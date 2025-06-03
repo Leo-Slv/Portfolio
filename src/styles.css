@@ -1,5 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+
+@font-face {
+    font-family: 'SpecialGothic';
+    src: url('../public/fonts/SpecialGothicCondensedOne-Regular.ttf')
+  }
+
+    html, body {
+    margin: 0;
+    padding: 0;
+}
+
 body {
   background-image: radial-gradient(circle at 99% 33%, hsla(235, 0%, 48%, 0.03) 0%, hsla(235, 0%, 48%, 0.03) 37%, transparent 37%, transparent 100%), radial-gradient(circle at 46% 16%, hsla(235, 0%, 48%, 0.03) 0%, hsla(235, 0%, 48%, 0.03) 43%, transparent 43%, transparent 100%), radial-gradient(circle at 99% 25%, hsla(235, 0%, 48%, 0.03) 0%, hsla(235, 0%, 48%, 0.03) 22%, transparent 22%, transparent 100%), radial-gradient(circle at 57% 88%, hsla(235, 0%, 48%, 0.03) 0%, hsla(235, 0%, 48%, 0.03) 86%, transparent 86%, transparent 100%), radial-gradient(circle at 82% 78%, hsla(235, 0%, 48%, 0.03) 0%, hsla(235, 0%, 48%, 0.03) 22%, transparent 22%, transparent 100%), linear-gradient(90deg, rgb(22, 22, 26), rgb(22, 22, 26));
   background-size: cover;
@@ -11,3 +22,60 @@ body {
   height: 100vh;
   /* Garante que o elemento ocupe 100% da altura da viewport */
 }
+
+  .main-font{
+    font-family: "SpecialGothic";
+  }
+
+  .nav-title{
+    transition: transform 0.4s ease-in-out, color 0.4s ease-in-out; 
+  }
+  .nav-title:hover{
+    transform: scale(1.2);
+    color: #fffffe;
+  }
+
+  .hover-effect {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .hover-effect::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #7f5af0;
+    transition: width 0.3s ease;
+  }
+
+  .hover-effect:hover::after {
+    width: 100%;
+  }
+
+  .headline{
+    color: #fffffe;
+  }
+
+  .paragraph{
+    color: #94a1b2;
+  }
+
+  .bg-button-color{
+    background-color: #7f5af0;
+  }
+
+  .main-color{
+    color: #7f5af0;
+  }
+
+  .main-font{
+    font-family: "SpecialGothic";
+  }
+
+  .button-text{
+    color: #fffffe;
+  }
