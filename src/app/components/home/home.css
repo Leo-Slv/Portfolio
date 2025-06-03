@@ -1,0 +1,8 @@
+/* Classe para limitar o texto a 3 linhas */
+.line-clamp-4 {
+  display: -webkit-box; /* Necessário para o efeito de clamp */
+  -webkit-line-clamp: 4; /* Define o número de linhas */
+  -webkit-box-orient: vertical; /* Orientação do box para o clamp */
+  overflow: hidden; /* Esconde o texto que exceder */
+  text-overflow: ellipsis; /* Adiciona reticências ao final */
+}

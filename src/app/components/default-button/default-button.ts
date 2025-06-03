@@ -17,7 +17,7 @@ export class DefaultButton {
   const paddingXClass = this.getPaddingClass('x', this.paddingX);
   const paddingYClass = this.getPaddingClass('y', this.paddingY);
   
-  return `text-base text-white button-hover font-medium border-black border-b-5 border-r-5 ${paddingXClass} ${paddingYClass} mb-2 lg:text-xl `;
+  return `text-xs sm:text-base text-white button-hover font-medium border-black border-b-5 border-r-5 ${paddingXClass} ${paddingYClass} mb-2 lg:text-xl `;
 }
 
 private getPaddingClass(direction: 'x' | 'y', value: string): string {
