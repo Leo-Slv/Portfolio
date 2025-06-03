@@ -8,18 +8,16 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class DefaultButton {
 
-  // Propriedades que podem ser passadas para o componente
-  @Input() texto: string = 'Botão'; // Valor padrão
-  @Input() cor: string = '#7f5af0'; // Cor padrão
-  @Input() paddingX: string = '10'; // px padrão (padding eixo x)
-  @Input() paddingY: string = '4'; // py padrão (padding eixo y)
+  @Input() text: string = 'Botão'; // Default text
+  @Input() color: string = '#7f5af0'; // Default color
+  @Input() paddingX: string = '8'; // Default px (padding x)
+  @Input() paddingY: string = '4'; // Default py (padding y)
 
-  // No componente .ts
   get buttonClasses(): string {
   const paddingXClass = this.getPaddingClass('x', this.paddingX);
   const paddingYClass = this.getPaddingClass('y', this.paddingY);
   
-  return `text-white button-hover font-medium border-black border-b-5 border-r-5 text-xl ${paddingXClass} ${paddingYClass} mb-2`;
+  return `text-base text-white button-hover font-medium border-black border-b-5 border-r-5 ${paddingXClass} ${paddingYClass} mb-2 lg:text-xl `;
 }
 
 private getPaddingClass(direction: 'x' | 'y', value: string): string {

@@ -10,8 +10,16 @@
   margin: 0;
   padding: 0;
   height: 100%;
+  scroll-behavior: smooth;
+  overflow: auto; /* Habilita o scroll */
+  scrollbar-width: none; /* Oculta a barra de rolagem em Firefox */
 }
 
+::-webkit-scrollbar {
+  display: none; /* Oculta a barra de rolagem */
+}
+
+ 
 body {
   background-image: radial-gradient(circle at 99% 33%, hsla(235, 0%, 48%, 0.03) 0%, hsla(235, 0%, 48%, 0.03) 37%, transparent 37%, transparent 100%), 
     radial-gradient(circle at 46% 16%, hsla(235, 0%, 48%, 0.03) 0%, hsla(235, 0%, 48%, 0.03) 43%, transparent 43%, transparent 100%), 
@@ -68,10 +76,6 @@ body {
     color: #94a1b2;
   }
 
-  .bg-button-color{
-    background-color: #7f5af0;
-  }
-
   .main-color{
     color: #7f5af0;
   }
@@ -80,15 +84,4 @@ body {
     font-family: "SpecialGothic";
   }
 
-  .button-text{
-    color: #fffffe;
-  }
-
-  .button-hover{
-    transition: transform 0.4s ease-in-out, color 0.4s ease-in-out; 
-  }
-
-  .button-hover:hover{
-    transform: scale(1.05);
-    color: #fffffe;
-  }
+  
