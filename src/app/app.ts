@@ -5,10 +5,11 @@ import { initFlowbite } from 'flowbite';
 import { NavBar } from './components/nav-bar/nav-bar';
 import { Home } from './components/home/home';
 import { About } from './components/about/about';
+import { Projects } from './components/projects/projects';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavBar, Home, About],
+  imports: [RouterOutlet, NavBar, Home, About, Projects],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
