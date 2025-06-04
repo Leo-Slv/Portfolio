@@ -4,10 +4,11 @@ import { isPlatformBrowser } from '@angular/common';
 import { initFlowbite } from 'flowbite';
 import { NavBar } from './components/nav-bar/nav-bar';
 import { Home } from './components/home/home';
+import { About } from './components/about/about';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavBar, Home],
+  imports: [RouterOutlet, NavBar, Home, About],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
