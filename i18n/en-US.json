@@ -57,6 +57,9 @@
     "DESCRIPTION_3": "Connect with me on LinkedIn to follow my professional career and exchange experiences.",
     "DESCRIPTION_4": "Explore my repositories and open source projects. Contributions and collaborations are always welcome!"
   },
+  "FOOTER":{
+    "TEXT":"© 2025 Leonardo da Silva Irineu. All rights reserved."
+  },
   "SVG":{
     "LANGUAGE":"./assets/US.svg"
   }
