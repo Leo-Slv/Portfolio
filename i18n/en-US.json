@@ -1,0 +1,16 @@
+{
+  "HOME": {
+    "GREETING": "Hello, my name is Leonardo",
+    "TITLE_1": "Full-Stack Developer",
+    "TITLE_2": "Java and Node.js",
+    "DESCRIPTION": "I'm a Full-Stack developer passionate about creating solutions that not only meet functional requirements but also deliver exceptional performance and build user trust through stable and secure experiences.",
+    "RESUME_BUTTON": "Resume",
+    "GITHUB_BUTTON": "GitHub"
+  },
+  "NAVBAR": {
+    "HOME": "Home",
+    "ABOUT": "About",
+    "PROJECTS": "Projects",
+    "CONTACTS": "Contacts"
+  }
+}
