@@ -1,6 +1,6 @@
 <div id="about-section" class="container main-font p-5 ">
     <div class="fade-in-up delay-300">
-        <h1 class="page-title float-1 pt-20">Sobre</h1>
+        <h1 class="page-title float-1 pt-20">{{ translationService.translate('ABOUT.TITLE') }}</h1>
     </div>
 
     <div class="about-section">
@@ -12,7 +12,7 @@
                 </div>
 
                 <h2 class="profile-name text-white">Leonardo</h2>
-                <p class="profile-title">Desenvolvedor Full Stack</p>
+                <p class="profile-title">{{ translationService.translate('ABOUT.SUBTITLE') }}</p>
 
                 <div class="contact-info">
                     <div class="contact-item text-white">
@@ -52,27 +52,12 @@
         </div>
         <div class="fade-in-right delay-300">
             <div class="about-content float-3">
-                <h2 class="about-title">Meu Valor</h2>
+                <h2 class="about-title">{{ translationService.translate('ABOUT.TITLE_2') }}</h2>
                 <p class="about-text">
-                    Aos 20 anos, sou um desenvolvedor full-stack apaixonado por
-                    criar soluções robustas e escaláveis. Com
-                    experiência em Node.js, Spring Boot e TypeScript, desenvolvo
-                    APIs e sistemas que priorizam performance e
-                    segurança, aplicando conceitos de Domain-Driven Design (DDD)
-                    para criar arquiteturas bem estruturadas e
-                    alinhadas às necessidades do negócio.
+                    {{ translationService.translate('ABOUT.DESCRIPTION_1') }}
                 </p>
                 <p class="about-text">
-                    Também possuo conhecimentos em Angular e React, o que me
-                    permite
-                    ter uma visão completa do desenvolvimento
-                    full-stack e colaborar efetivamente com equipes front-end.
-                    Estou
-                    em busca de oportunidades que me permitam
-                    aplicar meus conhecimentos técnicos enquanto continuo
-                    evoluindo
-                    como desenvolvedor, contribuindo para
-                    projetos inovadores e impactantes.
+                    {{ translationService.translate('ABOUT.DESCRIPTION_2') }}
                 </p>
 
                 <div class="skills-grid text-white">
@@ -126,23 +111,17 @@
 
     <div id="education-section" class="education-section">
         <div class="fade-in-up delay-300">
-            <h2 class="section-title float-2">Formação Acadêmicaa</h2>
+            <h2 class="section-title float-2">{{ translationService.translate('EDUCATION.TITLE') }}</h2>
         </div>
         <div class="education-grid">
 
             <div class="fade-in-left delay-300">
                 <div class="education-card float-1">
-                    <h3 class="education-degree">Desenvolvimento de Software
-                        Multiplataforma</h3>
-                    <p class="education-school">FATEC - Faculdade de
-                        Tecnologia</p>
+                    <h3 class="education-degree">{{ translationService.translate('EDUCATION.DEGREE_1') }}</h3>
+                    <p class="education-school">{{ translationService.translate('EDUCATION.SCHOOL_1') }}</p>
                     <p class="education-period">2025 - 2027</p>
                     <p class="education-description">
-                        Curso superior tecnológico focado em desenvolvimento
-                        de
-                        software, programação,
-                        banco de dados, engenharia de software e gestão de
-                        projetos.
+                        {{ translationService.translate('EDUCATION.DESCRIPTION_1') }}
                     </p>
                     <span class="education-status text-white">Em
                         andamento</span>
@@ -151,16 +130,11 @@
 
             <div class="fade-in-up delay-300">
                 <div class="education-card float-3">
-                    <h3 class="education-degree">Técnico em Desenvolvimento de Sistemas</h3>
-                    <p class="education-school">ETEC - Escola Técnica
-                        Estadual</p>
+                    <h3 class="education-degree">{{ translationService.translate('EDUCATION.DEGREE_2') }}</h3>
+                    <p class="education-school">{{ translationService.translate('EDUCATION.SCHOOL_2') }}</p>
                     <p class="education-period">2023 - 2024</p>
                     <p class="education-description">
-                        Formação técnica em programação, desenvolvimento
-                        web,
-                        banco
-                        de dados e
-                        redes de computadores.
+                        {{ translationService.translate('EDUCATION.DESCRIPTION_2') }}
                     </p>
                     <span
                         class="education-status text-white">Concluído</span>
@@ -169,12 +143,11 @@
 
             <div class="fade-in-right delay-300">
                 <div class="education-card float-2">
-                    <h3 class="education-degree">Inglês Intermediário</h3>
-                    <p class="education-school">Icbeu</p>
+                    <h3 class="education-degree">{{ translationService.translate('EDUCATION.DEGREE_3') }}</h3>
+                    <p class="education-school">{{ translationService.translate('EDUCATION.SCHOOL_3') }}</p>
                     <p class="education-period">2017-2020</p>
                     <p class="education-description">
-                        Cursei Inglês durante 3 anos da minha vida, atingindo um nivel Intermediário de Inglês
-                        e conseguindo me comunicar.
+                       {{ translationService.translate('EDUCATION.DESCRIPTION_3') }}
                     </p>
                     <span
                         class="education-status text-white">Certificado</span>

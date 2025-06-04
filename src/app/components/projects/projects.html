@@ -1,6 +1,6 @@
 <div id="projects-section" class="container main-font p-2 sm:p-10">
   <div class="fade-in-up delay-300 pt-20">
-    <h1 class="page-title float-1">Projetos</h1>
+    <h1 class="page-title float-1">{{ translationService.translate('PROJECTS.TITLE') }}</h1>
   </div>
 
   <div class="projects-grid">
@@ -11,13 +11,9 @@
           <img src="./assets/error-squad-server.png" alt="Foto de perfil">
         </div>
         <div class="project-content">
-          <h3 class="project-title">ErrorSquad Server</h3>
+          <h3 class="project-title">{{ translationService.translate('PROJECTS.CARD_TITLE_1') }}</h3>
           <p class="project-description">
-            API robusta desenvolvida com Node.js e TypeScript, implementando
-            Domain-Driven Design (DDD)
-            para gerenciamento de projetos. Utiliza PostgreSQL como banco de
-            dados e oferece
-            autenticação JWT para segurança.
+            {{ translationService.translate('PROJECTS.DESCRIPTION_1') }}
           </p>
           <div class="project-technologies">
             <div
@@ -64,13 +60,9 @@
           <img src="./assets/shop-api.png" alt="Foto de perfil">
         </div>
         <div class="project-content">
-          <h3 class="project-title">Shop API</h3>
+          <h3 class="project-title">{{ translationService.translate('PROJECTS.CARD_TITLE_2') }}</h3>
           <p class="project-description">
-            API REST completa para e-commerce desenvolvida em Spring Boot com
-            Java.
-            Implementa funcionalidades de catálogo de produtos, carrinho de
-            compras,
-            gerenciamento de usuários e processamento de pedidos.
+            {{ translationService.translate('PROJECTS.DESCRIPTION_2') }}
           </p>
           <div class="project-technologies">
             <div
@@ -110,13 +102,9 @@
           <img src="./assets/portfolio.png" alt="Foto de perfil">
         </div>
         <div class="project-content">
-          <h3 class="project-title">Portfolio Pessoal</h3>
+          <h3 class="project-title">{{ translationService.translate('PROJECTS.CARD_TITLE_3') }}</h3>
           <p class="project-description">
-            Portfolio pessoal desenvolvido com Angular e TypeScript,
-            apresentando
-            projetos, habilidades e experiências profissionais. Interface
-            moderna
-            e responsiva com animações suaves e design glassmorphism.
+            {{ translationService.translate('PROJECTS.DESCRIPTION_3') }}
           </p>
           <div class="project-technologies">
             <div
@@ -163,12 +151,9 @@
           <img src="./assets/first-spring-crud.png" alt="Foto de perfil">
         </div>
         <div class="project-content">
-          <h3 class="project-title">Spring CRUD Docker</h3>
+          <h3 class="project-title">{{ translationService.translate('PROJECTS.CARD_TITLE_4') }}</h3>
           <p class="project-description">
-            Primeiro projeto com Spring Boot implementando operações CRUD
-            completas.
-            Containerizado com Docker para facilitar deploy e desenvolvimento.
-            Demonstra conhecimentos em arquitetura de microsserviços.
+            {{ translationService.translate('PROJECTS.DESCRIPTION_4') }}
           </p>
           <div class="project-technologies">
             <div

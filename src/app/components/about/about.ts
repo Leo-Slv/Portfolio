@@ -1,26 +1,31 @@
 import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { DefaultCard } from './../default-card/default-card';
-
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-about',
-  imports: [DefaultCard],
   templateUrl: './about.html',
-  styleUrl: './about.css'
+  styleUrls: ['./about.css']
 })
 export class About implements OnInit, OnDestroy {
+  
   private observer: IntersectionObserver | undefined;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    public translationService: TranslationService
+  ) {}
 
   ngOnInit(): void {
     this.setupAboutAnimations();
     this.setupEducationAnimations();
   }
 
+  changeLanguage(lang: string) {
+    this.translationService.setLanguage(lang);
+  }
+
   private setupAboutAnimations(): void {
-    // Verifica se está rodando no navegador
     if (isPlatformBrowser(this.platformId)) {
       const aboutSection = document.getElementById('about-section');
       
@@ -48,7 +53,6 @@ export class About implements OnInit, OnDestroy {
   }
 
   private setupEducationAnimations(): void {
-    // Verifica se está rodando no navegador
     if (isPlatformBrowser(this.platformId)) {
       const educationSection = document.getElementById('education-section');
       

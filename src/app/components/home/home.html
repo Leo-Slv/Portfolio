@@ -9,7 +9,7 @@
       <div class=" float-2">
         <div
           class="headline pt-18 pb-15 text-base sm:text-xl text-center lg:text-left fade-in-left delay-300">
-          <span>Olá, meu nome é Leonardo</span>
+          <span>{{ translationService.translate('HOME.GREETING') }}</span>
         </div>
       </div>
 
@@ -17,7 +17,7 @@
       <div
         class="headline text-4xl sm:text-6xl lg:text-5xl xl:text-6xl text-center lg:text-left mb-4 float-5">
         <div class="typewriter-line1">
-          <span>Full-Stack Developer</span>
+          <span>{{ translationService.translate('HOME.TITLE_1') }}</span>
         </div>
         <div class="typewriter-line2">
           <span>Java and Node.js</span>
@@ -28,7 +28,7 @@
       <div class="float-3">
         <div
           class="text-sm lg:h-25 pt-4 paragraph text-center md:text-lg lg:text-left mb-11 xl:mb-6  typewriter-description">
-          <span>"Sou um desenvolvedor Full-Stack apaixonado por criar soluções que não apenas atendam aos requisitos funcionais, mas também proporcionem desempenho excepcional e fortaleçam a confiança dos usuários através de experiências estáveis e seguras."</span>
+          <span>{{ translationService.translate('HOME.DESCRIPTION') }}</span>
         </div>
       </div>
 
@@ -38,13 +38,13 @@
         <a href="./assets/Leonardo Curriculo_2025.pdf" target="_blank"
           rel="noopener noreferrer">
           <div class="fade-in-up delay-300">
-            <app-default-button text="Curriculo"></app-default-button>
+            <app-default-button [text]="translationService.translate('HOME.RESUME_BUTTON')"></app-default-button>
           </div>
         </a>
         <a href="https://github.com/Leo-Slv" target="_blank"
           rel="noopener noreferrer">
           <div class="fade-in-up delay-300">
-            <app-default-button text="GitHub"
+            <app-default-button [text]="translationService.translate('HOME.GITHUB_BUTTON')"
               paddingX="10"></app-default-button>
           </div>
         </a>
