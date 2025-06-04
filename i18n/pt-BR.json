@@ -33,7 +33,10 @@
     "SCHOOL_3": "Icbeu",
     "DESCRIPTION_1": "Curso superior tecnológico focado em desenvolvimento de software, programação, banco de dados, engenharia de software e gestão de projetos.",
     "DESCRIPTION_2": "Formação técnica em programação, desenvolvimento web, banco de dados e redes de computadores.",
-    "DESCRIPTION_3": "Cursei Inglês durante 3 anos da minha vida, atingindo um nivel Intermediário de Inglês e conseguindo me comunicar."
+    "DESCRIPTION_3": "Cursei Inglês durante 3 anos da minha vida, atingindo um nivel Intermediário de Inglês e conseguindo me comunicar.",
+    "STATUS_1": "Em andamento",
+    "STATUS_2": "Concluído",
+    "STATUS_3": "Certificado"
   },
   "PROJECTS": {
     "TITLE": "Projetos",
