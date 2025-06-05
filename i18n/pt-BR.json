@@ -5,7 +5,8 @@
     "TITLE_2": "Java and Node.js",
     "DESCRIPTION": "Sou um desenvolvedor Full-Stack apaixonado por criar soluções que não apenas atendam aos requisitos funcionais, mas também proporcionem desempenho excepcional e fortaleçam a confiança dos usuários através de experiências estáveis e seguras.",
     "RESUME_BUTTON": "Curriculo",
-    "GITHUB_BUTTON": "GitHub"
+    "GITHUB_BUTTON": "GitHub",
+    "PATH":"./assets/curriculo.html"
   },
   "NAVBAR": {
     "MAIN-LANGUAGE":"Português (BR)",
