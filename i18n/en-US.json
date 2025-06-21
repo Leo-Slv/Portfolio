@@ -46,7 +46,7 @@
     "CARD_TITLE_3": "Personal Portfolio",
     "CARD_TITLE_4": "Spring CRUD Docker",
     "DESCRIPTION_1": "Robust API developed with Node.js and TypeScript, implementing Domain-Driven Design (DDD) for project management. It uses PostgreSQL as its database and offers JWT authentication for security.",
-    "DESCRIPTION_2": "Complete REST API for e-commerce developed in Spring Boot with Java. It implements product catalog, shopping cart, user management and order processing functionalities.",
+    "DESCRIPTION_2": "REST API being developed for e-commerce in Spring Boot with Java. It implements product catalog, shopping cart, user management and order processing functionalities.",
     "DESCRIPTION_3": "Personal portfolio developed with Angular and TypeScript, presenting projects, skills and professional experience. Modern, responsive interface with smooth animations and glassmorphism design.",
     "DESCRIPTION_4": "First project with Spring Boot implementing complete CRUD operations. Containerized with Docker to facilitate deployment and development. Demonstrates knowledge of microservices architecture."
   },
