@@ -6,7 +6,7 @@
     "DESCRIPTION": "I'm a Full-Stack developer passionate about creating solutions that not only meet functional requirements but also deliver exceptional performance and build user trust through stable and secure experiences.",
     "RESUME_BUTTON": "Curriculum",
     "GITHUB_BUTTON": "GitHub",
-    "PATH":"./assets/curricullum.html"
+    "PATH":"./assets/Curriculum_Leonardo_Irineu_EN.pdf"
   },
   "NAVBAR": {
     "MAIN-LANGUAGE":"English (US)",
@@ -41,14 +41,14 @@
   },
   "PROJECTS": {
     "TITLE": "Projects",
-    "CARD_TITLE_1": "ErrorSquad Server",
+    "CARD_TITLE_1": "ACTi Case",
     "CARD_TITLE_2": "Shop API",
     "CARD_TITLE_3": "Personal Portfolio",
-    "CARD_TITLE_4": "Spring CRUD Docker",
-    "DESCRIPTION_1": "Robust API developed with Node.js and TypeScript, implementing Domain-Driven Design (DDD) for project management. It uses PostgreSQL as its database and offers JWT authentication for security.",
+    "CARD_TITLE_4": "ErrorSquad Server",
+    "DESCRIPTION_1": "Robust API developed with ASP.NET and Angular, implementing Domain-Driven Design (DDD) for project management. It uses SQL Server as its database and apply clean architecture concepts to ensure organized and sustainable code.",
     "DESCRIPTION_2": "REST API being developed for e-commerce in Spring Boot with Java. It implements product catalog, shopping cart, user management and order processing functionalities.",
     "DESCRIPTION_3": "Personal portfolio developed with Angular and TypeScript, presenting projects, skills and professional experience. Modern, responsive interface with smooth animations and glassmorphism design.",
-    "DESCRIPTION_4": "First project with Spring Boot implementing complete CRUD operations. Containerized with Docker to facilitate deployment and development. Demonstrates knowledge of microservices architecture."
+    "DESCRIPTION_4": "Robust API developed with Node.js and TypeScript, implementing Domain-Driven Design (DDD) for project management. It uses PostgreSQL as its database and offers JWT authentication for security."
   },
   "CONTACTS": {
     "TITLE": "Contacts",

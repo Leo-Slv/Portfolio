@@ -6,7 +6,7 @@
     "DESCRIPTION": "Sou um desenvolvedor Full-Stack apaixonado por criar soluções que não apenas atendam aos requisitos funcionais, mas também proporcionem desempenho excepcional e fortaleçam a confiança dos usuários através de experiências estáveis e seguras.",
     "RESUME_BUTTON": "Curriculo",
     "GITHUB_BUTTON": "GitHub",
-    "PATH":"./assets/curriculo.html"
+    "PATH":"./assets/Curriculo_Leonardo_Irineu.pdf"
   },
   "NAVBAR": {
     "MAIN-LANGUAGE":"Português (BR)",
@@ -41,13 +41,14 @@
   },
   "PROJECTS": {
     "TITLE": "Projetos",
-    "CARD_TITLE_1": "ErrorSquad Server",
+    "CARD_TITLE_1": "ACTi Case",
     "CARD_TITLE_2": "Shop API",
     "CARD_TITLE_3": "Portfolio Pessoal",
-    "CARD_TITLE_4": "Spring CRUD Docker",
-    "DESCRIPTION_1": "API robusta desenvolvida com Node.js e TypeScript, implementando Domain-Driven Design (DDD) para gerenciamento de projetos. Utiliza PostgreSQL como banco de dados e oferece autenticação JWT para segurança.",
+    "CARD_TITLE_4": "ErrorSquad Server",
+    "DESCRIPTION_1": "API robusta desenvolvida com ASP.NET e Angular, implementando Domain-Driven Design (DDD) para gerenciamento de projetos. Utiliza SQL Server como banco de dados e aplica conceitos de Clean Architecture para garantir um código organizado e sustentável.",
     "DESCRIPTION_2": "API REST em desenvolvimento para e-commerce desenvolvida em Spring Boot com Java. Implementa funcionalidades de catálogo de produtos, carrinho de compras, gerenciamento de usuários e processamento de pedidos.",
-    "DESCRIPTION_3": "Portfolio pessoal desenvolvido com Angular e TypeScript, apresentando projetos, habilidades e experiências profissionais. Interface moderna e responsiva com animações suaves e design glassmorphism."
+    "DESCRIPTION_3": "Portfolio pessoal desenvolvido com Angular e TypeScript, apresentando projetos, habilidades e experiências profissionais. Interface moderna e responsiva com animações suaves e design glassmorphism.",
+    "DESCRIPTION_4": "API robusta desenvolvida com Node.js e TypeScript, implementando Domain-Driven Design (DDD) para gerenciamento de projetos. Utiliza PostgreSQL como banco de dados e oferece autenticação JWT para segurança."
   },
   "CONTACTS": {
     "TITLE": "Contatos",
