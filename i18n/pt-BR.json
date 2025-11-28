@@ -41,15 +41,23 @@
     "STATUS_3": "Certificado"
   },
   "PROJECTS": {
-    "TITLE": "Projetos",
+    "MY": "Projetos Pessoais",
+    "STUDENT": "Projetos Acadêmicos",
+    "PROFESSIONAL": "Projetos Profissionais",
     "CARD_TITLE_1": "ACTi Case",
     "CARD_TITLE_2": "Shop API",
     "CARD_TITLE_3": "Portfolio Pessoal",
     "CARD_TITLE_4": "ErrorSquad Server",
+    "CARD_TITLE_5": "Agile Tracker Server",
+    "CARD_TITLE_6": "Projeto Limnológico",
+    "CARD_TITLE_7": "PDV Web",
     "DESCRIPTION_1": "API robusta desenvolvida com ASP.NET e Angular, implementando Domain-Driven Design (DDD) para gerenciamento de projetos. Utiliza SQL Server como banco de dados e aplica conceitos de Clean Architecture para garantir um código organizado e sustentável.",
     "DESCRIPTION_2": "API REST em desenvolvimento para e-commerce desenvolvida em Spring Boot com Java. Implementa funcionalidades de catálogo de produtos, carrinho de compras, gerenciamento de usuários e processamento de pedidos.",
     "DESCRIPTION_3": "Portfolio pessoal desenvolvido com Angular e TypeScript, apresentando projetos, habilidades e experiências profissionais. Interface moderna e responsiva com animações suaves e design glassmorphism.",
-    "DESCRIPTION_4": "API robusta desenvolvida com Node.js e TypeScript, implementando Domain-Driven Design (DDD) para gerenciamento de projetos. Utiliza PostgreSQL como banco de dados e oferece autenticação JWT para segurança."
+    "DESCRIPTION_4": "API robusta desenvolvida com Node.js e TypeScript, implementando Domain-Driven Design (DDD) para gerenciamento de projetos. Utiliza PostgreSQL como banco de dados e oferece autenticação JWT para segurança.",
+    "DESCRIPTION_5": "Plataforma web para gestão integrada de projetos, unificando Scrum e Kanban com dashboards analíticos, documentação e diagramas colaborativos. Construída com ASP.NET, Next.js e PostgreSQL, aplica DDD para garantir modularidade, clareza e escalabilidade.",
+    "DESCRIPTION_6": "Projeto web focado em monitoramento limnológico, desenvolvido com Vue.js e TypeScript. A aplicação permite a visualização e análise de dados ambientais, oferecendo gráficos interativos e relatórios detalhados para pesquisadores e profissionais da área.",
+    "DESCRIPTION_7": "Sistema profissional de PDV Web desenvolvido com ASP.NET, Next.js e MySQL, projetado para modernizar e agilizar operações comerciais. A plataforma oferece um dashboard dinâmico para acompanhamento de vendas, ranking de clientes, controle de pedidos e indicadores operacionais em tempo real. Conta com relatórios personalizáveis, consulta inteligente de produtos, gerenciamento de preços e funcionalidades direcionadas ao time comercial. A arquitetura prioriza desempenho, segurança e escalabilidade, proporcionando uma experiência fluida e confiável para usuários corporativos."
   },
   "CONTACTS": {
     "TITLE": "Contatos",

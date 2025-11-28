@@ -6,12 +6,12 @@
     "DESCRIPTION": "I'm a Full-Stack developer passionate about creating solutions that not only meet functional requirements but also deliver exceptional performance and build user trust through stable and secure experiences.",
     "RESUME_BUTTON": "Curriculum",
     "GITHUB_BUTTON": "GitHub",
-    "PATH":"./assets/Curriculum_Leonardo_Irineu_EN.pdf"
+    "PATH": "./assets/Curriculum_Leonardo_Irineu_EN.pdf"
   },
   "NAVBAR": {
-    "MAIN-LANGUAGE":"English (US)",
-    "PORTUGUESE":"Portuguese (BR)",
-    "ENGLISH":"English (US)",
+    "MAIN-LANGUAGE": "English (US)",
+    "PORTUGUESE": "Portuguese (BR)",
+    "ENGLISH": "English (US)",
     "HOME": "Home",
     "ABOUT": "About",
     "PROJECTS": "Projects",
@@ -42,14 +42,23 @@
   },
   "PROJECTS": {
     "TITLE": "Projects",
+    "MY": "Personal Projects",
+    "STUDENT": "Academic Projects",
+    "PROFESSIONAL": "Professional Projects",
     "CARD_TITLE_1": "ACTi Case",
     "CARD_TITLE_2": "Shop API",
     "CARD_TITLE_3": "Personal Portfolio",
     "CARD_TITLE_4": "ErrorSquad Server",
+    "CARD_TITLE_5": "Agile Tracker Server",
+    "CARD_TITLE_6": "Limnological Project",
+    "CARD_TITLE_7": "Web POS",
     "DESCRIPTION_1": "Robust API developed with ASP.NET and Angular, implementing Domain-Driven Design (DDD) for project management. It uses SQL Server as its database and apply clean architecture concepts to ensure organized and sustainable code.",
     "DESCRIPTION_2": "REST API being developed for e-commerce in Spring Boot with Java. It implements product catalog, shopping cart, user management and order processing functionalities.",
     "DESCRIPTION_3": "Personal portfolio developed with Angular and TypeScript, presenting projects, skills and professional experience. Modern, responsive interface with smooth animations and glassmorphism design.",
-    "DESCRIPTION_4": "Robust API developed with Node.js and TypeScript, implementing Domain-Driven Design (DDD) for project management. It uses PostgreSQL as its database and offers JWT authentication for security."
+    "DESCRIPTION_4": "Robust API developed with Node.js and TypeScript, implementing Domain-Driven Design (DDD) for project management. It uses PostgreSQL as its database and offers JWT authentication for security.",
+    "DESCRIPTION_5": "Web platform for integrated project management, combining Scrum and Kanban with analytical dashboards, documentation, and collaborative diagrams. Built with ASP.NET, Next.js, and PostgreSQL, applying DDD to ensure modularity, clarity, and scalability.",
+    "DESCRIPTION_6": "Web project focused on limnological monitoring, developed with Vue.js and TypeScript. The application allows visualization and analysis of environmental data, offering interactive graphs and detailed reports for researchers and professionals in the field.",
+    "DESCRIPTION_7": "Professional Web POS system built with ASP.NET, Next.js, and MySQL, designed to modernize and accelerate commercial operations. The platform features a dynamic dashboard for tracking sales performance, customer rankings, orders, and real-time operational indicators. It includes customizable reports, smart product lookup, price management, and tools tailored for sales teams. Its architecture prioritizes performance, security, and scalability, delivering a smooth and reliable experience for enterprise environments."
   },
   "CONTACTS": {
     "TITLE": "Contacts",
@@ -62,10 +71,10 @@
     "DESCRIPTION_3": "Connect with me on LinkedIn to follow my professional career and exchange experiences.",
     "DESCRIPTION_4": "Explore my repositories and open source projects. Contributions and collaborations are always welcome!"
   },
-  "FOOTER":{
-    "TEXT":"© 2025 Leonardo da Silva Irineu. All rights reserved."
+  "FOOTER": {
+    "TEXT": "© 2025 Leonardo da Silva Irineu. All rights reserved."
   },
-  "SVG":{
-    "LANGUAGE":"./assets/US.svg"
+  "SVG": {
+    "LANGUAGE": "./assets/US.svg"
   }
 }
