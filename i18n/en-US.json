@@ -20,10 +20,9 @@
   "ABOUT": {
     "TITLE": "About",
     "SUBTITLE": "Full-Stack Developer",
-    "TITLE_2": "My Value",
-    "DESCRIPTION_1": "At the age of 20, I'm a full-stack developer with a passion for creating robust and scalable solutions. With experience in ASP.NET, Spring Boot and TypeScript, I develop APIs and systems that prioritize performance and security, applying Domain-Driven Design (DDD) concepts to create well-structured architectures aligned with business needs.",
-    "DESCRIPTION_2": "I also have knowledge of Next.JS e Angular, which allows me to have a complete view of full-stack development and collaborate effectively with front-end teams. I'm looking for opportunities that allow me to apply my technical knowledge while continuing to evolve as a developer, contributing to innovative and impactful projects.",
-    "DESCRIPTION_3": "Currently working as a Software Development Intern at ACTI since September 2025, where I develop and maintain web applications using ASP.NET, Next.js, and SQL Server. My role focuses on implementing clean architecture principles, optimizing database operations, and collaborating with the development team to deliver scalable and maintainable solutions."
+    "DESCRIPTION_1": "I'm a full-stack developer focused on building scalable and well-structured applications. I work with ASP.NET and Next.js, applying DDD, layered architecture, and clean code practices to deliver reliable solutions.",
+    "DESCRIPTION_2": "Across my projects, I’ve built everything from management platforms and robust APIs to AI-powered solutions. Highlights include InboxIQ (FastAPI + OpenAI), AgileTracker (.NET 9 + DDD for agile management with Scrum/Kanban), and academic projects using React, Node.js, and PostgreSQL focused on data visualization and organization.",
+    "DESCRIPTION_3": "I’m currently a Software Development Intern at ACTI (since 09/2025), working on web systems, database integration, and continuous feature improvements with a focus on performance and quality."
   },
   "EDUCATION": {
     "TITLE": "Education",
@@ -41,24 +40,31 @@
     "STATUS_3": "Certificate"
   },
   "PROJECTS": {
-    "TITLE": "Projects",
     "MY": "Personal Projects",
     "STUDENT": "Academic Projects",
     "PROFESSIONAL": "Professional Projects",
-    "CARD_TITLE_1": "ACTi Case",
-    "CARD_TITLE_2": "Shop API",
+    "SUBTITLE": "Selected projects focused on architecture, scalability, and real-world applications — from APIs and management platforms to AI-powered solutions.",
+    "CARD_TITLE_1": "ACTi-case",
+    "CARD_TITLE_2": "InboxIQ",
     "CARD_TITLE_3": "Personal Portfolio",
-    "CARD_TITLE_4": "ErrorSquad Server",
-    "CARD_TITLE_5": "Agile Tracker Server",
-    "CARD_TITLE_6": "Limnological Project",
+    "CARD_TITLE_4": "Pedagogical Management",
+    "CARD_TITLE_5": "AgileTracker",
+    "CARD_TITLE_6": "Limnological Portal",
     "CARD_TITLE_7": "Web POS",
-    "DESCRIPTION_1": "Robust API developed with ASP.NET and Angular, implementing Domain-Driven Design (DDD) for project management. It uses SQL Server as its database and apply clean architecture concepts to ensure organized and sustainable code.",
-    "DESCRIPTION_2": "REST API being developed for e-commerce in Spring Boot with Java. It implements product catalog, shopping cart, user management and order processing functionalities.",
-    "DESCRIPTION_3": "Personal portfolio developed with Angular and TypeScript, presenting projects, skills and professional experience. Modern, responsive interface with smooth animations and glassmorphism design.",
-    "DESCRIPTION_4": "Robust API developed with Node.js and TypeScript, implementing Domain-Driven Design (DDD) for project management. It uses PostgreSQL as its database and offers JWT authentication for security.",
-    "DESCRIPTION_5": "Web platform for integrated project management, combining Scrum and Kanban with analytical dashboards, documentation, and collaborative diagrams. Built with ASP.NET, Next.js, and PostgreSQL, applying DDD to ensure modularity, clarity, and scalability.",
-    "DESCRIPTION_6": "Web project focused on limnological monitoring, developed with Vue.js and TypeScript. The application allows visualization and analysis of environmental data, offering interactive graphs and detailed reports for researchers and professionals in the field.",
-    "DESCRIPTION_7": "Professional Web POS system built with ASP.NET, Next.js, and MySQL, designed to modernize and accelerate commercial operations. The platform features a dynamic dashboard for tracking sales performance, customer rankings, orders, and real-time operational indicators. It includes customizable reports, smart product lookup, price management, and tools tailored for sales teams. Its architecture prioritizes performance, security, and scalability, delivering a smooth and reliable experience for enterprise environments."
+    "MINI_1": "Partner registration & management (full stack)",
+    "MINI_2": "AI email triage and automation",
+    "MINI_3": "Modern UI, responsive, multi-language",
+    "MINI_4": "Academic system with admin & guest area",
+    "MINI_5": "Agile management with DDD & robust API",
+    "MINI_6": "Environmental data visualization",
+    "MINI_7": "Enterprise system focused on performance",
+    "DESCRIPTION_1": "Full stack application for partner registration and management, featuring consistent validations, layered architecture, and secure database persistence.",
+    "DESCRIPTION_2": "AI-powered email triage MVP with classification and suggested replies. Supports text/file analysis, Gmail integration, and a production-ready architecture approach.",
+    "DESCRIPTION_3": "Portfolio built with a focus on modern UI, responsiveness, smooth animations, and well-structured content to showcase projects and professional experience.",
+    "DESCRIPTION_4": "Full stack solution for academic management with an admin area and public guest access, integrating authentication, database persistence, and real-time updates.",
+    "DESCRIPTION_5": "Agile management platform combining Scrum and Kanban with a focus on traceability, modularity, and scalability. DDD-based structure with standardized endpoints and clear business rules.",
+    "DESCRIPTION_6": "Web platform for consulting and visualizing limnological data with filters by time, location, and scientific variables, providing analysis through tables, charts, and reports.",
+    "DESCRIPTION_7": "Professional Web POS system designed to modernize commercial operations with dashboards, KPIs, reports, and sales-focused features, prioritizing performance and scalability."
   },
   "CONTACTS": {
     "TITLE": "Contacts",

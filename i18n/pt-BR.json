@@ -6,12 +6,12 @@
     "DESCRIPTION": "Sou um desenvolvedor Full-Stack apaixonado por criar soluções que não apenas atendam aos requisitos funcionais, mas também proporcionem desempenho excepcional e fortaleçam a confiança dos usuários através de experiências estáveis e seguras.",
     "RESUME_BUTTON": "Curriculo",
     "GITHUB_BUTTON": "GitHub",
-    "PATH":"./assets/Curriculo_Leonardo_Irineu.pdf"
+    "PATH": "./assets/Curriculo_Leonardo_Irineu.pdf"
   },
   "NAVBAR": {
-    "MAIN-LANGUAGE":"Português (BR)",
-    "PORTUGUESE":"Português (BR)",
-    "ENGLISH":"Inglês (US)",
+    "MAIN-LANGUAGE": "Português (BR)",
+    "PORTUGUESE": "Português (BR)",
+    "ENGLISH": "Inglês (US)",
     "HOME": "Home",
     "ABOUT": "Sobre",
     "PROJECTS": "Projetos",
@@ -20,10 +20,9 @@
   "ABOUT": {
     "TITLE": "Sobre",
     "SUBTITLE": "Desenvolvedor Full-Stack",
-    "TITLE_2": "Meu Valor",
-    "DESCRIPTION_1": "Aos 20 anos, sou um desenvolvedor full-stack apaixonado por criar soluções robustas e escaláveis. Com experiência em ASP.NET, Spring Boot e TypeScript, desenvolvo APIs e sistemas que priorizam performance e segurança, aplicando conceitos de Domain-Driven Design (DDD) para criar arquiteturas bem estruturadas e alinhadas às necessidades do negócio.",
-    "DESCRIPTION_2": "Também possuo conhecimentos em Next.JS e Angular, o que me permite ter uma visão completa do desenvolvimento full-stack e colaborar efetivamente com equipes front-end. Estou em busca de oportunidades que me permitam aplicar meus conhecimentos técnicos enquanto continuo evoluindo como desenvolvedor, contribuindo para projetos inovadores e impactantes.",
-    "DESCRIPTION_3": "Atualmente atuando como Estagiário em Desenvolvimento de Software na empresa ACTI desde setembro de 2025, onde desenvolvo e mantenho aplicações web utilizando ASP.NET, Next.js e SQL Server. Minha função envolve a aplicação de princípios de arquitetura limpa, otimização de operações de banco de dados e colaboração com a equipe de desenvolvimento para entregar soluções escaláveis e de fácil manutenção."
+    "DESCRIPTION_1": "Sou desenvolvedor full-stack focado em construir aplicações escaláveis e bem estruturadas. Trabalho com ASP.NET e Next.js, aplicando boas práticas como DDD, arquitetura em camadas e código limpo para entregar soluções confiáveis.",
+    "DESCRIPTION_2": "Nos meus projetos, desenvolvi desde plataformas de gestão e APIs robustas até soluções com IA. Destaque para o InboxIQ (FastAPI + OpenAI), o AgileTracker (.NET 9 + DDD para gestão ágil com Scrum/Kanban) e projetos acadêmicos com React, Node.js e PostgreSQL voltados à visualização e organização de dados.",
+    "DESCRIPTION_3": "Atualmente sou estagiário em Desenvolvimento de Software na ACTI (desde 09/2025), atuando no desenvolvimento e manutenção de sistemas web, integração com banco de dados e evolução contínua de funcionalidades com foco em performance e qualidade."
   },
   "EDUCATION": {
     "TITLE": "Formação Acadêmica",
@@ -44,21 +43,30 @@
     "MY": "Projetos Pessoais",
     "STUDENT": "Projetos Acadêmicos",
     "PROFESSIONAL": "Projetos Profissionais",
-    "CARD_TITLE_1": "ACTi Case",
-    "CARD_TITLE_2": "Shop API",
-    "CARD_TITLE_3": "Portfolio Pessoal",
-    "CARD_TITLE_4": "ErrorSquad Server",
-    "CARD_TITLE_5": "Agile Tracker Server",
-    "CARD_TITLE_6": "Projeto Limnológico",
+    "SUBTITLE": "Projetos selecionados com foco em arquitetura, escalabilidade e aplicações reais — de APIs e plataformas de gestão até soluções com IA.",
+    "CARD_TITLE_1": "ACTi-case",
+    "CARD_TITLE_2": "InboxIQ",
+    "CARD_TITLE_3": "Portfólio Pessoal",
+    "CARD_TITLE_4": "Gerenciamento Pedagógico",
+    "CARD_TITLE_5": "AgileTracker",
+    "CARD_TITLE_6": "Portal Limnológico",
     "CARD_TITLE_7": "PDV Web",
-    "DESCRIPTION_1": "API robusta desenvolvida com ASP.NET e Angular, implementando Domain-Driven Design (DDD) para gerenciamento de projetos. Utiliza SQL Server como banco de dados e aplica conceitos de Clean Architecture para garantir um código organizado e sustentável.",
-    "DESCRIPTION_2": "API REST em desenvolvimento para e-commerce desenvolvida em Spring Boot com Java. Implementa funcionalidades de catálogo de produtos, carrinho de compras, gerenciamento de usuários e processamento de pedidos.",
-    "DESCRIPTION_3": "Portfolio pessoal desenvolvido com Angular e TypeScript, apresentando projetos, habilidades e experiências profissionais. Interface moderna e responsiva com animações suaves e design glassmorphism.",
-    "DESCRIPTION_4": "API robusta desenvolvida com Node.js e TypeScript, implementando Domain-Driven Design (DDD) para gerenciamento de projetos. Utiliza PostgreSQL como banco de dados e oferece autenticação JWT para segurança.",
-    "DESCRIPTION_5": "Plataforma web para gestão integrada de projetos, unificando Scrum e Kanban com dashboards analíticos, documentação e diagramas colaborativos. Construída com ASP.NET, Next.js e PostgreSQL, aplica DDD para garantir modularidade, clareza e escalabilidade.",
-    "DESCRIPTION_6": "Projeto web focado em monitoramento limnológico, desenvolvido com Vue.js e TypeScript. A aplicação permite a visualização e análise de dados ambientais, oferecendo gráficos interativos e relatórios detalhados para pesquisadores e profissionais da área.",
-    "DESCRIPTION_7": "Sistema profissional de PDV Web desenvolvido com ASP.NET, Next.js e MySQL, projetado para modernizar e agilizar operações comerciais. A plataforma oferece um dashboard dinâmico para acompanhamento de vendas, ranking de clientes, controle de pedidos e indicadores operacionais em tempo real. Conta com relatórios personalizáveis, consulta inteligente de produtos, gerenciamento de preços e funcionalidades direcionadas ao time comercial. A arquitetura prioriza desempenho, segurança e escalabilidade, proporcionando uma experiência fluida e confiável para usuários corporativos."
+    "MINI_1": "Cadastro e gestão de parceiros (full stack)",
+    "MINI_2": "Triagem de e-mails com IA e automações",
+    "MINI_3": "UI moderna, responsiva e multilíngue",
+    "MINI_4": "Sistema acadêmico com área admin e guest",
+    "MINI_5": "Gestão ágil com DDD e API robusta",
+    "MINI_6": "Visualização de dados ambientais",
+    "MINI_7": "Sistema corporativo com foco em performance",
+    "DESCRIPTION_1": "Aplicação full stack para cadastro e gerenciamento de parceiros, com validações consistentes, arquitetura em camadas e integração com banco de dados para persistência segura.",
+    "DESCRIPTION_2": "MVP de triagem inteligente de e-mails com classificação e respostas sugeridas usando IA. Suporta análise por texto/arquivos, integração com Gmail e arquitetura preparada para produção.",
+    "DESCRIPTION_3": "Portfólio desenvolvido com foco em UI moderna, responsividade, animações suaves e organização de conteúdo para apresentar projetos, habilidades e trajetória profissional.",
+    "DESCRIPTION_4": "Solução full stack para gestão acadêmica com área administrativa e consulta pública (guest), integrando autenticação, banco de dados e recursos de atualização em tempo real.",
+    "DESCRIPTION_5": "Plataforma para gestão ágil unificando Scrum e Kanban com foco em rastreabilidade, modularidade e escalabilidade. Estrutura baseada em DDD com endpoints padronizados e regras bem definidas.",
+    "DESCRIPTION_6": "Plataforma web para consulta e visualização de dados limnológicos com filtros por período, local e variáveis científicas, oferecendo análise em tabelas, gráficos e relatórios.",
+    "DESCRIPTION_7": "Sistema profissional de PDV Web desenvolvido para modernizar operações comerciais com dashboards, indicadores, relatórios e funcionalidades voltadas ao time comercial, priorizando performance e escalabilidade."
   },
+
   "CONTACTS": {
     "TITLE": "Contatos",
     "CARD_TITLE_1": "Email",
@@ -70,10 +78,10 @@
     "DESCRIPTION_3": "Conecte-se comigo no LinkedIn para acompanhar minha trajetória profissional e trocar experiências.",
     "DESCRIPTION_4": "Explore meus repositórios e projetos open source. Contribuições e colaborações são sempre bem-vindas!"
   },
-  "FOOTER":{
-    "TEXT":"© 2025 Leonardo da Silva Irineu. Todos os direitos reservados."
+  "FOOTER": {
+    "TEXT": "© 2025 Leonardo da Silva Irineu. Todos os direitos reservados."
   },
-  "SVG":{
-    "LANGUAGE":"./assets/BR.svg"
+  "SVG": {
+    "LANGUAGE": "./assets/BR.svg"
   }
 }
