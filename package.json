@@ -20,6 +20,7 @@
     "@angular/router": "^20.0.0",
     "@angular/ssr": "^20.0.0",
     "@tailwindcss/postcss": "^4.1.8",
+    "@vercel/analytics": "^1.6.1",
     "express": "^5.1.0",
     "flowbite": "^3.1.2",
     "postcss": "^8.5.4",

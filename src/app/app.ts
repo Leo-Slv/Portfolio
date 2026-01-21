@@ -2,6 +2,7 @@ import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import { initFlowbite } from 'flowbite';
+import { inject as injectAnalytics } from '@vercel/analytics';
 import { NavBar } from './components/nav-bar/nav-bar';
 import { Home } from './components/home/home';
 import { About } from './components/about/about';
@@ -23,6 +24,7 @@ export class App implements OnInit {
    ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       initFlowbite();
+      injectAnalytics();
     }
   }
 }
