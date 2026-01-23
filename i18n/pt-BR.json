@@ -21,7 +21,7 @@
     "TITLE": "Sobre",
     "SUBTITLE": "Desenvolvedor Full-Stack",
     "DESCRIPTION_1": "Sou desenvolvedor full-stack focado em construir aplicações escaláveis e bem estruturadas. Trabalho com ASP.NET e Next.js, aplicando boas práticas como DDD, arquitetura em camadas e código limpo para entregar soluções confiáveis.",
-    "DESCRIPTION_2": "Nos meus projetos, desenvolvi desde plataformas de gestão e APIs robustas até soluções com IA. Destaque para o InboxIQ (FastAPI + OpenAI), o AgileTracker (.NET 9 + DDD para gestão ágil com Scrum/Kanban) e projetos acadêmicos com React, Node.js e PostgreSQL voltados à visualização e organização de dados.",
+    "DESCRIPTION_2": "Nos meus projetos, desenvolvi desde plataformas de gestão e APIs robustas até soluções com IA. Destaque para o InboxIQ (FastAPI + OpenAI), o ArchFlow (.NET 9 + DDD para gestão ágil com Scrum/Kanban) e projetos acadêmicos com React, Node.js e PostgreSQL voltados à visualização e organização de dados.",
     "DESCRIPTION_3": "Atualmente sou estagiário em Desenvolvimento de Software na ACTI (desde 09/2025), atuando no desenvolvimento e manutenção de sistemas web, integração com banco de dados e evolução contínua de funcionalidades com foco em performance e qualidade."
   },
   "EDUCATION": {
@@ -48,7 +48,7 @@
     "CARD_TITLE_2": "InboxIQ",
     "CARD_TITLE_3": "Portfólio Pessoal",
     "CARD_TITLE_4": "Gerenciamento Pedagógico",
-    "CARD_TITLE_5": "AgileTracker",
+    "CARD_TITLE_5": "ArchFlow",
     "CARD_TITLE_6": "Portal Limnológico",
     "CARD_TITLE_7": "PDV Web",
     "MINI_1": "Cadastro e gestão de parceiros (full stack)",

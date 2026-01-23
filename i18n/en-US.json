@@ -21,7 +21,7 @@
     "TITLE": "About",
     "SUBTITLE": "Full-Stack Developer",
     "DESCRIPTION_1": "I'm a full-stack developer focused on building scalable and well-structured applications. I work with ASP.NET and Next.js, applying DDD, layered architecture, and clean code practices to deliver reliable solutions.",
-    "DESCRIPTION_2": "Across my projects, I’ve built everything from management platforms and robust APIs to AI-powered solutions. Highlights include InboxIQ (FastAPI + OpenAI), AgileTracker (.NET 9 + DDD for agile management with Scrum/Kanban), and academic projects using React, Node.js, and PostgreSQL focused on data visualization and organization.",
+    "DESCRIPTION_2": "Across my projects, I’ve built everything from management platforms and robust APIs to AI-powered solutions. Highlights include InboxIQ (FastAPI + OpenAI), ArchFlow (.NET 9 + DDD for agile management with Scrum/Kanban), and academic projects using React, Node.js, and PostgreSQL focused on data visualization and organization.",
     "DESCRIPTION_3": "I’m currently a Software Development Intern at ACTI (since 09/2025), working on web systems, database integration, and continuous feature improvements with a focus on performance and quality."
   },
   "EDUCATION": {
@@ -48,7 +48,7 @@
     "CARD_TITLE_2": "InboxIQ",
     "CARD_TITLE_3": "Personal Portfolio",
     "CARD_TITLE_4": "Pedagogical Management",
-    "CARD_TITLE_5": "AgileTracker",
+    "CARD_TITLE_5": "ArchFlow",
     "CARD_TITLE_6": "Limnological Portal",
     "CARD_TITLE_7": "Web POS",
     "MINI_1": "Partner registration & management (full stack)",
