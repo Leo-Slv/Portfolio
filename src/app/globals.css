@@ -1,19 +1,28 @@
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "SpecialGothic";
-  src: url("/fonts/SpecialGothicCondensedOne-Regular.ttf") format("truetype");
+:root {
+  --font-satoshi: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+  --page-bg: #16171d;
+  --surface: #14121a;
+  --accent: #6D28D9;
+  --accent-soft-15: rgba(109, 40, 217, 0.15);
+  --accent-soft-25: rgba(109, 40, 217, 0.25);
+  --accent-soft-35: rgba(109, 40, 217, 0.35);
+  --border-default: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(255, 255, 255, 0.14);
+  --border-highlight: rgba(255, 255, 255, 0.08);
+  --border-shade: rgba(0, 0, 0, 0.22);
+  --text-primary: rgba(255, 255, 255, 0.95);
+  --text-secondary: rgba(255, 255, 255, 0.74);
+  --text-tertiary: rgba(255, 255, 255, 0.58);
 }
 
-:root {
-  --font-special: "SpecialGothic", sans-serif;
-  --color-headline: #fffffe;
-  --color-paragraph: #94a1b2;
-  --color-main: #7f5af0;
-  --color-accent: #2cb67d;
-  --background: #16161a;
+html {
+  color-scheme: dark;
 }
 
 html,
@@ -24,47 +33,10 @@ body {
   min-height: 100%;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  background: radial-gradient(
-      circle at 99% 33%,
-      hsla(235, 0%, 48%, 0.03) 0%,
-      hsla(235, 0%, 48%, 0.03) 37%,
-      transparent 37%,
-      transparent 100%
-    ),
-    radial-gradient(
-      circle at 46% 16%,
-      hsla(235, 0%, 48%, 0.03) 0%,
-      hsla(235, 0%, 48%, 0.03) 43%,
-      transparent 43%,
-      transparent 100%
-    ),
-    radial-gradient(
-      circle at 99% 25%,
-      hsla(235, 0%, 48%, 0.03) 0%,
-      hsla(235, 0%, 48%, 0.03) 22%,
-      transparent 22%,
-      transparent 100%
-    ),
-    radial-gradient(
-      circle at 57% 88%,
-      hsla(235, 0%, 48%, 0.03) 0%,
-      hsla(235, 0%, 48%, 0.03) 86%,
-      transparent 86%,
-      transparent 100%
-    ),
-    radial-gradient(
-      circle at 82% 78%,
-      hsla(235, 0%, 48%, 0.03) 0%,
-      hsla(235, 0%, 48%, 0.03) 22%,
-      transparent 22%,
-      transparent 100%
-    ),
-    linear-gradient(90deg, rgb(22, 22, 26), rgb(22, 22, 26));
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background: var(--page-bg);
   display: flex;
   flex-direction: column;
+  font-family: var(--font-satoshi);
 }
 
 @media (max-width: 768px) {
@@ -74,24 +46,79 @@ body {
   }
 }
 
+/* ArchFlow scrollbar (WebKit) */
 ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--page-bg);
+  box-shadow: inset 1px 0 0 var(--border-highlight), inset 0 -1px 0 var(--border-shade);
+}
+::-webkit-scrollbar-thumb {
+  background: #14121a;
+  width: 8px;
+  margin-left: 2px;
+  border: none;
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1a1722;
+}
+::-webkit-scrollbar-button,
+::-webkit-scrollbar-corner {
   display: none;
 }
 
 * {
-  scrollbar-width: none;
+  scrollbar-color: #14121a #16171d;
 }
 
+/* Focus ring */
+.focus-ring:focus-visible {
+  outline: none;
+  border-color: var(--accent-soft-35);
+  box-shadow: 0 0 0 3px var(--accent-soft-15), 0 0 0 1px var(--accent-soft-25);
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+/* Surface depth (cards/panels) */
+.surface-depth {
+  box-shadow: inset 0 1px 0 var(--border-highlight), inset 0 -1px 0 var(--border-shade);
+}
+
+/* Nav link hover underline (accent) */
+.nav-link-underline:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+}
+
+/* Section divider */
+.section-divider {
+  height: 1px;
+  width: 100%;
+  margin: 3.5rem 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  border-radius: 999px;
+}
+
+/* Transitions */
+.transition-af {
+  transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+/* Legacy utility classes (kept for section classes) */
 .main-font {
-  font-family: var(--font-special);
+  font-family: var(--font-satoshi);
 }
 
 .nav-title {
-  transition: transform 0.4s ease-in-out, color 0.4s ease-in-out;
+  transition: color 180ms ease;
 }
 .nav-title:hover {
-  transform: scale(1.2);
-  color: var(--color-headline);
+  color: var(--text-primary);
 }
 
 .hover-effect {
@@ -106,29 +133,29 @@ body {
   bottom: 0;
   width: 0;
   height: 2px;
-  background-color: var(--color-main);
-  transition: width 0.3s ease;
+  background-color: var(--accent);
+  transition: width 180ms ease;
 }
 .hover-effect:hover::after {
   width: 100%;
 }
 
 .headline {
-  color: var(--color-headline);
+  color: var(--text-primary);
 }
 
 .paragraph {
-  color: var(--color-paragraph);
+  color: var(--text-secondary);
 }
 
 .main-color {
-  color: var(--color-main);
+  color: var(--accent);
 }
 
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(12px);
   }
   100% {
     opacity: 1;
@@ -195,7 +222,7 @@ body {
     border-color: transparent;
   }
   50% {
-    border-color: #667eea;
+    border-color: var(--accent);
   }
 }
 
@@ -224,40 +251,20 @@ body {
   animation-fill-mode: both;
 }
 
-.delay-100 {
-  animation-delay: 0.1s;
-}
-.delay-200 {
-  animation-delay: 0.2s;
-}
-.delay-300 {
-  animation-delay: 0.3s;
-}
-.delay-400 {
-  animation-delay: 0.4s;
-}
-.delay-500 {
-  animation-delay: 0.5s;
-}
-.delay-600 {
-  animation-delay: 0.6s;
-}
-.delay-700 {
-  animation-delay: 0.7s;
-}
-.delay-800 {
-  animation-delay: 0.8s;
-}
-.delay-900 {
-  animation-delay: 0.9s;
-}
-.delay-1000 {
-  animation-delay: 1s;
-}
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+.delay-800 { animation-delay: 0.8s; }
+.delay-900 { animation-delay: 0.9s; }
+.delay-1000 { animation-delay: 1s; }
 
 .typewriter-line1 {
   overflow: hidden;
-  border-right: 2px solid #667eea;
+  border-right: 2px solid var(--accent);
   white-space: nowrap;
   margin: 0 auto;
   animation: typewriter 1.8s steps(30, end) 0.3s forwards,
@@ -268,7 +275,7 @@ body {
 
 .typewriter-line2 {
   overflow: hidden;
-  border-right: 2px solid #667eea;
+  border-right: 2px solid var(--accent);
   white-space: nowrap;
   margin: 0 auto;
   animation: typewriter 1.8s steps(30, end) 2.1s forwards,
@@ -285,82 +292,43 @@ body {
 }
 
 @keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
 }
 
 @keyframes floatReverse {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
 }
 
 @keyframes floatSlow {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
 }
 
 @keyframes floatFast {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
 }
 
-.float-1 {
-  animation: float 3s ease-in-out infinite;
-  animation-delay: 0s;
-}
-.float-2 {
-  animation: floatReverse 2.5s ease-in-out infinite;
-  animation-delay: 0.5s;
-}
-.float-3 {
-  animation: float 3.5s ease-in-out infinite;
-  animation-delay: 1s;
-}
-.float-4 {
-  animation: floatSlow 2.8s ease-in-out infinite;
-  animation-delay: 1.5s;
-}
-.float-5 {
-  animation: floatFast 3.2s ease-in-out infinite;
-  animation-delay: 2s;
-}
+.float-1 { animation: float 3s ease-in-out infinite; animation-delay: 0s; }
+.float-2 { animation: floatReverse 2.5s ease-in-out infinite; animation-delay: 0.5s; }
+.float-3 { animation: float 3.5s ease-in-out infinite; animation-delay: 1s; }
+.float-4 { animation: floatSlow 2.8s ease-in-out infinite; animation-delay: 1.5s; }
+.float-5 { animation: floatFast 3.2s ease-in-out infinite; animation-delay: 2s; }
 
 .icon-hover {
-  transition: all 0.3s ease;
+  transition: transform 180ms ease, filter 180ms ease;
   cursor: pointer;
 }
 .icon-hover:hover {
-  transform: scale(1.1) translateY(-5px) !important;
-  filter: brightness(1.2);
+  transform: scale(1.1) translateY(-5px);
+  filter: brightness(1.1);
   animation-play-state: paused;
 }
 
 @media (max-width: 768px) {
-  .float-1,
-  .float-2,
-  .float-3,
-  .float-4,
-  .float-5 {
+  .float-1, .float-2, .float-3, .float-4, .float-5 {
     animation-duration: 2.5s;
   }
 }
@@ -373,20 +341,14 @@ body {
   text-overflow: ellipsis;
 }
 
-.border-nav::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #7f5af0 0%, #2cb67d 100%);
-}
-
+/* Navbar bottom separator (ArchFlow) */
 .border-nav {
   position: relative;
+  border-bottom: 1px solid var(--border-default);
+  box-shadow: inset 0 -1px 0 var(--border-shade);
 }
 
+/* Contact cards top accent (keep for LinkedIn/GitHub) */
 .contact-card::before {
   content: "";
   position: absolute;

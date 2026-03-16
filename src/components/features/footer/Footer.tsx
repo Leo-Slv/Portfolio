@@ -1,17 +1,21 @@
 "use client";
 
-import { useTranslation } from "@/lib/translation-context";
+import { useTranslation } from "@/lib/i18n";
 
 export function Footer() {
   const { t } = useTranslation();
 
   return (
-    <nav className="bg-[#16161a] w-full z-20 top-0 start-0 border-nav">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-center mx-auto pr-4 pl-4">
-        <div className="items-center text-white justify-center p-4 text-xs sm:text-base sm:p-8 w-full md:flex md:w-auto md:order-1">
-          {t("FOOTER.TEXT")}
+    <footer className="border-t border-white/10 mt-10 pt-8">
+      <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-3">
+        <div className="text-center md:text-left">
+          <span className="text-sm font-semibold tracking-tight text-white">Leo</span>
+          <span className="text-sm font-semibold tracking-tight text-white/60"> / Portfolio</span>
         </div>
+        <p className="text-xs text-white/45 mt-6 md:mt-0">
+          {t("FOOTER.TEXT")}
+        </p>
       </div>
-    </nav>
+    </footer>
   );
 }

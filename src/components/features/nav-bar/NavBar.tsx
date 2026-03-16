@@ -1,10 +1,16 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import { useTranslation } from "@/lib/translation-context";
-import type { Locale } from "@/lib/translation-context";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { useState } from "react";
+import { useTranslation } from "@/lib/i18n";
+import type { Locale } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
 
 const FLAG_SVG_BR = (
   <svg className="h-3.5 w-3.5 rounded-full shrink-0" viewBox="0 0 512 512" aria-hidden>
@@ -17,31 +23,14 @@ const FLAG_SVG_BR = (
 const FLAG_SVG_US = (
   <svg className="h-3.5 w-3.5 rounded-full shrink-0" viewBox="0 0 512 512" aria-hidden>
     <path fill="#bd3d44" d="M0 0h512v512H0z" />
-    <path fill="#fff" d="M0 0h512v39.4H0zm0 78.8h512v39.4H0zm0 78.8h512v39.4H0zm0 78.8h512v39.4H0zm0 78.8h512v39.4H0zm0 78.8h512v39.4H0zm0 78.8h512v39.4H0z" />
+    <path fill="#fff" d="M0 0h512v39.4H0zm0 78.8h512v39.4H0zm0 78.8h512v39.4H0zm0 78.8h512v39.4H0zm0 78.8h512v39.4H0zm0 78.8h512v39.4H0z" />
     <path fill="#192f5d" d="M0 0h197.5v275H0z" />
   </svg>
 );
 
 export function NavBar() {
   const { t, locale, setLocale } = useTranslation();
-  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setDropdownOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  const handleSetLocale = (newLocale: Locale) => {
-    setLocale(newLocale);
-    setDropdownOpen(false);
-  };
 
   const navLinks = [
     { href: "#home", label: t("NAVBAR.HOME") },
@@ -51,67 +40,72 @@ export function NavBar() {
   ];
 
   return (
-    <nav className="bg-[#16161a] fixed w-full z-20 top-0 start-0 border-nav">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto pr-4 sm:pr-10 pl-4">
-        <a href="https://github.com/Leo-Slv" className="flex items-center space-x-3 rtl:space-x-reverse float-1" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/l-logo.png" className="h-12 sm:h-20" alt="Leo Logo" width={80} height={80} />
+    <nav className="bg-page/80 backdrop-blur-xl fixed w-full z-50 top-0 start-0 border-nav transition-af">
+      <div className="max-w-6xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4">
+        <a
+          href="https://github.com/Leo-Slv"
+          className="flex items-center gap-3"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/assets/l-logo.png" className="h-9 w-9 sm:h-10 sm:w-10" alt="Leo Logo" width={40} height={40} />
+          <span className="text-sm font-semibold tracking-tight text-white hidden sm:inline">Leo</span>
+          <span className="text-sm font-semibold tracking-tight text-white/60 hidden sm:inline">/ Portfolio</span>
         </a>
 
         <div className="flex items-center gap-2 md:order-2">
-          <div className="relative" ref={dropdownRef}>
-            <button
-              type="button"
-              onClick={() => setDropdownOpen((o) => !o)}
-              className="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-400 rounded-lg cursor-pointer hover:bg-gray-700 hover:text-white"
-            >
-              {locale === "pt-BR" ? FLAG_SVG_BR : FLAG_SVG_US}
-              <span className="hidden sm:inline ml-2">{t("NAVBAR.MAIN-LANGUAGE")}</span>
-              <ChevronDown className="ml-1 h-4 w-4" />
-            </button>
-            {dropdownOpen && (
-              <div className="absolute right-0 z-50 mt-2 w-48 rounded-lg bg-gray-900 shadow-lg border border-gray-700 py-1">
-                <button
-                  onClick={() => handleSetLocale("pt-BR")}
-                  className="flex items-center w-full px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white"
-                >
-                  {FLAG_SVG_BR}
-                  <span className="ml-2">{t("NAVBAR.PORTUGUESE")}</span>
-                </button>
-                <button
-                  onClick={() => handleSetLocale("en-US")}
-                  className="flex items-center w-full px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white"
-                >
-                  {FLAG_SVG_US}
-                  <span className="ml-2">{t("NAVBAR.ENGLISH")}</span>
-                </button>
-              </div>
-            )}
-          </div>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="default"
+                className="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-white/74 rounded-af-sm border border-white/10 surface-depth bg-white/5 hover:border-white/[0.14] hover:bg-white/[0.08] transition-af cursor-pointer"
+              >
+                {locale === "pt-BR" ? FLAG_SVG_BR : FLAG_SVG_US}
+                <span className="hidden sm:inline ml-2">{t("NAVBAR.MAIN-LANGUAGE")}</span>
+                <img src="/assets/svg/chevron-down.svg" alt="" className="ml-1 w-4 h-4 opacity-70 invert" aria-hidden />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-48">
+              <DropdownMenuItem onClick={() => setLocale("pt-BR")}>
+                {FLAG_SVG_BR}
+                <span className="ml-2">{t("NAVBAR.LABEL_PT")}</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setLocale("en-US")}>
+                {FLAG_SVG_US}
+                <span className="ml-2">{t("NAVBAR.LABEL_EN")}</span>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
 
           <button
             type="button"
             onClick={() => setMobileOpen((o) => !o)}
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-700 focus:outline-none"
+            className="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-white/74 rounded-af-sm md:hidden hover:bg-white/5 focus-ring"
             aria-label="Toggle menu"
           >
-            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            <img
+              src={mobileOpen ? "/assets/svg/x.svg" : "/assets/svg/menu.svg"}
+              alt=""
+              className="w-5 h-5 invert opacity-90"
+              aria-hidden
+            />
           </button>
         </div>
 
         <div
           className={cn(
-            "items-center justify-between w-full md:flex md:w-auto md:order-1",
-            mobileOpen ? "flex" : "hidden"
+            "w-full md:w-auto md:order-1",
+            mobileOpen ? "flex" : "hidden md:block"
           )}
           id="navbar-sticky"
         >
-          <ul className="font-medium flex flex-col p-4 gap-2 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
+          <ul className="flex flex-col p-4 gap-2 md:flex-row md:p-0 md:mt-0 md:gap-6 font-medium">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="nav-title hover-effect block py-2 px-3 text-gray-400 text-xl main-font rounded-sm hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0"
+                  className="nav-title nav-link-underline block py-2 px-3 text-sm text-white/70 hover:text-white rounded-af-sm md:py-0 md:px-0"
                 >
                   {link.label}
                 </a>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslation } from "@/lib/translation-context";
+import { useTranslation } from "@/lib/i18n";
 import {
   Card,
   CardHeader,
@@ -139,10 +139,10 @@ const PROFESSIONAL_PROJECTS: Array<{
 ];
 
 const markClasses: Record<ProjectMark, string> = {
-  "mark-purple": "bg-[rgba(127,90,240,0.25)]",
-  "mark-green": "bg-[rgba(44,182,125,0.22)]",
-  "mark-cyan": "bg-[rgba(59,130,246,0.2)]",
-  "mark-orange": "bg-[rgba(249,115,22,0.18)]",
+  "mark-purple": "bg-accent-soft-25",
+  "mark-green": "bg-accent-soft-15",
+  "mark-cyan": "bg-accent-soft-15",
+  "mark-orange": "bg-accent-soft-15",
 };
 
 function ProjectCard({
@@ -172,38 +172,38 @@ function ProjectCard({
 }) {
   return (
     <div className={fade}>
-      <Card className={float}>
-        <CardHeader>
+      <Card className={`${float} flex flex-col gap-4`}>
+        <CardHeader className="gap-3 !mb-0">
           <div
-            className={`w-11 h-11 rounded-xl flex items-center justify-center border border-white/20 font-extrabold text-white/95 ${markClasses[mark]}`}
+            className={`w-11 h-11 rounded-af-sm flex items-center justify-center border border-white/10 surface-depth font-extrabold text-white shrink-0 ${markClasses[mark]}`}
           >
             {initials}
           </div>
-          <div>
-            <CardTitle>{t(titleKey)}</CardTitle>
+          <div className="min-w-0">
+            <CardTitle className="text-lg font-semibold">{t(titleKey)}</CardTitle>
             <CardDescription>{t(miniKey)}</CardDescription>
           </div>
         </CardHeader>
-        <CardContent>
-          <p className="text-base leading-relaxed text-[rgba(225,225,230,0.88)]">{t(descKey)}</p>
-          <div className="flex flex-wrap gap-2.5 mt-4">
+        <CardContent className="flex flex-col gap-4 !mt-0">
+          <p className="text-sm leading-relaxed text-white/74">{t(descKey)}</p>
+          <div className="flex flex-wrap gap-2">
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="text-[0.85rem] font-semibold text-white/90 py-1.5 px-3 rounded-full bg-white/10 border border-white/10"
+                className="inline-flex items-center px-3 py-1 text-xs font-medium rounded-af-sm border border-white/10 surface-depth bg-white/5 text-white/80"
               >
                 {tag}
               </span>
             ))}
           </div>
         </CardContent>
-        <CardFooter>
+        <CardFooter className="!mt-0">
           {github && (
             <a
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center h-10 px-4 rounded-full text-sm font-semibold bg-[rgba(127,90,240,0.2)] border border-[rgba(127,90,240,0.35)] text-white hover:bg-[rgba(127,90,240,0.35)] hover:-translate-y-0.5 transition-all"
+              className="inline-flex items-center justify-center h-10 px-4 rounded-af-sm text-sm font-semibold bg-accent-soft-15 border border-accent-soft-25 text-white hover:bg-accent-soft-25 transition-af focus-ring"
             >
               GitHub
             </a>
@@ -213,7 +213,7 @@ function ProjectCard({
               href={demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center h-10 px-4 rounded-full text-sm font-semibold bg-white/10 border border-white/20 text-white/90 hover:bg-white/20 hover:-translate-y-0.5 transition-all"
+              className="inline-flex items-center justify-center h-10 px-4 rounded-af-sm text-sm font-semibold bg-white/5 border border-white/10 text-white/90 hover:bg-white/[0.08] hover:border-white/[0.14] transition-af focus-ring"
             >
               Demo
             </a>
@@ -228,47 +228,47 @@ export function ProjectsSection() {
   const { t } = useTranslation();
 
   return (
-    <section id="projects-section" className="main-font p-4 sm:p-10 max-w-[1200px] mx-auto">
-      <div className="projects-header fade-in-up delay-300 pt-16 sm:pt-20 text-center mb-10">
-        <h1 className="page-title float-1 text-[clamp(2.4rem,4vw,4rem)] font-extrabold tracking-tight mb-3.5 bg-white bg-clip-text text-transparent">
+    <section id="projects-section" className="max-w-6xl mx-auto px-4 py-24">
+      <div className="max-w-2xl mx-auto text-center mb-10">
+        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white fade-in-up delay-300">
           {t("PROJECTS.MY")}
-        </h1>
-        <p className="page-subtitle max-w-[780px] mx-auto text-[rgba(225,225,230,0.72)] text-[1.05rem] leading-relaxed">
+        </h2>
+        <p className="mt-3 text-sm md:text-base leading-relaxed text-white/70">
           {t("PROJECTS.SUBTITLE")}
         </p>
       </div>
 
-      <div className="mb-10">
-        <div className="flex items-center justify-center gap-3.5 my-6">
-          <h2 className="text-[1.4rem] font-bold text-white/92">{t("PROJECTS.MY")}</h2>
-          <span className="inline-flex items-center justify-center h-6 min-w-6 px-2.5 rounded-full bg-[rgba(127,90,240,0.18)] border border-[rgba(127,90,240,0.32)] text-white/90 text-sm font-semibold">
+      <div className="mb-16">
+        <div className="flex items-center justify-center gap-3 my-6">
+          <h3 className="text-lg font-semibold text-white/95">{t("PROJECTS.MY")}</h3>
+          <span className="inline-flex items-center justify-center h-6 min-w-6 px-2.5 rounded-af-sm bg-accent-soft-15 border border-accent-soft-25 text-white/90 text-xs font-semibold">
             4
           </span>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
           {PERSONAL_PROJECTS.map((p) => (
             <ProjectCard key={p.titleKey} t={t} {...p} />
           ))}
         </div>
       </div>
 
-      <div className="projects-header fade-in-up delay-300 pt-16 sm:pt-20 text-center mb-10">
-        <h1 className="page-title float-1 text-[clamp(2.4rem,4vw,4rem)] font-extrabold tracking-tight bg-white bg-clip-text text-transparent">
+      <div className="max-w-2xl mx-auto text-center mb-10 mt-20">
+        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white">
           {t("PROJECTS.STUDENT")}
-        </h1>
+        </h2>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
         {ACADEMIC_PROJECTS.map((p) => (
           <ProjectCard key={p.titleKey} t={t} {...p} />
         ))}
       </div>
 
-      <div className="projects-header fade-in-up delay-300 pt-16 sm:pt-20 text-center mb-10">
-        <h1 className="page-title float-1 text-[clamp(2.4rem,4vw,4rem)] font-extrabold tracking-tight bg-white bg-clip-text text-transparent">
+      <div className="max-w-2xl mx-auto text-center mb-10 mt-20">
+        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white">
           {t("PROJECTS.PROFESSIONAL")}
-        </h1>
+        </h2>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
         {PROFESSIONAL_PROJECTS.map((p) => (
           <ProjectCard key={p.titleKey} t={t} {...p} />
         ))}

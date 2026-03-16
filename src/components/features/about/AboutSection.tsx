@@ -1,7 +1,6 @@
 "use client";
 
-import { useTranslation } from "@/lib/translation-context";
-import { Mail, MapPin, Link2 } from "lucide-react";
+import { useTranslation } from "@/lib/i18n";
 
 const SKILLS = [
   { label: "ASP.NET", href: "https://github.com/Leo-Slv/ACTi-case" },
@@ -13,7 +12,7 @@ const SKILLS = [
   { label: "Docker", href: "https://github.com/Leo-Slv" },
   { label: "DDD", href: "https://github.com/Leo-Slv" },
   { label: "AWS", href: "https://github.com/Leo-Slv/InboxIQ" },
-  { label: "Angular", href: "https://github.com/Leo-Slv/Portfolio" },
+  { label: "Vite", href: "https://github.com/Leo-Slv/Portfolio" },
   { label: "Git", href: "https://github.com/Leo-Slv" },
 ];
 
@@ -48,40 +47,43 @@ export function AboutSection() {
   const { t } = useTranslation();
 
   return (
-    <section id="about-section" className="main-font p-4 sm:p-5 max-w-[1400px] mx-auto">
-      <div className="fade-in-up delay-300">
-        <h1 className="page-title float-1 pt-16 sm:pt-20 text-center text-4xl sm:text-5xl font-bold mb-12 sm:mb-16 bg-white bg-clip-text text-transparent">
+    <section id="about-section" className="max-w-6xl mx-auto px-4 py-20">
+      <div className="max-w-2xl mx-auto text-center mb-10">
+        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white fade-in-up delay-300">
           {t("ABOUT.TITLE")}
-        </h1>
+        </h2>
+        <p className="mt-3 text-sm md:text-base leading-relaxed text-white/70">
+          {t("ABOUT.SUBTITLE")}
+        </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-10 lg:gap-16 mb-16 lg:mb-20 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-8 lg:gap-8 mb-16 items-start">
         <div className="fade-in-left delay-300">
-          <div className={`profile-card float-2 rounded-3xl p-8 sm:p-10 text-center sticky top-5 shadow-[0_20px_40px_rgba(0,0,0,0.3)] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/10`}>
-            <div className="profile-image w-[180px] h-[180px] rounded-full mx-auto mb-8 border-4 border-transparent bg-gradient-to-br from-[#7f5af0] to-[#2cb67d] p-[4px] overflow-hidden hover:scale-105 transition-transform">
+          <div className="float-2 rounded-af-sm border border-white/10 bg-surface surface-depth p-6 shadow-card-drop sticky top-5 transition-af hover:border-white/[0.14]">
+            <div className="w-[180px] h-[180px] rounded-full mx-auto mb-8 border-2 border-accent-soft-35 overflow-hidden bg-surface">
               <img
                 src="/assets/eu.jpeg"
                 alt="Foto de perfil"
-                className="w-full h-full object-cover rounded-full"
+                className="w-full h-full object-cover"
                 width={180}
                 height={180}
               />
             </div>
-            <h2 className="profile-name text-2xl font-semibold mb-2 bg-white bg-clip-text text-transparent">Leonardo</h2>
-            <p className="profile-title text-[#a8a8b3] text-lg mb-8">{t("ABOUT.SUBTITLE")}</p>
-            <div className="contact-info flex flex-col gap-4">
-              <div className="contact-item flex items-center gap-4 p-3 rounded-xl bg-white/5 text-white hover:bg-white/10 transition-colors">
-                <Mail className="w-5 h-5 shrink-0 opacity-80" />
-                <span className="break-all">leonardo1692004&#64;gmail.com</span>
+            <h3 className="text-lg font-semibold mb-2 text-white">Leonardo</h3>
+            <p className="text-white/74 text-sm mb-8">{t("ABOUT.SUBTITLE")}</p>
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center gap-3 p-3 rounded-af-sm bg-white/[0.03] border border-white/10 text-white/95 transition-af hover:bg-white/5">
+                <img src="/assets/svg/mail.svg" alt="" className="w-5 h-5 shrink-0 opacity-60 invert" aria-hidden />
+                <span className="break-all text-sm">leonardo1692004&#64;gmail.com</span>
               </div>
-              <div className="contact-item flex items-center gap-4 p-3 rounded-xl bg-white/5 text-white hover:bg-white/10 transition-colors">
-                <MapPin className="w-5 h-5 shrink-0 opacity-80" />
-                <span>São José dos Campos, SP</span>
+              <div className="flex items-center gap-3 p-3 rounded-af-sm bg-white/[0.03] border border-white/10 text-white/95 transition-af hover:bg-white/5">
+                <img src="/assets/svg/map-pin.svg" alt="" className="w-5 h-5 shrink-0 opacity-60 invert" aria-hidden />
+                <span className="text-sm">São José dos Campos, SP</span>
               </div>
               <a href="https://www.linkedin.com/in/leonardo-irineu-8418b0288/" target="_blank" rel="noopener noreferrer" className="block">
-                <div className="contact-item flex items-center gap-4 p-3 rounded-xl bg-white/5 text-white hover:bg-white/10 transition-colors">
-                  <Link2 className="w-5 h-5 shrink-0 opacity-80" />
-                  <span>linkedin.com/leonardo-irineu</span>
+                <div className="flex items-center gap-3 p-3 rounded-af-sm bg-white/[0.03] border border-white/10 text-white/95 transition-af hover:bg-white/5">
+                  <img src="/assets/svg/link.svg" alt="" className="w-5 h-5 shrink-0 opacity-60 invert" aria-hidden />
+                  <span className="text-sm">linkedin.com/leonardo-irineu</span>
                 </div>
               </a>
             </div>
@@ -89,24 +91,24 @@ export function AboutSection() {
         </div>
 
         <div className="fade-in-right delay-300">
-          <div className={`about-content float-3 rounded-3xl p-8 sm:p-12 shadow-[0_20px_40px_rgba(0,0,0,0.3)] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/10`}>
-            <p className="about-text text-[1.1rem] leading-relaxed text-[#e1e1e6] mb-8">
+          <div className="float-3 rounded-af-sm border border-white/10 bg-surface surface-depth p-6 md:p-8 shadow-card-drop transition-af hover:border-white/[0.14]">
+            <p className="text-sm md:text-base leading-relaxed text-white/74 mb-6">
               {t("ABOUT.DESCRIPTION_1")}
             </p>
-            <p className="about-text text-[1.1rem] leading-relaxed text-[#e1e1e6] mb-8">
+            <p className="text-sm md:text-base leading-relaxed text-white/74 mb-6">
               {t("ABOUT.DESCRIPTION_2")}
             </p>
-            <p className="about-text text-[1.1rem] leading-relaxed text-[#e1e1e6] mb-8">
+            <p className="text-sm md:text-base leading-relaxed text-white/74 mb-8">
               {t("ABOUT.DESCRIPTION_3")}
             </p>
-            <div className="skills-grid grid grid-cols-2 sm:grid-cols-3 gap-3 mt-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {SKILLS.map((skill) => (
                 <a
                   key={skill.label}
                   href={skill.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="skill-tag text-center py-2.5 px-4 rounded-full text-sm font-medium bg-[#7f5af0] border border-[rgba(127,90,240,0.3)] text-white hover:bg-gradient-to-br hover:from-[rgba(127,90,240,0.3)] hover:to-[rgba(44,182,125,0.3)] hover:-translate-y-0.5 transition-all"
+                  className="inline-flex items-center justify-center px-3 py-1.5 text-xs font-medium rounded-af-sm border border-white/10 surface-depth bg-white/5 text-white/80 hover:border-accent-soft-25 hover:text-accent transition-af"
                 >
                   {skill.label}
                 </a>
@@ -116,28 +118,30 @@ export function AboutSection() {
         </div>
       </div>
 
-      <div id="education-section" className="mt-10">
-        <div className="fade-in-up delay-300">
-          <h2 className="section-title float-2 text-center text-2xl sm:text-3xl font-semibold mb-8 sm:mb-10 bg-white bg-clip-text text-transparent">
+      <div id="education-section" className="mt-24">
+        <div className="max-w-2xl mx-auto text-center mb-10">
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white fade-in-up delay-300">
             {t("EDUCATION.TITLE")}
           </h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {EDUCATION.map((edu, i) => (
             <div
               key={edu.degreeKey}
-              className={i === 0 ? "fade-in-left delay-300" : i === 1 ? "fade-in-up delay-300" : "fade-in-right delay-300"}
+              className={`flex flex-col min-h-[320px] ${i === 0 ? "fade-in-left delay-300" : i === 1 ? "fade-in-up delay-300" : "fade-in-right delay-300"}`}
             >
               <div
-                className={`education-card ${edu.float} rounded-2xl p-6 sm:p-8 relative overflow-hidden transition-all hover:-translate-y-2 shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/10 before:absolute before:top-0 before:left-0 before:right-0 before:h-1 before:bg-gradient-to-r before:from-[#7f5af0] before:to-[#2cb67d]`}
+                className={`${edu.float} flex flex-col justify-between h-full rounded-af-sm border border-white/10 bg-surface surface-depth p-6 relative overflow-hidden transition-af hover:border-white/[0.14] shadow-card-drop before:absolute before:top-0 before:left-0 before:bottom-0 before:w-0.5 before:bg-accent-soft-35`}
               >
-                <h3 className="education-degree text-xl font-semibold mb-2 text-white">{t(edu.degreeKey)}</h3>
-                <p className="education-school text-[#7f5af0] text-lg font-medium mb-4">{t(edu.schoolKey)}</p>
-                <p className="education-period text-[#a8a8b3] text-sm mb-4">{edu.period}</p>
-                <p className="education-description text-[0.95rem] leading-relaxed text-[#e1e1e6]">
-                  {t(edu.descKey)}
-                </p>
-                <span className="inline-block mt-4 py-1.5 px-3 rounded-full text-xs font-medium bg-[#7f5af0] border border-[rgba(127,90,240,0.3)] text-white">
+                <div>
+                  <h3 className="text-lg font-semibold mb-2 text-white">{t(edu.degreeKey)}</h3>
+                  <p className="text-accent text-sm font-medium mb-3">{t(edu.schoolKey)}</p>
+                  <p className="text-white/58 text-xs mb-3">{edu.period}</p>
+                  <p className="text-sm leading-relaxed text-white/74">
+                    {t(edu.descKey)}
+                  </p>
+                </div>
+                <span className="inline-block mt-4 px-3 py-1 text-xs font-medium rounded-af-sm bg-accent-soft-15 border border-accent-soft-25 text-white w-fit">
                   {t(edu.statusKey)}
                 </span>
               </div>

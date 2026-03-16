@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { TranslationProvider } from "@/lib/translation-context";
+import { TranslationProvider } from "@/lib/i18n";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -13,8 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-[#16161a]">
-      <body className="min-h-screen antialiased">
+    <html lang="en" className="bg-page" style={{ colorScheme: "dark" }}>
+      <body className="min-h-screen antialiased bg-page text-white/95">
         <TranslationProvider>{children}</TranslationProvider>
       </body>
     </html>
