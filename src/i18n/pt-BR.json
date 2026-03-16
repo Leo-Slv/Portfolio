@@ -1,0 +1,86 @@
+{
+  "HOME": {
+    "GREETING": "Olá, meu nome é Leonardo",
+    "TITLE_1": "Desenvolvedor Full-Stack",
+    "TITLE_2": "Java and Node.js",
+    "DESCRIPTION": "Sou um desenvolvedor Full-Stack apaixonado por criar soluções que não apenas atendam aos requisitos funcionais, mas também proporcionem desempenho excepcional e fortaleçam a confiança dos usuários através de experiências estáveis e seguras.",
+    "RESUME_BUTTON": "Curriculo",
+    "GITHUB_BUTTON": "GitHub",
+    "PATH": "/assets/Curriculo_Leonardo_Irineu.pdf"
+  },
+  "NAVBAR": {
+    "MAIN-LANGUAGE": "Português (BR)",
+    "PORTUGUESE": "Português (BR)",
+    "ENGLISH": "Inglês (US)",
+    "HOME": "Home",
+    "ABOUT": "Sobre",
+    "PROJECTS": "Projetos",
+    "CONTACTS": "Contatos"
+  },
+  "ABOUT": {
+    "TITLE": "Sobre",
+    "SUBTITLE": "Desenvolvedor Full-Stack",
+    "DESCRIPTION_1": "Sou desenvolvedor full-stack focado em construir aplicações escaláveis e bem estruturadas. Trabalho com ASP.NET e Next.js, aplicando boas práticas como DDD, arquitetura em camadas e código limpo para entregar soluções confiáveis.",
+    "DESCRIPTION_2": "Nos meus projetos, desenvolvi desde plataformas de gestão e APIs robustas até soluções com IA. Destaque para o InboxIQ (FastAPI + OpenAI), o ArchFlow (.NET 9 + DDD para gestão ágil com Scrum/Kanban) e projetos acadêmicos com React, Node.js e PostgreSQL voltados à visualização e organização de dados.",
+    "DESCRIPTION_3": "Atualmente sou estagiário em Desenvolvimento de Software na ACTI (desde 09/2025), atuando no desenvolvimento e manutenção de sistemas web, integração com banco de dados e evolução contínua de funcionalidades com foco em performance e qualidade."
+  },
+  "EDUCATION": {
+    "TITLE": "Formação Acadêmica",
+    "DEGREE_1": "Desenvolvimento de Software Multiplataforma",
+    "DEGREE_2": "Técnico em Desenvolvimento de Sistemas",
+    "DEGREE_3": "Inglês Intermediário",
+    "SCHOOL_1": "FATEC - Faculdade de Tecnologia",
+    "SCHOOL_2": "ETEC - Escola Técnica Estadual",
+    "SCHOOL_3": "Icbeu",
+    "DESCRIPTION_1": "Curso superior tecnológico focado em desenvolvimento de software, programação, banco de dados, engenharia de software e gestão de projetos.",
+    "DESCRIPTION_2": "Formação técnica em programação, desenvolvimento web, banco de dados e redes de computadores.",
+    "DESCRIPTION_3": "Cursei Inglês durante 3 anos da minha vida, atingindo um nivel Intermediário de Inglês e conseguindo me comunicar.",
+    "STATUS_1": "Em andamento",
+    "STATUS_2": "Concluído",
+    "STATUS_3": "Certificado"
+  },
+  "PROJECTS": {
+    "MY": "Projetos Pessoais",
+    "STUDENT": "Projetos Acadêmicos",
+    "PROFESSIONAL": "Projetos Profissionais",
+    "SUBTITLE": "Projetos selecionados com foco em arquitetura, escalabilidade e aplicações reais — de APIs e plataformas de gestão até soluções com IA.",
+    "CARD_TITLE_1": "ACTi-case",
+    "CARD_TITLE_2": "InboxIQ",
+    "CARD_TITLE_3": "Portfólio Pessoal",
+    "CARD_TITLE_4": "Gerenciamento Pedagógico",
+    "CARD_TITLE_5": "ArchFlow",
+    "CARD_TITLE_6": "Portal Limnológico",
+    "CARD_TITLE_7": "PDV Web",
+    "MINI_1": "Cadastro e gestão de parceiros (full stack)",
+    "MINI_2": "Triagem de e-mails com IA e automações",
+    "MINI_3": "UI moderna, responsiva e multilíngue",
+    "MINI_4": "Sistema acadêmico com área admin e guest",
+    "MINI_5": "Gestão ágil com DDD e API robusta",
+    "MINI_6": "Visualização de dados ambientais",
+    "MINI_7": "Sistema corporativo com foco em performance",
+    "DESCRIPTION_1": "Aplicação full stack para cadastro e gerenciamento de parceiros, com validações consistentes, arquitetura em camadas e integração com banco de dados para persistência segura.",
+    "DESCRIPTION_2": "MVP de triagem inteligente de e-mails com classificação e respostas sugeridas usando IA. Suporta análise por texto/arquivos, integração com Gmail e arquitetura preparada para produção.",
+    "DESCRIPTION_3": "Portfólio desenvolvido com foco em UI moderna, responsividade, animações suaves e organização de conteúdo para apresentar projetos, habilidades e trajetória profissional.",
+    "DESCRIPTION_4": "Solução full stack para gestão acadêmica com área administrativa e consulta pública (guest), integrando autenticação, banco de dados e recursos de atualização em tempo real.",
+    "DESCRIPTION_5": "Plataforma para gestão ágil unificando Scrum e Kanban com foco em rastreabilidade, modularidade e escalabilidade. Estrutura baseada em DDD com endpoints padronizados e regras bem definidas.",
+    "DESCRIPTION_6": "Plataforma web para consulta e visualização de dados limnológicos com filtros por período, local e variáveis científicas, oferecendo análise em tabelas, gráficos e relatórios.",
+    "DESCRIPTION_7": "Sistema profissional de PDV Web desenvolvido para modernizar operações comerciais com dashboards, indicadores, relatórios e funcionalidades voltadas ao time comercial, priorizando performance e escalabilidade."
+  },
+  "CONTACTS": {
+    "TITLE": "Contatos",
+    "CARD_TITLE_1": "Email",
+    "CARD_TITLE_2": "Telefone",
+    "CARD_TITLE_3": "Linkedin",
+    "CARD_TITLE_4": "GitHub",
+    "DESCRIPTION_1": "Entre em contato por email para discussões sobre projetos, oportunidades profissionais ou colaborações.",
+    "DESCRIPTION_2": "Disponível para conversas rápidas e alinhamentos sobre projetos. Prefira contato via WhatsApp.",
+    "DESCRIPTION_3": "Conecte-se comigo no LinkedIn para acompanhar minha trajetória profissional e trocar experiências.",
+    "DESCRIPTION_4": "Explore meus repositórios e projetos open source. Contribuições e colaborações são sempre bem-vindas!"
+  },
+  "FOOTER": {
+    "TEXT": "© 2025 Leonardo da Silva Irineu. Todos os direitos reservados."
+  },
+  "SVG": {
+    "LANGUAGE": "/assets/BR.svg"
+  }
+}
