@@ -19,17 +19,13 @@ export function HeroSection() {
           </p>
         </div>
 
-        <h1 className="headline text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-center lg:text-left float-5 w-full min-w-0 max-w-full overflow-hidden break-words text-balance leading-tight whitespace-normal [&_.typewriter-line1]:whitespace-normal [&_.typewriter-line2]:whitespace-normal">
-          <div className="typewriter-line1 mb-1">
-            <span>{t("HOME.TITLE_1")}</span>
-          </div>
-          <div className="typewriter-line2">
-            <span>Next.js</span>
-          </div>
+        <h1 className="headline text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-center lg:text-left w-full min-w-0 max-w-full overflow-hidden break-words text-balance leading-tight whitespace-normal fade-in-up delay-300">
+          <span className="block">{t("HOME.TITLE_1")}</span>
+          <span className="block">Next.js</span>
         </h1>
 
-        <div className="float-3 w-full min-w-0 overflow-hidden">
-          <p className="text-sm md:text-base leading-relaxed text-white/75 text-center lg:text-left typewriter-description break-words whitespace-normal">
+        <div className="w-full min-w-0 overflow-hidden fade-in-up delay-400">
+          <p className="text-sm md:text-base leading-relaxed text-white/75 text-center lg:text-left break-words whitespace-normal">
             {t("HOME.DESCRIPTION")}
           </p>
         </div>
