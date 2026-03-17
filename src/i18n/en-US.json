@@ -53,6 +53,7 @@
     "CARD_TITLE_5": "ArchFlow",
     "CARD_TITLE_6": "Limnological Portal",
     "CARD_TITLE_7": "Web POS",
+    "CARD_TITLE_8": "ArchFlow Frontend",
     "MINI_1": "Partner registration & management (full stack)",
     "MINI_2": "AI email triage and automation",
     "MINI_3": "Modern UI, responsive, multi-language",
@@ -66,7 +67,8 @@
     "DESCRIPTION_4": "Full stack solution for academic management with an admin area and public guest access, integrating authentication, database persistence, and real-time updates.",
     "DESCRIPTION_5": "Agile management platform combining Scrum and Kanban with a focus on traceability, modularity, and scalability. DDD-based structure with standardized endpoints and clear business rules.",
     "DESCRIPTION_6": "Web platform for consulting and visualizing limnological data with filters by time, location, and scientific variables, providing analysis through tables, charts, and reports.",
-    "DESCRIPTION_7": "Professional Web POS system designed to modernize commercial operations with dashboards, KPIs, reports, and sales-focused features, prioritizing performance and scalability."
+    "DESCRIPTION_7": "Professional Web POS system designed to modernize commercial operations with dashboards, KPIs, reports, and sales-focused features, prioritizing performance and scalability.",
+    "DESCRIPTION_8": "Frontend for the ArchFlow platform, built with Next.js, TypeScript, Shadcn UI, and Axios. Agile management platform with Scrum and Kanban."
   },
   "CONTACTS": {
     "TITLE": "Contacts",

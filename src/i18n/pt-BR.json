@@ -50,9 +50,10 @@
     "CARD_TITLE_2": "InboxIQ",
     "CARD_TITLE_3": "Portfólio Pessoal",
     "CARD_TITLE_4": "Gerenciamento Pedagógico",
-    "CARD_TITLE_5": "ArchFlow",
+    "CARD_TITLE_5": "ArchFlow API",
     "CARD_TITLE_6": "Portal Limnológico",
     "CARD_TITLE_7": "PDV Web",
+    "CARD_TITLE_8": "ArchFlow Frontend",
     "MINI_1": "Cadastro e gestão de parceiros (full stack)",
     "MINI_2": "Triagem de e-mails com IA e automações",
     "MINI_3": "UI moderna, responsiva e multilíngue",
@@ -64,9 +65,10 @@
     "DESCRIPTION_2": "MVP de triagem inteligente de e-mails com classificação e respostas sugeridas usando IA. Suporta análise por texto/arquivos, integração com Gmail e arquitetura preparada para produção.",
     "DESCRIPTION_3": "Portfólio desenvolvido com foco em UI moderna, responsividade, animações suaves e organização de conteúdo para apresentar projetos, habilidades e trajetória profissional.",
     "DESCRIPTION_4": "Solução full stack para gestão acadêmica com área administrativa e consulta pública (guest), integrando autenticação, banco de dados e recursos de atualização em tempo real.",
-    "DESCRIPTION_5": "Plataforma para gestão ágil unificando Scrum e Kanban com foco em rastreabilidade, modularidade e escalabilidade. Estrutura baseada em DDD com endpoints padronizados e regras bem definidas.",
+    "DESCRIPTION_5": "Plataforma para gestão ágil unificando Scrum e Kanban com foco em rastreabilidade, modularidade e escalabilidade. Estrutura baseada em camadas com endpoints padronizados e regras bem definidas.",
     "DESCRIPTION_6": "Plataforma web para consulta e visualização de dados limnológicos com filtros por período, local e variáveis científicas, oferecendo análise em tabelas, gráficos e relatórios.",
-    "DESCRIPTION_7": "Sistema profissional de PDV Web desenvolvido para modernizar operações comerciais com dashboards, indicadores, relatórios e funcionalidades voltadas ao time comercial, priorizando performance e escalabilidade."
+    "DESCRIPTION_7": "Sistema profissional de PDV Web desenvolvido para modernizar operações comerciais com dashboards, indicadores, relatórios e funcionalidades voltadas ao time comercial, priorizando performance e escalabilidade.",
+    "DESCRIPTION_8": "Frontend para a plataforma ArchFlow, construído com Next.js, TypeScript, Shadcn UI e Axios. Plataforma para gestão ágil com Scrum e Kanban."
   },
   "CONTACTS": {
     "TITLE": "Contatos",

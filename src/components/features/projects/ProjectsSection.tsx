@@ -27,12 +27,24 @@ const PERSONAL_PROJECTS: Array<{
   {
     mark: "mark-purple",
     initials: "AT",
+    titleKey: "PROJECTS.CARD_TITLE_8",
+    miniKey: "PROJECTS.MINI_5",
+    descKey: "PROJECTS.DESCRIPTION_8",
+    tags: ["Next.js", "TypeScript", "Shadcn UI", "Axios"],
+    github: "https://github.com/ArchFlowPlatform/ArchFlow-Front",
+    demo: "https://arch-flow-front.vercel.app/",
+    fade: "fade-in-left delay-300",
+    float: "float-5",
+  },
+  {
+    mark: "mark-purple",
+    initials: "AT",
     titleKey: "PROJECTS.CARD_TITLE_5",
     miniKey: "PROJECTS.MINI_5",
     descKey: "PROJECTS.DESCRIPTION_5",
-    tags: [".NET 9", "DDD", "PostgreSQL", "JWT"],
+    tags: [".NET 9", "EF Core", "PostgreSQL", "JWT"],
     github: "https://github.com/ArchFlowPlatform/ArchFlow-Server",
-    demo: null,
+    demo: "https://arch-flow-front.vercel.app/",
     fade: "fade-in-left delay-300",
     float: "float-2",
   },
@@ -242,7 +254,7 @@ export function ProjectsSection() {
         <div className="flex items-center justify-center gap-3 my-6">
           <h3 className="text-lg font-semibold text-white/95">{t("PROJECTS.MY")}</h3>
           <span className="inline-flex items-center justify-center h-6 min-w-6 px-2.5 rounded-af-sm bg-accent-soft-15 border border-accent-soft-25 text-white/90 text-xs font-semibold">
-            4
+            5
           </span>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
