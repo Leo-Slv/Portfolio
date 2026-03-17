@@ -34,17 +34,17 @@ export function ContactSection() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-[800px] mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-[800px] mx-auto items-stretch">
         {CONTACTS.map((contact, i) => (
           <div
             key={contact.type}
-            className={i === 0 ? "fade-in-left delay-600" : "fade-in-right delay-600"}
+            className={`flex h-full min-h-0 ${i === 0 ? "fade-in-left delay-600" : "fade-in-right delay-600"}`}
           >
             <a
               href={contact.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`contact-card ${contact.cardClass} float-4 flex flex-col items-center min-h-[280px] rounded-af-sm border border-white/10 bg-surface surface-depth p-6 md:p-8 text-center transition-af hover:border-white/[0.14] shadow-card-drop relative overflow-hidden`}
+              className={`contact-card ${contact.cardClass} float-4 w-full h-full min-h-[280px] flex flex-col items-center rounded-af-sm border border-white/10 bg-surface surface-depth p-6 md:p-8 text-center transition-af hover:border-white/[0.14] shadow-card-drop relative overflow-hidden`}
             >
               <div
                 className={`w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-full mb-6 transition-af ${

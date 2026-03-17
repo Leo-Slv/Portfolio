@@ -57,9 +57,9 @@ export function AboutSection() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-8 lg:gap-8 mb-16 items-start">
-        <div className="fade-in-left delay-300">
-          <div className="float-2 rounded-af-sm border border-white/10 bg-surface surface-depth p-6 shadow-card-drop sticky top-5 transition-af hover:border-white/[0.14]">
+      <div className="grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-8 lg:gap-8 mb-16 items-stretch">
+        <div className="fade-in-left delay-300 flex h-full min-h-0">
+          <div className="float-2 w-full h-full min-h-0 rounded-af-sm border border-white/10 bg-surface surface-depth p-6 shadow-card-drop sticky top-5 transition-af hover:border-white/[0.14] flex flex-col">
             <div className="w-[180px] h-[180px] rounded-full mx-auto mb-8 border-2 border-accent-soft-35 overflow-hidden bg-surface">
               <img
                 src="/assets/eu.jpeg"
@@ -90,8 +90,8 @@ export function AboutSection() {
           </div>
         </div>
 
-        <div className="fade-in-right delay-300">
-          <div className="float-3 rounded-af-sm border border-white/10 bg-surface surface-depth p-6 md:p-8 shadow-card-drop transition-af hover:border-white/[0.14]">
+        <div className="fade-in-right delay-300 flex h-full min-h-0">
+          <div className="float-3 w-full h-full min-h-0 rounded-af-sm border border-white/10 bg-surface surface-depth p-6 md:p-8 shadow-card-drop transition-af hover:border-white/[0.14] flex flex-col">
             <p className="text-sm md:text-base leading-relaxed text-white/74 mb-6">
               {t("ABOUT.DESCRIPTION_1")}
             </p>
