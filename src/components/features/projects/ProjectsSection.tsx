@@ -78,7 +78,7 @@ const PERSONAL_PROJECTS: Array<{
     titleKey: "PROJECTS.CARD_TITLE_3",
     miniKey: "PROJECTS.MINI_3",
     descKey: "PROJECTS.DESCRIPTION_3",
-    tags: ["Angular", "TypeScript", "UI/UX", "Responsive"],
+    tags: ["Nextjs", "TypeScript", "UI/UX", "Responsive"],
     github: "https://github.com/Leo-Slv/Portfolio",
     demo: "https://portfolio-git-master-leonardos-projects-ca06eb83.vercel.app/",
     fade: "fade-in-up delay-400",
