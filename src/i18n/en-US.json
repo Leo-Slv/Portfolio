@@ -54,6 +54,7 @@
     "CARD_TITLE_6": "Limnological Portal",
     "CARD_TITLE_7": "Web POS",
     "CARD_TITLE_8": "ArchFlow Frontend",
+    "CARD_TITLE_9": "Quantum CRM",
     "MINI_1": "Partner registration & management (full stack)",
     "MINI_2": "AI email triage and automation",
     "MINI_3": "Modern UI, responsive, multi-language",
@@ -61,6 +62,7 @@
     "MINI_5": "Agile management with DDD & robust API",
     "MINI_6": "Environmental data visualization",
     "MINI_7": "Enterprise system focused on performance",
+    "MINI_8": "Lead management & commercial productivity",
     "DESCRIPTION_1": "Full stack application for partner registration and management, featuring consistent validations, layered architecture, and secure database persistence.",
     "DESCRIPTION_2": "AI-powered email triage MVP with classification and suggested replies. Supports text/file analysis, Gmail integration, and a production-ready architecture approach.",
     "DESCRIPTION_3": "Portfolio built with a focus on modern UI, responsiveness, smooth animations, and well-structured content to showcase projects and professional experience.",
@@ -68,7 +70,8 @@
     "DESCRIPTION_5": "Agile management platform combining Scrum and Kanban with a focus on traceability, modularity, and scalability. DDD-based structure with standardized endpoints and clear business rules.",
     "DESCRIPTION_6": "Web platform for consulting and visualizing limnological data with filters by time, location, and scientific variables, providing analysis through tables, charts, and reports.",
     "DESCRIPTION_7": "Professional Web POS system designed to modernize commercial operations with dashboards, KPIs, reports, and sales-focused features, prioritizing performance and scalability.",
-    "DESCRIPTION_8": "Frontend for the ArchFlow platform, built with Next.js, TypeScript, Shadcn UI, and Axios. Agile management platform with Scrum and Kanban."
+    "DESCRIPTION_8": "Frontend for the ArchFlow platform, built with Next.js, TypeScript, Shadcn UI, and Axios. Agile management platform with Scrum and Kanban.",
+    "DESCRIPTION_9": "Lead management system for sales teams, focused on opportunity traceability and commercial productivity."
   },
   "CONTACTS": {
     "TITLE": "Contacts",

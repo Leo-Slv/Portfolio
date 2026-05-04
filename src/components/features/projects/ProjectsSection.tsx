@@ -99,6 +99,18 @@ const ACADEMIC_PROJECTS: Array<{
   float: string;
 }> = [
   {
+    mark: "mark-cyan",
+    initials: "QC",
+    titleKey: "PROJECTS.CARD_TITLE_9",
+    miniKey: "PROJECTS.MINI_8",
+    descKey: "PROJECTS.DESCRIPTION_9",
+    tags: ["Nest", "PostgreSQL", "Next", "REST"],
+    github: "https://github.com/ErrorSquad-ABP/ABP3-Sistema-Gestao-Leads",
+    demo: null,
+    fade: "fade-in-left delay-300",
+    float: "float-1",
+  },
+  {
     mark: "mark-purple",
     initials: "ES",
     titleKey: "PROJECTS.CARD_TITLE_4",
