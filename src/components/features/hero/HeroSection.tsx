@@ -3,12 +3,11 @@
 import Image from "next/image";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { useTranslation } from "@/lib/i18n";
-import { cn } from "@/lib/utils";
 
 const iconProps = { className: "h-4 w-4 shrink-0 text-ink", strokeWidth: 1.75 } as const;
 
 export function HeroSection() {
-  const { t, locale, setLocale } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <section
@@ -16,33 +15,6 @@ export function HeroSection() {
       className="w-full bg-surface min-h-[100svh] box-border flex flex-col pt-[4.5rem] md:pt-[5.25rem]"
     >
       <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col min-h-0 px-4 sm:px-6 lg:px-8">
-        <div className="relative z-10 flex justify-end shrink-0 pt-2">
-          <div className="flex border border-ink bg-surface" role="group">
-            <button
-              type="button"
-              onClick={() => setLocale("pt-BR")}
-              aria-pressed={locale === "pt-BR"}
-              className={cn(
-                "px-3 py-1.5 text-[0.65rem] font-semibold uppercase tracking-wide min-w-[3.25rem]",
-                locale === "pt-BR" ? "bg-ink text-white" : "bg-surface text-ink"
-              )}
-            >
-              {t("NAVBAR.LABEL_PT")}
-            </button>
-            <button
-              type="button"
-              onClick={() => setLocale("en-US")}
-              aria-pressed={locale === "en-US"}
-              className={cn(
-                "px-3 py-1.5 text-[0.65rem] font-semibold uppercase tracking-wide min-w-[3.25rem] border-l border-ink",
-                locale === "en-US" ? "bg-ink text-white" : "bg-surface text-ink"
-              )}
-            >
-              {t("NAVBAR.LABEL_EN")}
-            </button>
-          </div>
-        </div>
-
         <div className="flex-1 flex items-center justify-center min-h-0 py-6 md:py-8 overflow-y-auto [scrollbar-gutter:stable]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-14 items-center w-full max-w-full my-auto">
             <div className="flex flex-col gap-5 md:gap-6 min-w-0 order-2 lg:order-1">
@@ -87,7 +59,7 @@ export function HeroSection() {
                   {t("HOME.SOCIAL_GITHUB")}
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/leonardo-irineu-8418b0288/"
+                  href="https://www.linkedin.com/in/leonardo-irineu-dev/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-medium text-muted"
