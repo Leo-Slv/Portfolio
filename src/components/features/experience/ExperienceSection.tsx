@@ -2,6 +2,19 @@
 
 import { useTranslation } from "@/lib/i18n";
 
+const WORK_KEYS = [
+  {
+    periodKey: "EXPERIENCE_SECTION.WORK_1_PERIOD",
+    titleKey: "EXPERIENCE_SECTION.WORK_1_TITLE",
+    descKey: "EXPERIENCE_SECTION.WORK_1_DESC",
+  },
+  {
+    periodKey: "EXPERIENCE_SECTION.WORK_2_PERIOD",
+    titleKey: "EXPERIENCE_SECTION.WORK_2_TITLE",
+    descKey: "EXPERIENCE_SECTION.WORK_2_DESC",
+  },
+] as const;
+
 const EDUCATION_KEYS = [
   {
     degreeKey: "EDUCATION.DEGREE_1",
@@ -38,19 +51,33 @@ export function ExperienceSection() {
           <div className="absolute left-1/2 top-0 bottom-0 w-px bg-line -translate-x-1/2 hidden sm:block" aria-hidden />
 
           <div className="flex flex-col gap-12 sm:gap-16">
-            <div className="relative sm:grid sm:grid-cols-2 sm:gap-8 items-start">
-              <div className="sm:text-right sm:pr-10">
-                <p className="text-xs font-semibold uppercase tracking-wide text-muted mb-1">
-                  {t("EXPERIENCE_SECTION.WORK_PERIOD")}
-                </p>
-                <h3 className="text-base font-bold text-ink mb-2">{t("EXPERIENCE_SECTION.WORK_TITLE")}</h3>
-                <p className="text-sm leading-relaxed text-muted">{t("EXPERIENCE_SECTION.WORK_DESC")}</p>
+            {WORK_KEYS.map((work, idx) => (
+              <div key={work.titleKey} className="relative sm:grid sm:grid-cols-2 sm:gap-8 items-start">
+                {idx % 2 === 0 ? (
+                  <>
+                    <div className="sm:text-right sm:pr-10">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-muted mb-1">{t(work.periodKey)}</p>
+                      <h3 className="text-base font-bold text-ink mb-2">{t(work.titleKey)}</h3>
+                      <p className="text-sm leading-relaxed text-muted">{t(work.descKey)}</p>
+                    </div>
+                    <div className="hidden sm:block sm:pl-10" />
+                  </>
+                ) : (
+                  <>
+                    <div className="hidden sm:block sm:pr-10" />
+                    <div className="sm:pl-10 sm:border-none border-l-2 border-ink sm:border-l-0 pl-6 sm:pl-10">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-muted mb-1">{t(work.periodKey)}</p>
+                      <h3 className="text-base font-bold text-ink mb-2">{t(work.titleKey)}</h3>
+                      <p className="text-sm leading-relaxed text-muted">{t(work.descKey)}</p>
+                    </div>
+                  </>
+                )}
+
+                <div className="hidden sm:flex justify-center absolute left-1/2 top-2 -translate-x-1/2">
+                  <span className="h-2.5 w-2.5 border-2 border-ink bg-surface z-10" />
+                </div>
               </div>
-              <div className="hidden sm:flex justify-center absolute left-1/2 top-2 -translate-x-1/2">
-                <span className="h-2.5 w-2.5 border-2 border-ink bg-surface z-10" />
-              </div>
-              <div className="hidden sm:block sm:pl-10" />
-            </div>
+            ))}
 
             {EDUCATION_KEYS.map((edu) => (
               <div key={edu.degreeKey} className="relative sm:grid sm:grid-cols-2 sm:gap-8 items-start">

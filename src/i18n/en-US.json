@@ -37,7 +37,7 @@
     "FEATURE_PROBLEM": "Problem solving",
     "FEATURE_LEARN": "Continuous learning",
     "DESCRIPTION_1": "I'm a full-stack developer focused on building scalable and well-structured applications. I work with ASP.NET and Next.js, applying DDD, layered architecture, and clean code practices to deliver reliable solutions.",
-    "DESCRIPTION_2": "Across my projects, I've built everything from management platforms and robust APIs to AI-powered solutions. Highlights include InboxIQ (FastAPI + OpenAI), ArchFlow (.NET 9 + DDD for agile management with Scrum/Kanban), and academic projects using React, Node.js, and PostgreSQL focused on data visualization and organization.",
+    "DESCRIPTION_2": "Across my projects, I've built everything from management platforms and robust APIs to AI-powered solutions. Highlights include InboxIQ (FastAPI + OpenAI), Quantum CRM (Next.js + NestJS), and ArchFlow (.NET 9 + DDD for agile management with Scrum/Kanban).",
     "DESCRIPTION_3": "I'm currently a Software Development Intern at ACTI (since 09/2025), working on web systems, database integration, and continuous feature improvements with a focus on performance and quality."
   },
   "EDUCATION": {
@@ -59,7 +59,7 @@
     "SECTION_LABEL": "Technologies & tools"
   },
   "PROJECTS": {
-    "FEATURED_LABEL": "Featured projects",
+    "FEATURED_LABEL": "Projects",
     "VIEW_PROJECT": "View project",
     "MY": "Personal Projects",
     "STUDENT": "Academic Projects",
@@ -78,7 +78,7 @@
     "MINI_2": "AI email triage and automation",
     "MINI_3": "Modern UI, responsive, multi-language",
     "MINI_4": "Academic system with admin & guest area",
-    "MINI_5": "Agile management with DDD & robust API",
+    "MINI_5": "Agile management with DDD & robust backend",
     "MINI_6": "Environmental data visualization",
     "MINI_7": "Enterprise system focused on performance",
     "MINI_8": "Lead management & commercial productivity",
@@ -94,9 +94,12 @@
   },
   "EXPERIENCE_SECTION": {
     "LABEL": "Experience / education",
-    "WORK_TITLE": "Software development internship — ACTI",
-    "WORK_PERIOD": "Sep 2025 — present",
-    "WORK_DESC": "Web systems development and maintenance, database integration, and feature evolution with a focus on performance and quality."
+    "WORK_1_TITLE": "Junior Software Developer — ACTI",
+    "WORK_1_PERIOD": "Mar 2026 — present · São José dos Campos, SP",
+    "WORK_1_DESC": "Working on web systems development and maintenance, database integrations, and continuous feature improvements, with a strong focus on performance, quality, and best practices.",
+    "WORK_2_TITLE": "Product Owner, Software Architect & Full Stack Developer — FATEC Jacareí (ABP) · Quantum CRM",
+    "WORK_2_PERIOD": "Mar 2026 — Jun 2026 · Jacareí, SP",
+    "WORK_2_DESC": "Led requirements discovery and refinement, defined the end-to-end architecture (backend and frontend) with a DDD-first approach, produced supporting documentation (diagrams), and standardized folder/class responsibilities. Also contributed hands-on as a full stack developer, implementing and integrating features across the API and UI."
   },
   "CONTACTS": {
     "SECTION_LABEL": "Let's talk",

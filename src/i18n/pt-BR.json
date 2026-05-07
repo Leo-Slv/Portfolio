@@ -37,7 +37,7 @@
     "FEATURE_PROBLEM": "Resolução de problemas",
     "FEATURE_LEARN": "Aprendizado contínuo",
     "DESCRIPTION_1": "Sou desenvolvedor full-stack focado em construir aplicações escaláveis e bem estruturadas. Trabalho com ASP.NET e Next.js, aplicando boas práticas como DDD, arquitetura em camadas e código limpo para entregar soluções confiáveis.",
-    "DESCRIPTION_2": "Nos meus projetos, desenvolvi desde plataformas de gestão e APIs robustas até soluções com IA. Destaque para o InboxIQ (FastAPI + OpenAI), o ArchFlow (.NET 9 + DDD para gestão ágil com Scrum/Kanban) e projetos acadêmicos com React, Node.js e PostgreSQL voltados à visualização e organização de dados.",
+    "DESCRIPTION_2": "Nos meus projetos, desenvolvi desde plataformas de gestão e APIs robustas até soluções com IA. Destaque para o InboxIQ (FastAPI + OpenAI), o Quantum CRM (Next.js + NestJS) e o ArchFlow (.NET 9 + DDD para gestão ágil com Scrum/Kanban).",
     "DESCRIPTION_3": "Atualmente sou estagiário em Desenvolvimento de Software na ACTI (desde 09/2025), atuando no desenvolvimento e manutenção de sistemas web, integração com banco de dados e evolução contínua de funcionalidades com foco em performance e qualidade."
   },
   "EDUCATION": {
@@ -59,7 +59,7 @@
     "SECTION_LABEL": "Tecnologias & ferramentas"
   },
   "PROJECTS": {
-    "FEATURED_LABEL": "Projetos em destaque",
+    "FEATURED_LABEL": "Projetos",
     "VIEW_PROJECT": "Ver projeto",
     "MY": "Projetos Pessoais",
     "STUDENT": "Projetos Acadêmicos",
@@ -69,7 +69,7 @@
     "CARD_TITLE_2": "InboxIQ",
     "CARD_TITLE_3": "Portfólio Pessoal",
     "CARD_TITLE_4": "Gerenciamento Pedagógico",
-    "CARD_TITLE_5": "ArchFlow API",
+    "CARD_TITLE_5": "ArchFlow",
     "CARD_TITLE_6": "Portal Limnológico",
     "CARD_TITLE_7": "PDV Web",
     "CARD_TITLE_8": "ArchFlow Frontend",
@@ -78,7 +78,7 @@
     "MINI_2": "Triagem de e-mails com IA e automações",
     "MINI_3": "UI moderna, responsiva e multilíngue",
     "MINI_4": "Sistema acadêmico com área admin e guest",
-    "MINI_5": "Gestão ágil com DDD e API robusta",
+    "MINI_5": "Gestão ágil com DDD e backend robusto",
     "MINI_6": "Visualização de dados ambientais",
     "MINI_7": "Sistema corporativo com foco em performance",
     "MINI_8": "Gestão de leads e produtividade comercial",
@@ -94,9 +94,12 @@
   },
   "EXPERIENCE_SECTION": {
     "LABEL": "Experiência / educação",
-    "WORK_TITLE": "Estágio em desenvolvimento de software — ACTI",
-    "WORK_PERIOD": "Set 2025 — atual",
-    "WORK_DESC": "Desenvolvimento e manutenção de sistemas web, integração com banco de dados e evolução de funcionalidades com foco em performance e qualidade."
+    "WORK_1_TITLE": "Programador júnior — ACTI",
+    "WORK_1_PERIOD": "Mar 2026 — atual · São José dos Campos, SP",
+    "WORK_1_DESC": "Atuação no desenvolvimento e manutenção de sistemas web, integrações com banco de dados e evolução contínua de funcionalidades, com foco em performance, qualidade e boas práticas.",
+    "WORK_2_TITLE": "Product Owner, Arquiteto de Software e Desenvolvedor Full Stack — FATEC Jacareí (ABP) · Quantum CRM",
+    "WORK_2_PERIOD": "Mar 2026 — Jun 2026 · Jacareí, SP",
+    "WORK_2_DESC": "Conduzi o levantamento e refinamento de requisitos, defini a arquitetura end-to-end (backend e frontend) com foco em DDD, documentação (diagramas) e padronização de estrutura de pastas e responsabilidades. Também atuei no desenvolvimento full stack, implementando e integrando funcionalidades entre API e interface."
   },
   "CONTACTS": {
     "SECTION_LABEL": "Vamos conversar",
