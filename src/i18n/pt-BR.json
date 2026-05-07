@@ -4,26 +4,40 @@
     "TITLE_1": "Desenvolvedor Full-Stack",
     "TITLE_2": "Java and Node.js",
     "DESCRIPTION": "Sou um desenvolvedor Full-Stack apaixonado por criar soluções que não apenas atendam aos requisitos funcionais, mas também proporcionem desempenho excepcional e fortaleçam a confiança dos usuários através de experiências estáveis e seguras.",
-    "RESUME_BUTTON": "Curriculo",
+    "RESUME_BUTTON": "Currículo",
     "GITHUB_BUTTON": "GitHub",
-    "PATH": "/assets/Curriculo_Leonardo_Irineu.pdf"
+    "PATH": "/assets/Curriculo_Leonardo_Irineu.pdf",
+    "ROLE_LABEL": "Full Stack Developer",
+    "HERO_HEADLINE": "Desenvolvendo soluções completas e escaláveis.",
+    "HERO_LEAD": "Desenvolvedor Full Stack focado em construir aplicações modernas, bem estruturadas e úteis para problemas reais, unindo APIs robustas com interfaces web em Next.js.",
+    "VIEW_PROJECTS": "Ver projetos",
+    "CONTACT_BUTTON": "Entrar em contato",
+    "SOCIAL_GITHUB": "GitHub",
+    "SOCIAL_LINKEDIN": "LinkedIn",
+    "SOCIAL_EMAIL": "E-mail"
   },
   "NAVBAR": {
     "MAIN-LANGUAGE": "Português (BR)",
     "PORTUGUESE": "Português (BR)",
     "ENGLISH": "Inglês (US)",
-    "LABEL_PT": "Português (BR)",
-    "LABEL_EN": "English (US)",
-    "HOME": "Home",
+    "LABEL_PT": "PT-BR",
+    "LABEL_EN": "EN-US",
+    "FULL_NAME": "Leonardo da Silva Irineu",
+    "HOME": "Início",
     "ABOUT": "Sobre",
     "PROJECTS": "Projetos",
-    "CONTACTS": "Contatos"
+    "EXPERIENCE": "Experiência",
+    "CONTACTS": "Contato"
   },
   "ABOUT": {
+    "SECTION_LABEL": "Sobre mim",
     "TITLE": "Sobre",
     "SUBTITLE": "Desenvolvedor Full-Stack",
+    "FEATURE_QUALITY": "Foco em qualidade",
+    "FEATURE_PROBLEM": "Resolução de problemas",
+    "FEATURE_LEARN": "Aprendizado contínuo",
     "DESCRIPTION_1": "Sou desenvolvedor full-stack focado em construir aplicações escaláveis e bem estruturadas. Trabalho com ASP.NET e Next.js, aplicando boas práticas como DDD, arquitetura em camadas e código limpo para entregar soluções confiáveis.",
-    "DESCRIPTION_2": "Nos meus projetos, desenvolvi desde plataformas de gestão e APIs robustas até soluções com IA. Destaque para o InboxIQ (FastAPI + OpenAI), o ArchFlow (.NET 9 + DDD para gestão ágil com Scrum/Kanban) e projetos acadêmicos com React, Node.js e PostgreSQL voltados à visualização e organização de dados.",
+    "DESCRIPTION_2": "Nos meus projetos, desenvolvi desde plataformas de gestão e APIs robustas até soluções com IA. Destaque para o InboxIQ (FastAPI + OpenAI), o Quantum CRM (Next.js + NestJS) e o ArchFlow (.NET 9 + DDD para gestão ágil com Scrum/Kanban).",
     "DESCRIPTION_3": "Atualmente sou estagiário em Desenvolvimento de Software na ACTI (desde 09/2025), atuando no desenvolvimento e manutenção de sistemas web, integração com banco de dados e evolução contínua de funcionalidades com foco em performance e qualidade."
   },
   "EDUCATION": {
@@ -41,7 +55,12 @@
     "STATUS_2": "Concluído",
     "STATUS_3": "Certificado"
   },
+  "TECH": {
+    "SECTION_LABEL": "Tecnologias & ferramentas"
+  },
   "PROJECTS": {
+    "FEATURED_LABEL": "Projetos",
+    "VIEW_PROJECT": "Ver projeto",
     "MY": "Projetos Pessoais",
     "STUDENT": "Projetos Acadêmicos",
     "PROFESSIONAL": "Projetos Profissionais",
@@ -50,7 +69,7 @@
     "CARD_TITLE_2": "InboxIQ",
     "CARD_TITLE_3": "Portfólio Pessoal",
     "CARD_TITLE_4": "Gerenciamento Pedagógico",
-    "CARD_TITLE_5": "ArchFlow API",
+    "CARD_TITLE_5": "ArchFlow",
     "CARD_TITLE_6": "Portal Limnológico",
     "CARD_TITLE_7": "PDV Web",
     "CARD_TITLE_8": "ArchFlow Frontend",
@@ -59,7 +78,7 @@
     "MINI_2": "Triagem de e-mails com IA e automações",
     "MINI_3": "UI moderna, responsiva e multilíngue",
     "MINI_4": "Sistema acadêmico com área admin e guest",
-    "MINI_5": "Gestão ágil com DDD e API robusta",
+    "MINI_5": "Gestão ágil com DDD e backend robusto",
     "MINI_6": "Visualização de dados ambientais",
     "MINI_7": "Sistema corporativo com foco em performance",
     "MINI_8": "Gestão de leads e produtividade comercial",
@@ -73,7 +92,22 @@
     "DESCRIPTION_8": "Frontend para a plataforma ArchFlow, construído com Next.js, TypeScript, Shadcn UI e Axios. Plataforma para gestão ágil com Scrum e Kanban.",
     "DESCRIPTION_9": "Sistema de gestão de leads para times de vendas, com foco em rastreabilidade de oportunidades e produtividade comercial."
   },
+  "EXPERIENCE_SECTION": {
+    "LABEL": "Experiência / educação",
+    "WORK_1_TITLE": "Programador júnior — ACTI",
+    "WORK_1_PERIOD": "Mar 2026 — atual · São José dos Campos, SP",
+    "WORK_1_DESC": "Atuação no desenvolvimento e manutenção de sistemas web, integrações com banco de dados e evolução contínua de funcionalidades, com foco em performance, qualidade e boas práticas.",
+    "WORK_2_TITLE": "Product Owner, Arquiteto de Software e Desenvolvedor Full Stack — FATEC Jacareí (ABP) · Quantum CRM",
+    "WORK_2_PERIOD": "Mar 2026 — Jun 2026 · Jacareí, SP",
+    "WORK_2_DESC": "Conduzi o levantamento e refinamento de requisitos, defini a arquitetura end-to-end (backend e frontend) com foco em DDD, documentação (diagramas) e padronização de estrutura de pastas e responsabilidades. Também atuei no desenvolvimento full stack, implementando e integrando funcionalidades entre API e interface."
+  },
   "CONTACTS": {
+    "SECTION_LABEL": "Vamos conversar",
+    "CTA_LEAD": "Tem um projeto em mente ou quer trocar uma ideia? Envie uma mensagem.",
+    "LOCATION_LABEL": "Localização",
+    "LOCATION_VALUE": "São José dos Campos, SP — Brasil",
+    "AVAIL_LABEL": "Disponível para",
+    "AVAIL_VALUE": "Projetos • Freelancer • CLT",
     "TITLE": "Contatos",
     "CARD_TITLE_1": "Email",
     "CARD_TITLE_2": "Telefone",
@@ -85,9 +119,7 @@
     "DESCRIPTION_4": "Explore meus repositórios e projetos open source. Contribuições e colaborações são sempre bem-vindas!"
   },
   "FOOTER": {
-    "TEXT": "© 2025 Leonardo da Silva Irineu. Todos os direitos reservados."
-  },
-  "SVG": {
-    "LANGUAGE": "/assets/BR.svg"
+    "TEXT": "© 2026 Leonardo da Silva Irineu. Todos os direitos reservados.",
+    "MADE_WITH": "Feito com Next.js e muito café"
   }
 }

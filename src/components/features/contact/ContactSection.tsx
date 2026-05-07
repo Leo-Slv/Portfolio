@@ -1,66 +1,72 @@
 "use client";
 
+import { Mail, MapPin, Send } from "lucide-react";
 import { useTranslation } from "@/lib/i18n";
 
-const CONTACTS = [
-  {
-    type: "linkedin",
-    href: "https://www.linkedin.com/in/leonardo-irineu-dev/",
-    titleKey: "CONTACTS.CARD_TITLE_3",
-    info: "leonardo-irineu",
-    descKey: "CONTACTS.DESCRIPTION_3",
-    svg: "/assets/svg/linkedin.svg",
-    cardClass: "linkedin-card",
-  },
-  {
-    type: "github",
-    href: "https://github.com/Leo-Slv",
-    titleKey: "CONTACTS.CARD_TITLE_4",
-    info: "Leo-Slv",
-    descKey: "CONTACTS.DESCRIPTION_4",
-    svg: "/assets/svg/github.svg",
-    cardClass: "github-card",
-  },
-];
+const cardIconClass = "h-6 w-6 text-ink shrink-0";
 
 export function ContactSection() {
   const { t } = useTranslation();
 
-  return (
-    <section id="contacts-section" className="max-w-6xl mx-auto px-4 py-24 pb-24">
-      <div className="max-w-2xl mx-auto text-center mb-10">
-        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white fade-in-up delay-300">
-          {t("CONTACTS.TITLE")}
-        </h2>
-      </div>
+  const cards = [
+    {
+      icon: <Mail className={cardIconClass} strokeWidth={1.75} aria-hidden />,
+      title: t("CONTACTS.CARD_TITLE_1"),
+      body: "leonardo1692004@gmail.com",
+      href: "mailto:leonardo1692004@gmail.com",
+    },
+    {
+      icon: <MapPin className={cardIconClass} strokeWidth={1.75} aria-hidden />,
+      title: t("CONTACTS.LOCATION_LABEL"),
+      body: t("CONTACTS.LOCATION_VALUE"),
+      href: null as string | null,
+    },
+    {
+      icon: <Send className={cardIconClass} strokeWidth={1.75} aria-hidden />,
+      title: t("CONTACTS.AVAIL_LABEL"),
+      body: t("CONTACTS.AVAIL_VALUE"),
+      href: null as string | null,
+    },
+  ];
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-[800px] mx-auto items-stretch">
-        {CONTACTS.map((contact, i) => (
-          <div
-            key={contact.type}
-            className={`flex h-full min-h-0 ${i === 0 ? "fade-in-left delay-600" : "fade-in-right delay-600"}`}
-          >
-            <a
-              href={contact.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`contact-card ${contact.cardClass} float-4 w-full h-full min-h-[280px] flex flex-col items-center rounded-af-sm border border-white/10 bg-surface surface-depth p-6 md:p-8 text-center transition-af hover:border-white/[0.14] shadow-card-drop relative overflow-hidden`}
-            >
-              <div
-                className={`w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-full mb-6 transition-af ${
-                  contact.type === "linkedin"
-                    ? "bg-gradient-to-br from-[#0077b5] to-[#005885] text-white"
-                    : "bg-gradient-to-br from-[#333] to-[#24292e] text-white"
-                }`}
-              >
-                <img src={contact.svg} alt="" className="w-8 h-8 md:w-10 md:h-10 opacity-95 invert" aria-hidden />
-              </div>
-              <h3 className="text-lg font-semibold mb-4 text-white">{t(contact.titleKey)}</h3>
-              <p className="text-white/74 text-sm mb-5 break-all">{contact.info}</p>
-              <p className="text-white/58 text-sm leading-relaxed">{t(contact.descKey)}</p>
-            </a>
+  return (
+    <section id="contacts-section" className="border-t border-line bg-page">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+        <div className="section-title-row">
+          <span className="section-title-text">{t("CONTACTS.SECTION_LABEL")}</span>
+          <span className="section-title-line" />
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="flex flex-col justify-center lg:pr-4">
+            <p className="text-sm leading-relaxed text-muted">{t("CONTACTS.CTA_LEAD")}</p>
           </div>
-        ))}
+
+          {cards.map((card) => {
+            const inner = (
+              <>
+                <div className="mb-4">{card.icon}</div>
+                <h3 className="text-xs font-semibold uppercase tracking-wide text-ink mb-2">{card.title}</h3>
+                <p className="text-sm text-muted leading-relaxed break-words">{card.body}</p>
+              </>
+            );
+            const className =
+              "border border-line bg-surface p-6 flex flex-col h-full min-h-[160px] focus-ring";
+
+            if (card.href) {
+              return (
+                <a key={card.title} href={card.href} className={className}>
+                  {inner}
+                </a>
+              );
+            }
+            return (
+              <div key={card.title} className={className}>
+                {inner}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
