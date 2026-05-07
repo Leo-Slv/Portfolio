@@ -4,14 +4,11 @@ import type { LucideIcon } from "lucide-react";
 import {
   Atom,
   BookOpen,
-  Braces,
   Cloud,
   Code2,
   Container,
-  Cpu,
   Database,
   Flame,
-  GitBranch,
   Layers,
   LayoutTemplate,
   Puzzle,
@@ -21,17 +18,17 @@ import {
 import { useTranslation } from "@/lib/i18n";
 
 const SKILLS: Array<{ label: string; href: string; Icon: LucideIcon }> = [
-  { label: "JavaScript", href: "https://github.com/Leo-Slv", Icon: Braces },
   { label: "React", href: "https://github.com/ExceptionH4ndlers/ABP_2DSM", Icon: Atom },
+  { label: "Vite", href: "https://github.com/Leo-Slv/Portfolio", Icon: Flame },
   { label: "Next.js", href: "https://github.com/Leo-Slv", Icon: LayoutTemplate },
-  { label: "Node.js", href: "https://github.com/ExceptionH4ndlers/ABP_2DSM", Icon: Cpu },
+  { label: "NestJS", href: "https://github.com/Leo-Slv", Icon: Layers },
   { label: "ASP.NET", href: "https://github.com/Leo-Slv/ACTi-case", Icon: Server },
   { label: "FastAPI", href: "https://github.com/Leo-Slv/InboxIQ", Icon: Zap },
   { label: "PostgreSQL", href: "https://github.com/ExceptionH4ndlers/ABP_2DSM", Icon: Database },
+  { label: "SQL Server", href: "https://github.com/Leo-Slv/ACTi-case", Icon: Database },
+  { label: "MySQL", href: "https://github.com/Leo-Slv", Icon: Database },
   { label: "Docker", href: "https://github.com/Leo-Slv", Icon: Container },
   { label: "AWS", href: "https://github.com/Leo-Slv/InboxIQ", Icon: Cloud },
-  { label: "Vite", href: "https://github.com/Leo-Slv/Portfolio", Icon: Flame },
-  { label: "Git", href: "https://github.com/Leo-Slv", Icon: GitBranch },
   { label: "DDD", href: "https://github.com/Leo-Slv", Icon: Layers },
 ];
 
