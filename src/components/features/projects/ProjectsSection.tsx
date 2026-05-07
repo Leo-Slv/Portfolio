@@ -22,7 +22,7 @@ const PROJECTS: Featured[] = [
     titleKey: "PROJECTS.CARD_TITLE_9",
     descKey: "PROJECTS.DESCRIPTION_9",
     tags: ["Next.js", "NestJS", "PostgreSQL", "CRM"],
-    href: "https://github.com/Leo-Slv",
+    href: "https://github.com/ErrorSquad-ABP/ABP3-Sistema-Gestao-Leads",
   },
   {
     titleKey: "PROJECTS.CARD_TITLE_2",
