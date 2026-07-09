@@ -105,12 +105,12 @@ export function ProjectsSection() {
           <span className="section-title-line" />
         </div>
 
-        <div className="relative mt-10">
-          <div className="pointer-events-none absolute inset-y-0 left-0 right-0 z-10 flex items-center justify-between">
+        <div className="relative mx-auto mt-10 w-[calc(100%-4rem)] max-w-6xl sm:w-[calc(100%-5.5rem)]">
+          <div className="pointer-events-none absolute inset-y-0 -left-12 -right-12 z-10 flex items-center justify-between sm:-left-16 sm:-right-16">
             <button
               type="button"
               onClick={() => scrollByCards(-1)}
-              className="pointer-events-auto inline-flex h-11 w-11 items-center justify-center border border-line bg-page text-ink focus-ring shadow-sm -translate-x-2 sm:-translate-x-5"
+              className="pointer-events-auto inline-flex h-11 w-11 items-center justify-center border border-line bg-page text-ink shadow-sm focus-ring"
               aria-label="Previous projects"
             >
               <ChevronLeft className="h-4 w-4" strokeWidth={2} aria-hidden />
@@ -118,7 +118,7 @@ export function ProjectsSection() {
             <button
               type="button"
               onClick={() => scrollByCards(1)}
-              className="pointer-events-auto inline-flex h-11 w-11 items-center justify-center border border-line bg-page text-ink focus-ring shadow-sm translate-x-2 sm:translate-x-5"
+              className="pointer-events-auto inline-flex h-11 w-11 items-center justify-center border border-line bg-page text-ink shadow-sm focus-ring"
               aria-label="Next projects"
             >
               <ChevronRight className="h-4 w-4" strokeWidth={2} aria-hidden />
@@ -127,7 +127,7 @@ export function ProjectsSection() {
 
           <div
             ref={trackRef}
-            className="flex gap-8 lg:gap-10 overflow-x-auto scroll-smooth snap-x snap-mandatory -mx-4 px-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+            className="flex gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] lg:gap-10 [&::-webkit-scrollbar]:hidden"
             aria-label="Projects carousel"
           >
             {PROJECTS.map((project) => {
