@@ -38,7 +38,7 @@
     "FEATURE_LEARN": "Aprendizado contínuo",
     "DESCRIPTION_1": "Sou desenvolvedor full-stack focado em construir aplicações escaláveis e bem estruturadas. Trabalho com ASP.NET e Next.js, aplicando boas práticas como DDD, arquitetura em camadas e código limpo para entregar soluções confiáveis.",
     "DESCRIPTION_2": "Nos meus projetos, desenvolvi desde plataformas de gestão e APIs robustas até soluções com IA. Destaque para o InboxIQ (FastAPI + OpenAI), o Quantum CRM (Next.js + NestJS) e o ArchFlow (.NET 9 + DDD para gestão ágil com Scrum/Kanban).",
-    "DESCRIPTION_3": "Atualmente sou estagiário em Desenvolvimento de Software na ACTI (desde 09/2025), atuando no desenvolvimento e manutenção de sistemas web, integração com banco de dados e evolução contínua de funcionalidades com foco em performance e qualidade."
+    "DESCRIPTION_3": "Atualmente sou Programador júnior na ACTI, após atuar como estagiário de Desenvolvimento de Software entre setembro de 2025 e março de 2026. Trabalho no desenvolvimento e manutenção de sistemas web, integração com banco de dados e evolução contínua de funcionalidades com foco em performance e qualidade."
   },
   "EDUCATION": {
     "TITLE": "Formação Acadêmica",
@@ -61,6 +61,7 @@
   "PROJECTS": {
     "FEATURED_LABEL": "Projetos",
     "VIEW_PROJECT": "Ver projeto",
+    "VIEW_REPOSITORY": "Ver repositório",
     "MY": "Projetos Pessoais",
     "STUDENT": "Projetos Acadêmicos",
     "PROFESSIONAL": "Projetos Profissionais",
@@ -97,9 +98,12 @@
     "WORK_1_TITLE": "Programador júnior — ACTI",
     "WORK_1_PERIOD": "Mar 2026 — atual · São José dos Campos, SP",
     "WORK_1_DESC": "Atuação no desenvolvimento e manutenção de sistemas web, integrações com banco de dados e evolução contínua de funcionalidades, com foco em performance, qualidade e boas práticas.",
-    "WORK_2_TITLE": "Product Owner, Arquiteto de Software e Desenvolvedor Full Stack — FATEC Jacareí (ABP) · Quantum CRM",
-    "WORK_2_PERIOD": "Mar 2026 — Jun 2026 · Jacareí, SP",
-    "WORK_2_DESC": "Conduzi o levantamento e refinamento de requisitos, defini a arquitetura end-to-end (backend e frontend) com foco em DDD, documentação (diagramas) e padronização de estrutura de pastas e responsabilidades. Também atuei no desenvolvimento full stack, implementando e integrando funcionalidades entre API e interface."
+    "WORK_2_TITLE": "Estagiário em Desenvolvimento de Software — ACTI",
+    "WORK_2_PERIOD": "Set 2025 — Mar 2026 · São José dos Campos, SP",
+    "WORK_2_DESC": "Atuação como estagiário no desenvolvimento e manutenção de sistemas web, apoio em integrações com banco de dados e evolução de funcionalidades, consolidando práticas de qualidade, performance e organização de código.",
+    "WORK_3_TITLE": "Product Owner, Arquiteto de Software e Desenvolvedor Full Stack — FATEC Jacareí (ABP) · Quantum CRM",
+    "WORK_3_PERIOD": "Mar 2026 — Jun 2026 · Jacareí, SP",
+    "WORK_3_DESC": "Conduzi o levantamento e refinamento de requisitos, defini a arquitetura end-to-end (backend e frontend) com foco em DDD, documentação (diagramas) e padronização de estrutura de pastas e responsabilidades. Também atuei no desenvolvimento full stack, implementando e integrando funcionalidades entre API e interface."
   },
   "CONTACTS": {
     "SECTION_LABEL": "Vamos conversar",
