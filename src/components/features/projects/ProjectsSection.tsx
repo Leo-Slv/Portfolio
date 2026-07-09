@@ -9,7 +9,6 @@ type Featured = {
   titleKey: string;
   descKey: string;
   tags: string[];
-  image?: string;
   projectUrl?: string;
   repositoryUrl?: string;
 };
@@ -20,7 +19,6 @@ const PROJECTS: Featured[] = [
     titleKey: "PROJECTS.CARD_TITLE_5",
     descKey: "PROJECTS.DESCRIPTION_5",
     tags: ["ASP.NET", "Next.js", "PostgreSQL", "DDD"],
-    image: "/projects/archflow.png",
     projectUrl: "https://arch-front-refactor.vercel.app/",
     repositoryUrl: "https://github.com/orgs/ArchFlowPlatform/repositories",
   },
@@ -29,7 +27,6 @@ const PROJECTS: Featured[] = [
     titleKey: "PROJECTS.CARD_TITLE_9",
     descKey: "PROJECTS.DESCRIPTION_9",
     tags: ["Next.js", "NestJS", "PostgreSQL", "CRM"],
-    image: "/projects/quantum-crm.png",
     repositoryUrl: "https://github.com/ErrorSquad-ABP/ABP3-Sistema-Gestao-Leads",
   },
   {
@@ -37,7 +34,6 @@ const PROJECTS: Featured[] = [
     titleKey: "PROJECTS.CARD_TITLE_2",
     descKey: "PROJECTS.DESCRIPTION_2",
     tags: ["FastAPI", "OpenAI", "Next.js", "AWS"],
-    image: "/projects/inboxiq.png",
     projectUrl: "https://inbox-iq-mauve.vercel.app/",
     repositoryUrl: "https://github.com/Leo-Slv/InboxIQ",
   },
@@ -46,7 +42,6 @@ const PROJECTS: Featured[] = [
     titleKey: "PROJECTS.CARD_TITLE_7",
     descKey: "PROJECTS.DESCRIPTION_7",
     tags: ["Web", "Dashboards", "Reports", "Performance"],
-    image: "/projects/pdv-web.png",
     repositoryUrl: "https://github.com/Leo-Slv",
   },
   {
@@ -54,7 +49,6 @@ const PROJECTS: Featured[] = [
     titleKey: "PROJECTS.CARD_TITLE_1",
     descKey: "PROJECTS.DESCRIPTION_1",
     tags: ["ASP.NET", "SQL Server", "Angular", "EF Core"],
-    image: "/projects/acti-case.png",
     repositoryUrl: "https://github.com/Leo-Slv/ACTi-case",
   },
   {
@@ -62,7 +56,6 @@ const PROJECTS: Featured[] = [
     titleKey: "PROJECTS.CARD_TITLE_3",
     descKey: "PROJECTS.DESCRIPTION_3",
     tags: ["Next.js", "TypeScript", "i18n", "UI"],
-    image: "/projects/portfolio-pessoal.png",
     repositoryUrl: "https://github.com/Leo-Slv/Portfolio",
   },
   {
@@ -70,7 +63,6 @@ const PROJECTS: Featured[] = [
     titleKey: "PROJECTS.CARD_TITLE_6",
     descKey: "PROJECTS.DESCRIPTION_6",
     tags: ["Data", "Charts", "Reports", "Web"],
-    image: "/projects/portal-limnologico.png",
     repositoryUrl: "https://github.com/ExceptionH4ndlers/ABP_2DSM",
   },
   {
@@ -78,7 +70,6 @@ const PROJECTS: Featured[] = [
     titleKey: "PROJECTS.CARD_TITLE_4",
     descKey: "PROJECTS.DESCRIPTION_4",
     tags: ["Full stack", "Auth", "Admin", "Realtime"],
-    image: "/projects/gerenciamento-pedagogico.png",
     projectUrl: "https://gerenciamento-pedagogico.vercel.app/",
     repositoryUrl: "https://github.com/ExceptionH4ndlers/ABP_2DSM",
   },
@@ -132,7 +123,6 @@ export function ProjectsSection() {
           >
             {PROJECTS.map((project) => {
               const projectTitle = t(project.titleKey);
-              const imageSrc = project.image ?? "/projects/default.png";
 
               return (
                 <article
@@ -140,14 +130,6 @@ export function ProjectsSection() {
                   data-carousel-card
                   className="flex flex-col border border-line bg-page snap-start shrink-0 basis-full md:basis-[calc(50%-1.25rem)] lg:basis-[calc(33.333%-1.666rem)]"
                 >
-                  <div className="overflow-hidden border-b border-line bg-page">
-                    <img
-                      src={imageSrc}
-                      alt={`Imagem do projeto ${projectTitle}`}
-                      loading="lazy"
-                      className="block h-auto w-full object-cover"
-                    />
-                  </div>
                   <div className="p-6 flex flex-col flex-1 gap-4">
                     <h3 className="text-lg font-bold text-ink tracking-tight">{projectTitle}</h3>
                     <p className="text-sm leading-relaxed text-muted flex-1">{t(project.descKey)}</p>
