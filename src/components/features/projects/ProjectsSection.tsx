@@ -27,6 +27,7 @@ const PROJECTS: Featured[] = [
     titleKey: "PROJECTS.CARD_TITLE_9",
     descKey: "PROJECTS.DESCRIPTION_9",
     tags: ["Next.js", "NestJS", "PostgreSQL", "CRM"],
+    projectUrl: "https://abp3-sistema-gestao-leads-front.vercel.app/login",
     repositoryUrl: "https://github.com/ErrorSquad-ABP/ABP3-Sistema-Gestao-Leads",
   },
   {
