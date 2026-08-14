@@ -31,6 +31,13 @@ const PROJECTS: Featured[] = [
     repositoryUrl: "https://github.com/ErrorSquad-ABP/ABP3-Sistema-Gestao-Leads",
   },
   {
+    slug: "coursecore",
+    titleKey: "PROJECTS.CARD_TITLE_10",
+    descKey: "PROJECTS.DESCRIPTION_10",
+    tags: [".NET 10", "ASP.NET Core", "PostgreSQL", "DDD"],
+    repositoryUrl: "https://github.com/Leo-Slv/CourseCore",
+  },
+  {
     slug: "inbox-iq",
     titleKey: "PROJECTS.CARD_TITLE_2",
     descKey: "PROJECTS.DESCRIPTION_2",

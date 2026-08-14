@@ -75,6 +75,7 @@
     "CARD_TITLE_7": "PDV Web",
     "CARD_TITLE_8": "ArchFlow Frontend",
     "CARD_TITLE_9": "Quantum CRM",
+    "CARD_TITLE_10": "CourseCore",
     "MINI_1": "Cadastro e gestão de parceiros (full stack)",
     "MINI_2": "Triagem de e-mails com IA e automações",
     "MINI_3": "UI moderna, responsiva e multilíngue",
@@ -91,7 +92,8 @@
     "DESCRIPTION_6": "Plataforma web para consulta e visualização de dados limnológicos com filtros por período, local e variáveis científicas, oferecendo análise em tabelas, gráficos e relatórios.",
     "DESCRIPTION_7": "Sistema profissional de PDV Web desenvolvido para modernizar operações comerciais com dashboards, indicadores, relatórios e funcionalidades voltadas ao time comercial, priorizando performance e escalabilidade.",
     "DESCRIPTION_8": "Frontend para a plataforma ArchFlow, construído com Next.js, TypeScript, Shadcn UI e Axios. Plataforma para gestão ágil com Scrum e Kanban.",
-    "DESCRIPTION_9": "Sistema de gestão de leads para times de vendas, com foco em rastreabilidade de oportunidades e produtividade comercial."
+    "DESCRIPTION_9": "Sistema de gestão de leads para times de vendas, com foco em rastreabilidade de oportunidades e produtividade comercial.",
+    "DESCRIPTION_10": "Backend modular white label para plataforma de cursos, cobrindo usuários, permissões, cursos, aulas, vídeos, progresso, auditoria e autenticação JWT."
   },
   "EXPERIENCE_SECTION": {
     "LABEL": "Experiência / educação",
