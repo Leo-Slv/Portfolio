@@ -14,7 +14,14 @@
     "CONTACT_BUTTON": "Get in touch",
     "SOCIAL_GITHUB": "GitHub",
     "SOCIAL_LINKEDIN": "LinkedIn",
-    "SOCIAL_EMAIL": "Email"
+    "SOCIAL_EMAIL": "Email",
+    "TERMINAL_ARIA_LABEL": "Terminal with Leonardo's technical summary",
+    "TERMINAL_WHOAMI": "Full Stack Developer · ASP.NET + Next.js",
+    "TERMINAL_BACKEND_LABEL": "backend",
+    "TERMINAL_FRONTEND_LABEL": "frontend",
+    "TERMINAL_DATA_LABEL": "data",
+    "TERMINAL_ARCHITECTURE_LABEL": "architecture",
+    "TERMINAL_STATUS": "available - projects · freelance · full-time"
   },
   "NAVBAR": {
     "MAIN-LANGUAGE": "English (US)",

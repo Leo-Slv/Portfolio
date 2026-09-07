@@ -80,7 +80,7 @@ export function HeroSection() {
               <div className="relative w-full max-w-2xl aspect-[4/3] border border-line bg-page shrink-0 overflow-hidden">
                 <div
                   className="relative flex h-full w-full items-center justify-center overflow-hidden bg-[linear-gradient(rgba(255,255,255,0.52),rgba(255,255,255,0.52)),repeating-linear-gradient(90deg,transparent_0,transparent_74px,rgba(20,20,20,0.028)_75px)] p-4 sm:p-6 lg:p-8"
-                  aria-label="Terminal com resumo técnico de Leonardo"
+                  aria-label={t("HOME.TERMINAL_ARIA_LABEL")}
                 >
                   <span
                     className="pointer-events-none absolute right-[-18px] top-[47%] h-20 w-20 opacity-40 [background-image:radial-gradient(circle,#595959_1.45px,transparent_1.55px)] [background-size:16px_16px]"
@@ -105,7 +105,7 @@ export function HeroSection() {
                         <span className="text-[#f0f0ec]">whoami</span>
                       </span>
                       <span className="block whitespace-pre-wrap text-[#b7b7b1]">
-                        Full Stack Developer · ASP.NET + Next.js
+                        {t("HOME.TERMINAL_WHOAMI")}
                       </span>
                       <span className="block h-2 sm:h-3" aria-hidden />
 
@@ -115,20 +115,20 @@ export function HeroSection() {
                         <span className="text-[#f0f0ec]">stack --current</span>
                       </span>
                       <span className="block whitespace-pre-wrap text-[#b7b7b1]">
-                        <span className="text-[#f0f0ec]">backend</span>       ASP.NET Core{" "}
+                        <span className="text-[#f0f0ec]">{t("HOME.TERMINAL_BACKEND_LABEL")}</span>       ASP.NET Core{" "}
                         <span className="text-[#62625e]">/</span> NestJS{" "}
                         <span className="text-[#62625e]">/</span> FastAPI
                       </span>
                       <span className="block whitespace-pre-wrap text-[#b7b7b1]">
-                        <span className="text-[#f0f0ec]">frontend</span>      Next.js{" "}
+                        <span className="text-[#f0f0ec]">{t("HOME.TERMINAL_FRONTEND_LABEL")}</span>      Next.js{" "}
                         <span className="text-[#62625e]">/</span> TypeScript
                       </span>
                       <span className="block whitespace-pre-wrap text-[#b7b7b1]">
-                        <span className="text-[#f0f0ec]">data</span>          PostgreSQL{" "}
+                        <span className="text-[#f0f0ec]">{t("HOME.TERMINAL_DATA_LABEL")}</span>          PostgreSQL{" "}
                         <span className="text-[#62625e]">/</span> SQL Server
                       </span>
                       <span className="block whitespace-pre-wrap text-[#b7b7b1]">
-                        <span className="text-[#f0f0ec]">architecture</span>  DDD{" "}
+                        <span className="text-[#f0f0ec]">{t("HOME.TERMINAL_ARCHITECTURE_LABEL")}</span>  DDD{" "}
                         <span className="text-[#62625e]">/</span> layered{" "}
                         <span className="text-[#62625e]">/</span> clean code
                       </span>
@@ -156,7 +156,7 @@ export function HeroSection() {
                         <span className="text-[#f0f0ec]">status</span>
                       </span>
                       <span className="block whitespace-pre-wrap text-[#b7b7b1]">
-                        available - projetos · freelancer · CLT
+                        {t("HOME.TERMINAL_STATUS")}
                       </span>
                       <span className="block h-2 sm:h-3" aria-hidden />
 
