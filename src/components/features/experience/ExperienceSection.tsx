@@ -9,14 +9,14 @@ const WORK_KEYS = [
     descKey: "EXPERIENCE_SECTION.WORK_1_DESC",
   },
   {
-    periodKey: "EXPERIENCE_SECTION.WORK_2_PERIOD",
-    titleKey: "EXPERIENCE_SECTION.WORK_2_TITLE",
-    descKey: "EXPERIENCE_SECTION.WORK_2_DESC",
-  },
-  {
     periodKey: "EXPERIENCE_SECTION.WORK_3_PERIOD",
     titleKey: "EXPERIENCE_SECTION.WORK_3_TITLE",
     descKey: "EXPERIENCE_SECTION.WORK_3_DESC",
+  },
+  {
+    periodKey: "EXPERIENCE_SECTION.WORK_2_PERIOD",
+    titleKey: "EXPERIENCE_SECTION.WORK_2_TITLE",
+    descKey: "EXPERIENCE_SECTION.WORK_2_DESC",
   },
 ] as const;
 

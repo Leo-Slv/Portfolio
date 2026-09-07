@@ -1,12 +1,177 @@
 "use client";
 
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "@/lib/i18n";
 
 const iconProps = { className: "h-4 w-4 shrink-0 text-ink", strokeWidth: 1.75 } as const;
+const TYPE_SPEED_MS = 18;
+
+type TerminalSegment = {
+  text: string;
+  className?: string;
+};
+
+type TerminalLine = {
+  segments: TerminalSegment[];
+  gapAfter?: boolean;
+};
+
+function getLineLength(line: TerminalLine) {
+  return line.segments.reduce((sum, segment) => sum + segment.text.length, 0);
+}
+
+function renderTypedSegments(segments: TerminalSegment[], visibleChars: number) {
+  let remaining = visibleChars;
+
+  return segments.map((segment, index) => {
+    const visibleText = segment.text.slice(0, Math.max(0, remaining));
+    remaining -= segment.text.length;
+
+    return (
+      <span key={`${segment.text}-${index}`} className={segment.className}>
+        {visibleText}
+      </span>
+    );
+  });
+}
 
 export function HeroSection() {
   const { t } = useTranslation();
+  const terminalLines = useMemo<TerminalLine[]>(
+    () => [
+      {
+        segments: [
+          { text: "leonardo@dev", className: "font-bold text-[#f6f6f3]" },
+          { text: ":~$", className: "text-[#9d9d97]" },
+          { text: " " },
+          { text: "whoami", className: "text-[#f0f0ec]" },
+        ],
+      },
+      {
+        segments: [{ text: t("HOME.TERMINAL_WHOAMI"), className: "text-[#b7b7b1]" }],
+        gapAfter: true,
+      },
+      {
+        segments: [
+          { text: "leonardo@dev", className: "font-bold text-[#f6f6f3]" },
+          { text: ":~$", className: "text-[#9d9d97]" },
+          { text: " " },
+          { text: "stack --current", className: "text-[#f0f0ec]" },
+        ],
+      },
+      {
+        segments: [
+          { text: t("HOME.TERMINAL_BACKEND_LABEL").padEnd(14, " "), className: "text-[#f0f0ec]" },
+          { text: "ASP.NET Core ", className: "text-[#b7b7b1]" },
+          { text: "/ ", className: "text-[#62625e]" },
+          { text: "NestJS ", className: "text-[#b7b7b1]" },
+          { text: "/ ", className: "text-[#62625e]" },
+          { text: "FastAPI", className: "text-[#b7b7b1]" },
+        ],
+      },
+      {
+        segments: [
+          { text: t("HOME.TERMINAL_FRONTEND_LABEL").padEnd(14, " "), className: "text-[#f0f0ec]" },
+          { text: "Next.js ", className: "text-[#b7b7b1]" },
+          { text: "/ ", className: "text-[#62625e]" },
+          { text: "TypeScript", className: "text-[#b7b7b1]" },
+        ],
+      },
+      {
+        segments: [
+          { text: t("HOME.TERMINAL_DATA_LABEL").padEnd(14, " "), className: "text-[#f0f0ec]" },
+          { text: "PostgreSQL ", className: "text-[#b7b7b1]" },
+          { text: "/ ", className: "text-[#62625e]" },
+          { text: "SQL Server", className: "text-[#b7b7b1]" },
+        ],
+      },
+      {
+        segments: [
+          { text: t("HOME.TERMINAL_ARCHITECTURE_LABEL").padEnd(14, " "), className: "text-[#f0f0ec]" },
+          { text: "DDD ", className: "text-[#b7b7b1]" },
+          { text: "/ ", className: "text-[#62625e]" },
+          { text: "layered ", className: "text-[#b7b7b1]" },
+          { text: "/ ", className: "text-[#62625e]" },
+          { text: "clean code", className: "text-[#b7b7b1]" },
+        ],
+        gapAfter: true,
+      },
+      {
+        segments: [
+          { text: "leonardo@dev", className: "font-bold text-[#f6f6f3]" },
+          { text: ":~$", className: "text-[#9d9d97]" },
+          { text: " " },
+          { text: "projects --featured", className: "text-[#f0f0ec]" },
+        ],
+      },
+      {
+        segments: [
+          { text: "01  ArchFlow      ", className: "text-[#b7b7b1]" },
+          { text: "# .NET · Next.js · DDD", className: "text-[#777772]" },
+        ],
+      },
+      {
+        segments: [
+          { text: "02  Quantum CRM   ", className: "text-[#b7b7b1]" },
+          { text: "# Next.js · NestJS", className: "text-[#777772]" },
+        ],
+      },
+      {
+        segments: [
+          { text: "03  CourseCore    ", className: "text-[#b7b7b1]" },
+          { text: "# ASP.NET · PostgreSQL", className: "text-[#777772]" },
+        ],
+        gapAfter: true,
+      },
+      {
+        segments: [
+          { text: "leonardo@dev", className: "font-bold text-[#f6f6f3]" },
+          { text: ":~$", className: "text-[#9d9d97]" },
+          { text: " " },
+          { text: "status", className: "text-[#f0f0ec]" },
+        ],
+      },
+      {
+        segments: [{ text: t("HOME.TERMINAL_STATUS"), className: "text-[#b7b7b1]" }],
+        gapAfter: true,
+      },
+      {
+        segments: [
+          { text: "leonardo@dev", className: "font-bold text-[#f6f6f3]" },
+          { text: ":~$", className: "text-[#9d9d97]" },
+          { text: " " },
+        ],
+      },
+    ],
+    [t]
+  );
+  const totalTerminalChars = useMemo(
+    () => terminalLines.reduce((sum, line) => sum + getLineLength(line), 0),
+    [terminalLines]
+  );
+  const [typedChars, setTypedChars] = useState(0);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setTypedChars(totalTerminalChars);
+      return;
+    }
+
+    setTypedChars(0);
+    const interval = window.setInterval(() => {
+      setTypedChars((current) => {
+        if (current >= totalTerminalChars) {
+          window.clearInterval(interval);
+          return current;
+        }
+
+        return current + 1;
+      });
+    }, TYPE_SPEED_MS);
+
+    return () => window.clearInterval(interval);
+  }, [totalTerminalChars]);
 
   return (
     <section
@@ -99,72 +264,22 @@ export function HeroSection() {
                     </div>
 
                     <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4 font-mono text-[0.62rem] font-medium leading-[1.65] tracking-normal [scrollbar-width:none] [-ms-overflow-style:none] sm:px-5 sm:py-5 sm:text-xs lg:px-6 lg:py-6 lg:text-[0.82rem] [&::-webkit-scrollbar]:hidden">
-                      <span className="block whitespace-pre-wrap">
-                        <span className="font-bold text-[#f6f6f3]">leonardo@dev</span>
-                        <span className="text-[#9d9d97]">:~$</span>{" "}
-                        <span className="text-[#f0f0ec]">whoami</span>
-                      </span>
-                      <span className="block whitespace-pre-wrap text-[#b7b7b1]">
-                        {t("HOME.TERMINAL_WHOAMI")}
-                      </span>
-                      <span className="block h-2 sm:h-3" aria-hidden />
+                      {terminalLines.map((line, index) => {
+                        const previousChars = terminalLines
+                          .slice(0, index)
+                          .reduce((sum, previousLine) => sum + getLineLength(previousLine), 0);
+                        const visibleChars = Math.max(0, Math.min(getLineLength(line), typedChars - previousChars));
 
-                      <span className="block whitespace-pre-wrap">
-                        <span className="font-bold text-[#f6f6f3]">leonardo@dev</span>
-                        <span className="text-[#9d9d97]">:~$</span>{" "}
-                        <span className="text-[#f0f0ec]">stack --current</span>
-                      </span>
-                      <span className="block whitespace-pre-wrap text-[#b7b7b1]">
-                        <span className="text-[#f0f0ec]">{t("HOME.TERMINAL_BACKEND_LABEL")}</span>       ASP.NET Core{" "}
-                        <span className="text-[#62625e]">/</span> NestJS{" "}
-                        <span className="text-[#62625e]">/</span> FastAPI
-                      </span>
-                      <span className="block whitespace-pre-wrap text-[#b7b7b1]">
-                        <span className="text-[#f0f0ec]">{t("HOME.TERMINAL_FRONTEND_LABEL")}</span>      Next.js{" "}
-                        <span className="text-[#62625e]">/</span> TypeScript
-                      </span>
-                      <span className="block whitespace-pre-wrap text-[#b7b7b1]">
-                        <span className="text-[#f0f0ec]">{t("HOME.TERMINAL_DATA_LABEL")}</span>          PostgreSQL{" "}
-                        <span className="text-[#62625e]">/</span> SQL Server
-                      </span>
-                      <span className="block whitespace-pre-wrap text-[#b7b7b1]">
-                        <span className="text-[#f0f0ec]">{t("HOME.TERMINAL_ARCHITECTURE_LABEL")}</span>  DDD{" "}
-                        <span className="text-[#62625e]">/</span> layered{" "}
-                        <span className="text-[#62625e]">/</span> clean code
-                      </span>
-                      <span className="block h-2 sm:h-3" aria-hidden />
+                        if (visibleChars <= 0) return null;
 
-                      <span className="block whitespace-pre-wrap">
-                        <span className="font-bold text-[#f6f6f3]">leonardo@dev</span>
-                        <span className="text-[#9d9d97]">:~$</span>{" "}
-                        <span className="text-[#f0f0ec]">projects --featured</span>
-                      </span>
-                      <span className="block whitespace-pre-wrap text-[#b7b7b1]">
-                        01  ArchFlow      <span className="text-[#777772]"># .NET · Next.js · DDD</span>
-                      </span>
-                      <span className="block whitespace-pre-wrap text-[#b7b7b1]">
-                        02  Quantum CRM   <span className="text-[#777772]"># Next.js · NestJS</span>
-                      </span>
-                      <span className="block whitespace-pre-wrap text-[#b7b7b1]">
-                        03  CourseCore    <span className="text-[#777772]"># ASP.NET · PostgreSQL</span>
-                      </span>
-                      <span className="block h-2 sm:h-3" aria-hidden />
-
-                      <span className="block whitespace-pre-wrap">
-                        <span className="font-bold text-[#f6f6f3]">leonardo@dev</span>
-                        <span className="text-[#9d9d97]">:~$</span>{" "}
-                        <span className="text-[#f0f0ec]">status</span>
-                      </span>
-                      <span className="block whitespace-pre-wrap text-[#b7b7b1]">
-                        {t("HOME.TERMINAL_STATUS")}
-                      </span>
-                      <span className="block h-2 sm:h-3" aria-hidden />
-
-                      <span className="block whitespace-pre-wrap">
-                        <span className="font-bold text-[#f6f6f3]">leonardo@dev</span>
-                        <span className="text-[#9d9d97]">:~$</span>{" "}
-                        <span className="inline-block h-[0.95em] w-2 translate-y-0.5 animate-pulse bg-[#e9e9e5]" aria-hidden />
-                      </span>
+                        return (
+                          <span key={index} className="block whitespace-pre-wrap">
+                            {renderTypedSegments(line.segments, visibleChars)}
+                            {line.gapAfter ? <span className="block h-2 sm:h-3" aria-hidden /> : null}
+                          </span>
+                        );
+                      })}
+                      <span className="inline-block h-[0.95em] w-2 translate-y-0.5 animate-pulse bg-[#e9e9e5]" aria-hidden />
                     </div>
 
                     <div className="hidden shrink-0 justify-between gap-5 border-t border-[#30302e] px-4 py-2 font-mono text-[0.6rem] font-medium uppercase tracking-[0.08em] text-[#85857f] sm:flex">
