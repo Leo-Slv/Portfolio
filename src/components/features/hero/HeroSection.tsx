@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "@/lib/i18n";
 
 const iconProps = { className: "h-4 w-4 shrink-0 text-ink", strokeWidth: 1.75 } as const;
@@ -38,6 +38,7 @@ function renderTypedSegments(segments: TerminalSegment[], visibleChars: number) 
 
 export function HeroSection() {
   const { t } = useTranslation();
+  const terminalBodyRef = useRef<HTMLDivElement | null>(null);
   const terminalLines = useMemo<TerminalLine[]>(
     () => [
       {
@@ -173,6 +174,13 @@ export function HeroSection() {
     return () => window.clearInterval(interval);
   }, [totalTerminalChars]);
 
+  useEffect(() => {
+    const terminalBody = terminalBodyRef.current;
+    if (!terminalBody) return;
+
+    terminalBody.scrollTop = terminalBody.scrollHeight;
+  }, [typedChars]);
+
   return (
     <section
       id="home"
@@ -181,7 +189,7 @@ export function HeroSection() {
       <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col min-h-0 px-4 sm:px-6 lg:px-8">
         <div className="flex-1 flex items-center justify-center min-h-0 py-6 md:py-8 overflow-y-auto [scrollbar-gutter:stable]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-14 items-center w-full max-w-full my-auto">
-            <div className="flex flex-col gap-5 md:gap-6 min-w-0 order-2 lg:order-1">
+            <div className="flex flex-col gap-5 md:gap-6 min-w-0 order-1">
               <div className="flex items-center gap-3">
                 <p className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-muted whitespace-nowrap">
                   {t("HOME.ROLE_LABEL")}
@@ -241,7 +249,7 @@ export function HeroSection() {
               </div>
             </div>
 
-            <div className="flex justify-center lg:justify-end items-center order-1 lg:order-2 w-full min-w-0">
+            <div className="flex justify-center lg:justify-end items-center order-2 w-full min-w-0">
               <div className="relative w-full max-w-2xl aspect-[4/3] border border-line bg-page shrink-0 overflow-hidden">
                 <div
                   className="relative flex h-full w-full items-center justify-center overflow-hidden bg-[linear-gradient(rgba(255,255,255,0.52),rgba(255,255,255,0.52)),repeating-linear-gradient(90deg,transparent_0,transparent_74px,rgba(20,20,20,0.028)_75px)] p-4 sm:p-6 lg:p-8"
@@ -251,7 +259,7 @@ export function HeroSection() {
                     className="pointer-events-none absolute right-[-18px] top-[47%] h-20 w-20 opacity-40 [background-image:radial-gradient(circle,#595959_1.45px,transparent_1.55px)] [background-size:16px_16px]"
                     aria-hidden
                   />
-                  <div className="relative z-[1] flex max-h-[calc(100%-1.5rem)] w-full flex-col border border-[#1b1b1b] bg-[#111110] text-[#ecece8] shadow-[12px_12px_0_#e4e4e0] sm:shadow-[18px_18px_0_#e4e4e0]">
+                  <div className="relative z-[1] flex h-[calc(100%-1.5rem)] w-full flex-col border border-[#1b1b1b] bg-[#111110] text-[#ecece8] shadow-[12px_12px_0_#e4e4e0] sm:shadow-[18px_18px_0_#e4e4e0]">
                     <div className="flex h-10 shrink-0 items-center justify-between border-b border-[#3a3a37] bg-[#171716] px-3 sm:h-12 sm:px-4">
                       <span className="font-mono text-[0.58rem] font-medium uppercase tracking-[0.08em] text-[#c8c8c4] sm:text-xs">
                         leonardo - portfolio
@@ -263,7 +271,10 @@ export function HeroSection() {
                       </div>
                     </div>
 
-                    <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4 font-mono text-[0.62rem] font-medium leading-[1.65] tracking-normal [scrollbar-width:none] [-ms-overflow-style:none] sm:px-5 sm:py-5 sm:text-xs lg:px-6 lg:py-6 lg:text-[0.82rem] [&::-webkit-scrollbar]:hidden">
+                    <div
+                      ref={terminalBodyRef}
+                      className="min-h-0 flex-1 overflow-y-auto px-4 py-4 font-mono text-[0.62rem] font-medium leading-[1.65] tracking-normal [scrollbar-width:none] [-ms-overflow-style:none] sm:px-5 sm:py-5 sm:text-xs lg:px-6 lg:py-6 lg:text-[0.82rem] [&::-webkit-scrollbar]:hidden"
+                    >
                       {terminalLines.map((line, index) => {
                         const previousChars = terminalLines
                           .slice(0, index)
