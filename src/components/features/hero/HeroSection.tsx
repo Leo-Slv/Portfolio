@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { useTranslation } from "@/lib/i18n";
 
@@ -77,24 +76,104 @@ export function HeroSection() {
               </div>
             </div>
 
-            <div className="flex justify-center lg:justify-end items-center gap-5 lg:gap-6 order-1 lg:order-2 w-full min-w-0">
+            <div className="flex justify-center lg:justify-end items-center order-1 lg:order-2 w-full min-w-0">
               <div className="relative w-full max-w-2xl aspect-[4/3] border border-line bg-page shrink-0 overflow-hidden">
-                <Image
-                  src="/assets/hero-geometry.png"
-                  alt=""
-                  fill
-                  className="object-contain object-center grayscale contrast-[1.05]"
-                  sizes="(max-width: 1024px) 100vw, 672px"
-                  priority
-                />
-              </div>
-              <div
-                className="hidden sm:grid grid-cols-4 grid-rows-5 gap-y-2 gap-x-2 self-center shrink-0"
-                aria-hidden
-              >
-                {Array.from({ length: 20 }).map((_, i) => (
-                  <span key={i} className="w-1.5 h-1.5 bg-muted/45" />
-                ))}
+                <div
+                  className="relative flex h-full w-full items-center justify-center overflow-hidden bg-[linear-gradient(rgba(255,255,255,0.52),rgba(255,255,255,0.52)),repeating-linear-gradient(90deg,transparent_0,transparent_74px,rgba(20,20,20,0.028)_75px)] p-4 sm:p-6 lg:p-8"
+                  aria-label="Terminal com resumo técnico de Leonardo"
+                >
+                  <span
+                    className="pointer-events-none absolute right-[-18px] top-[47%] h-20 w-20 opacity-40 [background-image:radial-gradient(circle,#595959_1.45px,transparent_1.55px)] [background-size:16px_16px]"
+                    aria-hidden
+                  />
+                  <div className="relative z-[1] flex max-h-[calc(100%-1.5rem)] w-full flex-col border border-[#1b1b1b] bg-[#111110] text-[#ecece8] shadow-[12px_12px_0_#e4e4e0] sm:shadow-[18px_18px_0_#e4e4e0]">
+                    <div className="flex h-10 shrink-0 items-center justify-between border-b border-[#3a3a37] bg-[#171716] px-3 sm:h-12 sm:px-4">
+                      <span className="font-mono text-[0.58rem] font-medium uppercase tracking-[0.08em] text-[#c8c8c4] sm:text-xs">
+                        leonardo - portfolio
+                      </span>
+                      <div className="flex gap-1.5 sm:gap-2" aria-hidden>
+                        {Array.from({ length: 3 }).map((_, i) => (
+                          <span key={i} className="block h-2 w-2 rounded-full border border-[#777772]" />
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4 font-mono text-[0.62rem] font-medium leading-[1.65] tracking-normal [scrollbar-width:none] [-ms-overflow-style:none] sm:px-5 sm:py-5 sm:text-xs lg:px-6 lg:py-6 lg:text-[0.82rem] [&::-webkit-scrollbar]:hidden">
+                      <span className="block whitespace-pre-wrap">
+                        <span className="font-bold text-[#f6f6f3]">leonardo@dev</span>
+                        <span className="text-[#9d9d97]">:~$</span>{" "}
+                        <span className="text-[#f0f0ec]">whoami</span>
+                      </span>
+                      <span className="block whitespace-pre-wrap text-[#b7b7b1]">
+                        Full Stack Developer · ASP.NET + Next.js
+                      </span>
+                      <span className="block h-2 sm:h-3" aria-hidden />
+
+                      <span className="block whitespace-pre-wrap">
+                        <span className="font-bold text-[#f6f6f3]">leonardo@dev</span>
+                        <span className="text-[#9d9d97]">:~$</span>{" "}
+                        <span className="text-[#f0f0ec]">stack --current</span>
+                      </span>
+                      <span className="block whitespace-pre-wrap text-[#b7b7b1]">
+                        <span className="text-[#f0f0ec]">backend</span>       ASP.NET Core{" "}
+                        <span className="text-[#62625e]">/</span> NestJS{" "}
+                        <span className="text-[#62625e]">/</span> FastAPI
+                      </span>
+                      <span className="block whitespace-pre-wrap text-[#b7b7b1]">
+                        <span className="text-[#f0f0ec]">frontend</span>      Next.js{" "}
+                        <span className="text-[#62625e]">/</span> TypeScript
+                      </span>
+                      <span className="block whitespace-pre-wrap text-[#b7b7b1]">
+                        <span className="text-[#f0f0ec]">data</span>          PostgreSQL{" "}
+                        <span className="text-[#62625e]">/</span> SQL Server
+                      </span>
+                      <span className="block whitespace-pre-wrap text-[#b7b7b1]">
+                        <span className="text-[#f0f0ec]">architecture</span>  DDD{" "}
+                        <span className="text-[#62625e]">/</span> layered{" "}
+                        <span className="text-[#62625e]">/</span> clean code
+                      </span>
+                      <span className="block h-2 sm:h-3" aria-hidden />
+
+                      <span className="block whitespace-pre-wrap">
+                        <span className="font-bold text-[#f6f6f3]">leonardo@dev</span>
+                        <span className="text-[#9d9d97]">:~$</span>{" "}
+                        <span className="text-[#f0f0ec]">projects --featured</span>
+                      </span>
+                      <span className="block whitespace-pre-wrap text-[#b7b7b1]">
+                        01  ArchFlow      <span className="text-[#777772]"># .NET · Next.js · DDD</span>
+                      </span>
+                      <span className="block whitespace-pre-wrap text-[#b7b7b1]">
+                        02  Quantum CRM   <span className="text-[#777772]"># Next.js · NestJS</span>
+                      </span>
+                      <span className="block whitespace-pre-wrap text-[#b7b7b1]">
+                        03  CourseCore    <span className="text-[#777772]"># ASP.NET · PostgreSQL</span>
+                      </span>
+                      <span className="block h-2 sm:h-3" aria-hidden />
+
+                      <span className="block whitespace-pre-wrap">
+                        <span className="font-bold text-[#f6f6f3]">leonardo@dev</span>
+                        <span className="text-[#9d9d97]">:~$</span>{" "}
+                        <span className="text-[#f0f0ec]">status</span>
+                      </span>
+                      <span className="block whitespace-pre-wrap text-[#b7b7b1]">
+                        available - projetos · freelancer · CLT
+                      </span>
+                      <span className="block h-2 sm:h-3" aria-hidden />
+
+                      <span className="block whitespace-pre-wrap">
+                        <span className="font-bold text-[#f6f6f3]">leonardo@dev</span>
+                        <span className="text-[#9d9d97]">:~$</span>{" "}
+                        <span className="inline-block h-[0.95em] w-2 translate-y-0.5 animate-pulse bg-[#e9e9e5]" aria-hidden />
+                      </span>
+                    </div>
+
+                    <div className="hidden shrink-0 justify-between gap-5 border-t border-[#30302e] px-4 py-2 font-mono text-[0.6rem] font-medium uppercase tracking-[0.08em] text-[#85857f] sm:flex">
+                      <span>main*</span>
+                      <span>utf-8</span>
+                      <span>portfolio.tsx</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
