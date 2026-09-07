@@ -38,6 +38,13 @@ const PROJECTS: Featured[] = [
     repositoryUrl: "https://github.com/Leo-Slv/CourseCore",
   },
   {
+    slug: "plataforma-vdg",
+    titleKey: "PROJECTS.CARD_TITLE_11",
+    descKey: "PROJECTS.DESCRIPTION_11",
+    tags: ["Next.js", "TypeScript", "Platform", "Web"],
+    repositoryUrl: "https://github.com/Leo-Slv/plataforma-vdg",
+  },
+  {
     slug: "inbox-iq",
     titleKey: "PROJECTS.CARD_TITLE_2",
     descKey: "PROJECTS.DESCRIPTION_2",
