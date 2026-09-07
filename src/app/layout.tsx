@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { TranslationProvider } from "@/lib/i18n";
 import "./globals.css";
 
@@ -16,6 +17,7 @@ export default function RootLayout({
     <html lang="pt-BR" className="bg-page" style={{ colorScheme: "light" }}>
       <body className="min-h-screen antialiased bg-page text-ink">
         <TranslationProvider>{children}</TranslationProvider>
+        <Analytics />
       </body>
     </html>
   );
