@@ -20,6 +20,8 @@
 
 html {
   color-scheme: light;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.25rem;
 }
 
 html,
@@ -28,12 +30,17 @@ body {
   padding: 0;
   width: 100%;
   min-height: 100%;
-  scroll-behavior: auto;
   overflow-x: hidden;
   background: var(--page-bg);
   display: flex;
   flex-direction: column;
   font-family: var(--font-satoshi);
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 4.5rem;
+  }
 }
 
 @media (max-width: 768px) {
