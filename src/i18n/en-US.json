@@ -24,7 +24,7 @@
     "TERMINAL_FRONTEND_LABEL": "frontend",
     "TERMINAL_DATA_LABEL": "data",
     "TERMINAL_ARCHITECTURE_LABEL": "architecture",
-    "TERMINAL_STATUS": "available - projects · freelance · full-time",
+    "TERMINAL_STATUS": "available - projects · freelance · full-time · B2B contract",
     "STAT_PROJECTS": "Projects",
     "STAT_TECH": "Technologies",
     "STAT_LIVE": "Live sites"
@@ -154,7 +154,7 @@
     "LOCATION_LABEL": "Location",
     "LOCATION_VALUE": "São José dos Campos, SP — Brazil",
     "AVAIL_LABEL": "Available for",
-    "AVAIL_VALUE": "Projects • Freelance • Full-time",
+    "AVAIL_VALUE": "Projects • Freelance • Full-time • B2B contract",
     "TITLE": "Contacts",
     "CARD_TITLE_1": "Email",
     "CARD_TITLE_2": "Telephone",

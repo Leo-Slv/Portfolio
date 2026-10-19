@@ -24,7 +24,7 @@
     "TERMINAL_FRONTEND_LABEL": "frontend",
     "TERMINAL_DATA_LABEL": "dados",
     "TERMINAL_ARCHITECTURE_LABEL": "arquitetura",
-    "TERMINAL_STATUS": "disponível - projetos · freelancer · CLT",
+    "TERMINAL_STATUS": "disponível - projetos · freelancer · CLT · PJ",
     "STAT_PROJECTS": "Projetos",
     "STAT_TECH": "Tecnologias",
     "STAT_LIVE": "Sites no ar"
@@ -154,7 +154,7 @@
     "LOCATION_LABEL": "Localização",
     "LOCATION_VALUE": "São José dos Campos, SP — Brasil",
     "AVAIL_LABEL": "Disponível para",
-    "AVAIL_VALUE": "Projetos • Freelancer • CLT",
+    "AVAIL_VALUE": "Projetos • Freelancer • CLT • PJ",
     "TITLE": "Contatos",
     "CARD_TITLE_1": "Email",
     "CARD_TITLE_2": "Telefone",
