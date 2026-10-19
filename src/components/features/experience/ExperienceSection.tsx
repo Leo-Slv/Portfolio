@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslation } from "@/lib/i18n";
+import { Reveal } from "@/components/ui/reveal";
 
 const WORK_KEYS = [
   {
@@ -47,17 +48,17 @@ export function ExperienceSection() {
   return (
     <section id="experience-section" className="border-t border-line bg-page">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-        <div className="section-title-row">
+        <Reveal className="section-title-row">
           <span className="section-title-text">{t("EXPERIENCE_SECTION.LABEL")}</span>
           <span className="section-title-line" />
-        </div>
+        </Reveal>
 
         <div className="relative max-w-3xl mx-auto mt-16">
           <div className="absolute left-1/2 top-0 bottom-0 w-px bg-line -translate-x-1/2 hidden sm:block" aria-hidden />
 
           <div className="flex flex-col gap-12 sm:gap-16">
             {WORK_KEYS.map((work, idx) => (
-              <div key={work.titleKey} className="relative sm:grid sm:grid-cols-2 sm:gap-8 items-start">
+              <Reveal key={work.titleKey} delay={idx * 80} className="relative sm:grid sm:grid-cols-2 sm:gap-8 items-start">
                 {idx % 2 === 0 ? (
                   <>
                     <div className="sm:text-right sm:pr-10">
@@ -81,11 +82,11 @@ export function ExperienceSection() {
                 <div className="hidden sm:flex justify-center absolute left-1/2 top-2 -translate-x-1/2">
                   <span className="h-2.5 w-2.5 border-2 border-ink bg-surface z-10" />
                 </div>
-              </div>
+              </Reveal>
             ))}
 
             {EDUCATION_KEYS.map((edu) => (
-              <div key={edu.degreeKey} className="relative sm:grid sm:grid-cols-2 sm:gap-8 items-start">
+              <Reveal key={edu.degreeKey} className="relative sm:grid sm:grid-cols-2 sm:gap-8 items-start">
                 <div className="hidden sm:block sm:pr-10" />
                 <div className="hidden sm:flex justify-center absolute left-1/2 top-2 -translate-x-1/2">
                   <span className="h-2.5 w-2.5 border-2 border-ink bg-surface z-10" />
@@ -96,7 +97,7 @@ export function ExperienceSection() {
                   <p className="text-sm font-medium text-ink/80 mb-2">{t(edu.schoolKey)}</p>
                   <p className="text-sm leading-relaxed text-muted">{t(edu.descKey)}</p>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>

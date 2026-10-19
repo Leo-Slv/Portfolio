@@ -2,6 +2,7 @@
 
 import { Mail, MapPin, Send } from "lucide-react";
 import { useTranslation } from "@/lib/i18n";
+import { Reveal } from "@/components/ui/reveal";
 
 const cardIconClass = "h-6 w-6 text-ink shrink-0";
 
@@ -32,17 +33,17 @@ export function ContactSection() {
   return (
     <section id="contacts-section" className="border-t border-line bg-page">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-        <div className="section-title-row">
+        <Reveal className="section-title-row">
           <span className="section-title-text">{t("CONTACTS.SECTION_LABEL")}</span>
           <span className="section-title-line" />
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          <div className="flex flex-col justify-center lg:pr-4">
+          <Reveal className="flex flex-col justify-center lg:pr-4">
             <p className="text-sm leading-relaxed text-muted">{t("CONTACTS.CTA_LEAD")}</p>
-          </div>
+          </Reveal>
 
-          {cards.map((card) => {
+          {cards.map((card, idx) => {
             const inner = (
               <>
                 <div className="mb-4">{card.icon}</div>
@@ -51,19 +52,23 @@ export function ContactSection() {
               </>
             );
             const className =
-              "border border-line bg-surface p-6 flex flex-col h-full min-h-[160px] focus-ring";
+              "border border-line bg-surface p-6 flex flex-col h-full min-h-[160px] focus-ring hover-lift";
 
             if (card.href) {
               return (
-                <a key={card.title} href={card.href} className={className}>
-                  {inner}
-                </a>
+                <Reveal key={card.title} delay={(idx + 1) * 100} className="h-full">
+                  <a href={card.href} className={className}>
+                    {inner}
+                  </a>
+                </Reveal>
               );
             }
             return (
-              <div key={card.title} className={className}>
-                {inner}
-              </div>
+              <Reveal key={card.title} delay={(idx + 1) * 100} className="h-full">
+                <div className={className}>
+                  {inner}
+                </div>
+              </Reveal>
             );
           })}
         </div>

@@ -16,6 +16,7 @@ import {
   Zap,
 } from "lucide-react";
 import { useTranslation } from "@/lib/i18n";
+import { Reveal } from "@/components/ui/reveal";
 
 const SKILLS: Array<{ label: string; href: string; Icon: LucideIcon }> = [
   { label: "React", href: "https://github.com/ExceptionH4ndlers/ABP_2DSM", Icon: Atom },
@@ -48,42 +49,47 @@ export function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-0">
           <div className="lg:pr-12 lg:border-r lg:border-line">
-            <div className="section-title-row">
+            <Reveal className="section-title-row">
               <span className="section-title-text">{t("ABOUT.SECTION_LABEL")}</span>
               <span className="section-title-line" />
-            </div>
+            </Reveal>
+            <Reveal delay={100}>
             <p className="text-base leading-relaxed text-muted mb-10 max-w-xl">
               {t("ABOUT.DESCRIPTION_1")} {t("ABOUT.DESCRIPTION_2")}
             </p>
+            </Reveal>
             <ul className="flex flex-col gap-8">
-              {features.map(({ Icon, title }) => (
-                <li key={title} className="flex gap-4 items-start">
+              {features.map(({ Icon, title }, idx) => (
+                <li key={title}>
+                  <Reveal delay={150 + idx * 90} className="flex gap-4 items-start">
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center border border-line bg-page text-ink">
                     <Icon className="h-[22px] w-[22px]" strokeWidth={1.75} aria-hidden />
                   </span>
                   <span className="text-sm font-semibold text-ink pt-2">{title}</span>
+                  </Reveal>
                 </li>
               ))}
             </ul>
           </div>
 
           <div className="lg:pl-12 pt-12 lg:pt-0">
-            <div className="section-title-row">
+            <Reveal className="section-title-row">
               <span className="section-title-text">{t("TECH.SECTION_LABEL")}</span>
               <span className="section-title-line" />
-            </div>
+            </Reveal>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {SKILLS.map(({ label, href, Icon }) => (
+              {SKILLS.map(({ label, href, Icon }, idx) => (
+                <Reveal key={label} delay={idx * 50}>
                 <a
-                  key={label}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col items-center justify-center gap-2 border border-line bg-page px-3 py-4 text-center min-h-[5.5rem] focus-ring"
+                  className="flex flex-col items-center justify-center gap-2 border border-line bg-page px-3 py-4 text-center min-h-[5.5rem] focus-ring hover-lift"
                 >
                   <Icon className={skillIconClass} strokeWidth={1.75} aria-hidden />
                   <span className="text-xs font-medium text-ink leading-tight">{label}</span>
                 </a>
+                </Reveal>
               ))}
             </div>
           </div>
