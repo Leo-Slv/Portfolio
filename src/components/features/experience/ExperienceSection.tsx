@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { useTranslation } from "@/lib/i18n";
 import { Reveal } from "@/components/ui/reveal";
 
@@ -44,6 +45,43 @@ const EDUCATION_KEYS = [
 
 export function ExperienceSection() {
   const { t } = useTranslation();
+  const timelineRef = useRef<HTMLDivElement | null>(null);
+  const fillRef = useRef<HTMLDivElement | null>(null);
+
+  // The center line "draws" itself as the section crosses the middle of the viewport.
+  useEffect(() => {
+    const timeline = timelineRef.current;
+    const fill = fillRef.current;
+    if (!timeline || !fill) return;
+
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const dots = Array.from(timeline.querySelectorAll<HTMLElement>("[data-timeline-dot]"));
+    let raf = 0;
+
+    const update = () => {
+      raf = 0;
+      const rect = timeline.getBoundingClientRect();
+      const reach = reduced ? rect.height : window.innerHeight * 0.55 - rect.top;
+      const drawn = Math.max(0, Math.min(rect.height, reach));
+      fill.style.height = `${drawn}px`;
+      for (const dot of dots) {
+        const dotY = dot.getBoundingClientRect().top - rect.top + dot.offsetHeight / 2;
+        dot.dataset.lit = dotY <= drawn ? "true" : "false";
+      }
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
 
   return (
     <section id="experience-section" className="border-t border-line bg-page">
@@ -53,8 +91,14 @@ export function ExperienceSection() {
           <span className="section-title-line" />
         </Reveal>
 
-        <div className="relative max-w-3xl mx-auto mt-16">
+        <div ref={timelineRef} className="relative max-w-3xl mx-auto mt-16">
           <div className="absolute left-1/2 top-0 bottom-0 w-px bg-line -translate-x-1/2 hidden sm:block" aria-hidden />
+          <div
+            ref={fillRef}
+            className="absolute left-1/2 top-0 w-px bg-ink -translate-x-1/2 hidden sm:block"
+            style={{ height: 0 }}
+            aria-hidden
+          />
 
           <div className="flex flex-col gap-12 sm:gap-16">
             {WORK_KEYS.map((work, idx) => (
@@ -80,7 +124,7 @@ export function ExperienceSection() {
                 )}
 
                 <div className="hidden sm:flex justify-center absolute left-1/2 top-2 -translate-x-1/2">
-                  <span className="h-2.5 w-2.5 border-2 border-ink bg-surface z-10" />
+                  <span data-timeline-dot className="h-2.5 w-2.5 border-2 border-ink bg-surface z-10 transition-colors duration-500 data-[lit=true]:bg-ink" />
                 </div>
               </Reveal>
             ))}
@@ -89,7 +133,7 @@ export function ExperienceSection() {
               <Reveal key={edu.degreeKey} className="relative sm:grid sm:grid-cols-2 sm:gap-8 items-start">
                 <div className="hidden sm:block sm:pr-10" />
                 <div className="hidden sm:flex justify-center absolute left-1/2 top-2 -translate-x-1/2">
-                  <span className="h-2.5 w-2.5 border-2 border-ink bg-surface z-10" />
+                  <span data-timeline-dot className="h-2.5 w-2.5 border-2 border-ink bg-surface z-10 transition-colors duration-500 data-[lit=true]:bg-ink" />
                 </div>
                 <div className="sm:pl-10 sm:border-none border-l-2 border-ink sm:border-l-0 pl-6 sm:pl-10">
                   <p className="text-xs font-semibold uppercase tracking-wide text-muted mb-1">{edu.period}</p>

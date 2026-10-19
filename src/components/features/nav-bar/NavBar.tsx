@@ -113,10 +113,10 @@ export function NavBar() {
             <a
               href={t("HOME.PATH")}
               download
-              className="hidden md:inline-flex items-center gap-2 border border-ink bg-ink px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white focus-ring"
+              className="hidden md:inline-flex items-center gap-2 border border-ink bg-ink px-4 py-2 text-xs font-semibold uppercase tracking-wide text-page focus-ring"
             >
               {t("HOME.RESUME_BUTTON")}
-              <Download className="h-4 w-4 shrink-0 text-white" strokeWidth={1.75} aria-hidden />
+              <Download className="h-4 w-4 shrink-0 text-page" strokeWidth={1.75} aria-hidden />
             </a>
 
             <button
@@ -156,10 +156,10 @@ export function NavBar() {
               href={t("HOME.PATH")}
               download
               onClick={() => setMobileOpen(false)}
-              className="inline-flex items-center justify-center gap-2 border border-ink bg-ink px-4 py-3 text-xs font-semibold uppercase tracking-wide text-white w-full"
+              className="inline-flex items-center justify-center gap-2 border border-ink bg-ink px-4 py-3 text-xs font-semibold uppercase tracking-wide text-page w-full"
             >
               {t("HOME.RESUME_BUTTON")}
-              <Download className="h-4 w-4 shrink-0 text-white" strokeWidth={1.75} aria-hidden />
+              <Download className="h-4 w-4 shrink-0 text-page" strokeWidth={1.75} aria-hidden />
             </a>
           </div>
         ) : null}

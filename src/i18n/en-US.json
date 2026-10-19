@@ -1,4 +1,7 @@
 {
+  "THEME": {
+    "TOGGLE": "Toggle light/dark theme"
+  },
   "HOME": {
     "GREETING": "Hello, my name is Leonardo",
     "TITLE_1": "Full-Stack Developer",
@@ -21,7 +24,10 @@
     "TERMINAL_FRONTEND_LABEL": "frontend",
     "TERMINAL_DATA_LABEL": "data",
     "TERMINAL_ARCHITECTURE_LABEL": "architecture",
-    "TERMINAL_STATUS": "available - projects · freelance · full-time"
+    "TERMINAL_STATUS": "available - projects · freelance · full-time",
+    "STAT_PROJECTS": "Projects",
+    "STAT_TECH": "Technologies",
+    "STAT_LIVE": "Live sites"
   },
   "NAVBAR": {
     "MAIN-LANGUAGE": "English (US)",
@@ -44,7 +50,7 @@
     "FEATURE_PROBLEM": "Problem solving",
     "FEATURE_LEARN": "Continuous learning",
     "DESCRIPTION_1": "I'm a full-stack developer focused on building scalable and well-structured applications. I work with ASP.NET and Next.js, applying DDD, layered architecture, and clean code practices to deliver reliable solutions.",
-    "DESCRIPTION_2": "Across my projects, I've built everything from management platforms and robust APIs to AI-powered solutions. Highlights include InboxIQ (FastAPI + OpenAI), Quantum CRM (Next.js + NestJS), and ArchFlow (.NET 9 + DDD for agile management with Scrum/Kanban).",
+    "DESCRIPTION_2": "On the .NET back end, I highlight OrderCore (orders, inventory under concurrency, and payments), CourseCore (a white-label course platform), and ArchFlow (.NET 9 + DDD for agile management with Scrum/Kanban). On the TypeScript front end, I highlight Marfim (a Next.js e-commerce), VDG Platform (courses and video lessons), and the ArchFlow front end, always connecting responsive interfaces to well-defined APIs.",
     "DESCRIPTION_3": "I'm currently a Junior Software Developer at ACTI, after working as a Software Development Intern from September 2025 to March 2026. I work on web systems development and maintenance, database integration, and continuous feature improvements with a focus on performance and quality."
   },
   "EDUCATION": {
@@ -65,7 +71,28 @@
   "TECH": {
     "SECTION_LABEL": "Technologies & tools"
   },
+  "GITHUB": {
+    "SECTION_LABEL": "GitHub activity",
+    "REPOS": "Public repositories",
+    "RECENT_COMMITS": "Recent commits",
+    "STARS": "Stars received",
+    "LANGUAGES": "Top languages",
+    "RECENT_ACTIVITY": "Recent activity",
+    "SOURCE_NOTE": "Live data from the public GitHub API."
+  },
   "PROJECTS": {
+    "PRIVATE_REPO": "Private repository (company)",
+    "FILTER_ALL": "All",
+    "FILTER_DOTNET": ".NET",
+    "FILTER_NEXTJS": "Next.js",
+    "FILTER_AI": "AI",
+    "FILTER_LIVE": "Live",
+    "DETAILS": "Details",
+    "LIVE_BADGE": "Live",
+    "MODAL_CLOSE": "Close details",
+    "MODAL_FALLBACK": "If the preview doesn't load, open the site in a new tab.",
+    "MODAL_NO_DEPLOY": "This project has no deployment yet. Check the code and docs in the repository.",
+    "OPEN_SITE": "Open site",
     "FEATURED_LABEL": "Projects",
     "VIEW_PROJECT": "View project",
     "VIEW_REPOSITORY": "View repository",
@@ -122,7 +149,7 @@
   },
   "CONTACTS": {
     "SECTION_LABEL": "Let's talk",
-    "CTA_LEAD": "Have a project in mind or want to connect? Send a message.",
+    "CTA_LEAD": "Have a project in mind or want to discuss an opportunity? Send a message.",
     "LOCATION_LABEL": "Location",
     "LOCATION_VALUE": "São José dos Campos, SP — Brazil",
     "AVAIL_LABEL": "Available for",
@@ -135,7 +162,25 @@
     "DESCRIPTION_1": "Contact us by email to discuss projects, professional opportunities or collaborations.",
     "DESCRIPTION_2": "I'm available for quick conversations and to discuss projects. Please contact me via WhatsApp.",
     "DESCRIPTION_3": "Connect with me on LinkedIn to follow my professional career and exchange experiences.",
-    "DESCRIPTION_4": "Explore my repositories and open source projects. Contributions and collaborations are always welcome!"
+    "DESCRIPTION_4": "Explore my repositories and open source projects. Contributions and collaborations are always welcome!",
+    "AVAILABLE_NOW": "Available now",
+    "HEADLINE": "Let's build something",
+    "HEADLINE_ACCENT": "together?",
+    "ONLINE_NOW": "Online now, quick replies",
+    "OFFLINE_NOW": "Outside working hours, I'll reply next business day",
+    "SUBJECT_LABEL": "What do you want to talk about?",
+    "SUBJECT_PROJECT": "Project",
+    "SUBJECT_FREELANCE": "Freelance",
+    "SUBJECT_CLT": "Full-time role",
+    "SUBJECT_HELLO": "Other topic",
+    "BODY_PROJECT": "Hi Leonardo! I have a project in mind and would like to talk.\n\nAbout the project:\n",
+    "BODY_FREELANCE": "Hi Leonardo! I'd like to talk about a freelance engagement.\n\nDetails:\n",
+    "BODY_CLT": "Hi Leonardo! We have a full-time opportunity and would like to talk.\n\nAbout the role:\n",
+    "BODY_HELLO": "Hi Leonardo! I came across your portfolio and would like to get in touch.\n",
+    "COPY_EMAIL": "Copy email",
+    "COPIED": "Email copied!",
+    "SEND_EMAIL": "Send email with the chosen subject",
+    "MARQUEE": "Available for new projects"
   },
   "FOOTER": {
     "TEXT": "© 2026 Leonardo da Silva Irineu. All rights reserved.",

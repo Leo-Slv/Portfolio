@@ -6,16 +6,34 @@
 
 :root {
   --font-satoshi: "Satoshi", ui-sans-serif, system-ui, sans-serif;
-  --page-bg: #f4f4f5;
-  --surface: #ffffff;
-  --ink: #0a0a0a;
-  --muted: #52525b;
-  --line: #e4e4e7;
-  --line-strong: #d4d4d8;
-  --border-default: #e4e4e7;
-  --text-primary: #0a0a0a;
-  --text-secondary: #52525b;
+  --c-page: 244 244 245;
+  --c-surface: 255 255 255;
+  --c-ink: 10 10 10;
+  --c-muted: 82 82 91;
+  --c-line: 228 228 231;
+  --c-line-strong: 212 212 216;
+  --page-bg: rgb(var(--c-page));
+  --surface: rgb(var(--c-surface));
+  --ink: rgb(var(--c-ink));
+  --muted: rgb(var(--c-muted));
+  --line: rgb(var(--c-line));
+  --line-strong: rgb(var(--c-line-strong));
+  --border-default: rgb(var(--c-line));
+  --text-primary: rgb(var(--c-ink));
+  --text-secondary: rgb(var(--c-muted));
   --text-tertiary: #71717a;
+  --term-shadow: #e4e4e0;
+}
+
+.dark {
+  --c-page: 10 10 11;
+  --c-surface: 17 17 19;
+  --c-ink: 244 244 245;
+  --c-muted: 161 161 170;
+  --c-line: 42 42 46;
+  --c-line-strong: 63 63 70;
+  --text-tertiary: #a1a1aa;
+  --term-shadow: #27272a;
 }
 
 html {
@@ -68,7 +86,7 @@ body::before {
   background: var(--page-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: #d4d4d8;
+  background: var(--line-strong);
   border: none;
   border-radius: 0;
 }
@@ -81,13 +99,13 @@ body::before {
 }
 
 * {
-  scrollbar-color: #d4d4d8 var(--page-bg);
+  scrollbar-color: var(--line-strong) var(--page-bg);
 }
 
 .focus-ring:focus-visible {
   outline: none;
   border-color: var(--ink);
-  box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--ink);
+  box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--ink);
 }
 
 .surface-depth {
@@ -178,6 +196,10 @@ body::before {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+
   .reveal,
   .reveal .section-title-line {
     opacity: 1;
@@ -188,4 +210,13 @@ body::before {
   .hover-lift:hover {
     transform: none;
   }
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+html,
+body {
+  transition: background-color 0.35s ease, color 0.35s ease;
 }

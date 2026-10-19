@@ -1,4 +1,7 @@
 {
+  "THEME": {
+    "TOGGLE": "Alternar tema claro/escuro"
+  },
   "HOME": {
     "GREETING": "Olá, meu nome é Leonardo",
     "TITLE_1": "Desenvolvedor Full-Stack",
@@ -21,7 +24,10 @@
     "TERMINAL_FRONTEND_LABEL": "frontend",
     "TERMINAL_DATA_LABEL": "dados",
     "TERMINAL_ARCHITECTURE_LABEL": "arquitetura",
-    "TERMINAL_STATUS": "disponível - projetos · freelancer · CLT"
+    "TERMINAL_STATUS": "disponível - projetos · freelancer · CLT",
+    "STAT_PROJECTS": "Projetos",
+    "STAT_TECH": "Tecnologias",
+    "STAT_LIVE": "Sites no ar"
   },
   "NAVBAR": {
     "MAIN-LANGUAGE": "Português (BR)",
@@ -44,7 +50,7 @@
     "FEATURE_PROBLEM": "Resolução de problemas",
     "FEATURE_LEARN": "Aprendizado contínuo",
     "DESCRIPTION_1": "Sou desenvolvedor full-stack focado em construir aplicações escaláveis e bem estruturadas. Trabalho com ASP.NET e Next.js, aplicando boas práticas como DDD, arquitetura em camadas e código limpo para entregar soluções confiáveis.",
-    "DESCRIPTION_2": "Nos meus projetos, desenvolvi desde plataformas de gestão e APIs robustas até soluções com IA. Destaque para o InboxIQ (FastAPI + OpenAI), o Quantum CRM (Next.js + NestJS) e o ArchFlow (.NET 9 + DDD para gestão ágil com Scrum/Kanban).",
+    "DESCRIPTION_2": "No back-end .NET, destaco o OrderCore (pedidos, estoque sob concorrência e pagamentos), o CourseCore (plataforma de cursos white label) e o ArchFlow (.NET 9 + DDD para gestão ágil com Scrum/Kanban). No front-end com TypeScript, destaco o Marfim (e-commerce em Next.js), a Plataforma VDG (cursos e videoaulas) e o front do ArchFlow, sempre integrando interfaces responsivas a APIs bem definidas.",
     "DESCRIPTION_3": "Atualmente sou Programador júnior na ACTI, após atuar como estagiário de Desenvolvimento de Software entre setembro de 2025 e março de 2026. Trabalho no desenvolvimento e manutenção de sistemas web, integração com banco de dados e evolução contínua de funcionalidades com foco em performance e qualidade."
   },
   "EDUCATION": {
@@ -65,7 +71,28 @@
   "TECH": {
     "SECTION_LABEL": "Tecnologias & ferramentas"
   },
+  "GITHUB": {
+    "SECTION_LABEL": "Atividade no GitHub",
+    "REPOS": "Repositórios públicos",
+    "RECENT_COMMITS": "Commits recentes",
+    "STARS": "Estrelas recebidas",
+    "LANGUAGES": "Linguagens mais usadas",
+    "RECENT_ACTIVITY": "Atividade recente",
+    "SOURCE_NOTE": "Dados ao vivo da API pública do GitHub."
+  },
   "PROJECTS": {
+    "PRIVATE_REPO": "Repositório privado (empresa)",
+    "FILTER_ALL": "Todos",
+    "FILTER_DOTNET": ".NET",
+    "FILTER_NEXTJS": "Next.js",
+    "FILTER_AI": "IA",
+    "FILTER_LIVE": "No ar",
+    "DETAILS": "Detalhes",
+    "LIVE_BADGE": "No ar",
+    "MODAL_CLOSE": "Fechar detalhes",
+    "MODAL_FALLBACK": "Se a prévia não carregar, abra o site em uma nova aba.",
+    "MODAL_NO_DEPLOY": "Este projeto ainda não tem deploy. Veja o código e a documentação no repositório.",
+    "OPEN_SITE": "Abrir site",
     "FEATURED_LABEL": "Projetos",
     "VIEW_PROJECT": "Ver projeto",
     "VIEW_REPOSITORY": "Ver repositório",
@@ -122,7 +149,7 @@
   },
   "CONTACTS": {
     "SECTION_LABEL": "Vamos conversar",
-    "CTA_LEAD": "Tem um projeto em mente ou quer trocar uma ideia? Envie uma mensagem.",
+    "CTA_LEAD": "Tem um projeto em mente ou deseja conversar sobre uma oportunidade? Envie uma mensagem.",
     "LOCATION_LABEL": "Localização",
     "LOCATION_VALUE": "São José dos Campos, SP — Brasil",
     "AVAIL_LABEL": "Disponível para",
@@ -135,7 +162,25 @@
     "DESCRIPTION_1": "Entre em contato por email para discussões sobre projetos, oportunidades profissionais ou colaborações.",
     "DESCRIPTION_2": "Disponível para conversas rápidas e alinhamentos sobre projetos. Prefira contato via WhatsApp.",
     "DESCRIPTION_3": "Conecte-se comigo no LinkedIn para acompanhar minha trajetória profissional e trocar experiências.",
-    "DESCRIPTION_4": "Explore meus repositórios e projetos open source. Contribuições e colaborações são sempre bem-vindas!"
+    "DESCRIPTION_4": "Explore meus repositórios e projetos open source. Contribuições e colaborações são sempre bem-vindas!",
+    "AVAILABLE_NOW": "Disponível agora",
+    "HEADLINE": "Vamos construir algo",
+    "HEADLINE_ACCENT": "juntos?",
+    "ONLINE_NOW": "Online agora, respondo rápido",
+    "OFFLINE_NOW": "Fora do horário, respondo no próximo dia útil",
+    "SUBJECT_LABEL": "Sobre o que você quer falar?",
+    "SUBJECT_PROJECT": "Projeto",
+    "SUBJECT_FREELANCE": "Freelancer",
+    "SUBJECT_CLT": "Vaga CLT",
+    "SUBJECT_HELLO": "Outro assunto",
+    "BODY_PROJECT": "Olá, Leonardo! Tenho um projeto em mente e gostaria de conversar.\n\nSobre o projeto:\n",
+    "BODY_FREELANCE": "Olá, Leonardo! Gostaria de conversar sobre um trabalho como freelancer.\n\nDetalhes:\n",
+    "BODY_CLT": "Olá, Leonardo! Temos uma oportunidade CLT e gostaríamos de conversar.\n\nSobre a vaga:\n",
+    "BODY_HELLO": "Olá, Leonardo! Conheci seu portfólio e gostaria de entrar em contato.\n",
+    "COPY_EMAIL": "Copiar e-mail",
+    "COPIED": "E-mail copiado!",
+    "SEND_EMAIL": "Enviar e-mail com o assunto escolhido",
+    "MARQUEE": "Disponível para novos projetos"
   },
   "FOOTER": {
     "TEXT": "© 2026 Leonardo da Silva Irineu. Todos os direitos reservados.",

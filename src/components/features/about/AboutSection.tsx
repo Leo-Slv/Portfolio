@@ -1,39 +1,48 @@
 "use client";
 
-import type { LucideIcon } from "lucide-react";
+import type { ComponentType } from "react";
 import {
-  Atom,
   BookOpen,
-  Cloud,
+  Boxes,
   Code2,
-  Container,
-  Database,
-  Flame,
-  Layers,
-  LayoutTemplate,
   Puzzle,
-  Server,
-  Zap,
 } from "lucide-react";
+import { DiMsqlServer } from "react-icons/di";
+import { FaAws } from "react-icons/fa6";
+import {
+  SiDocker,
+  SiDotnet,
+  SiFastapi,
+  SiMysql,
+  SiNestjs,
+  SiNextdotjs,
+  SiPostgresql,
+  SiReact,
+} from "react-icons/si";
 import { useTranslation } from "@/lib/i18n";
 import { Reveal } from "@/components/ui/reveal";
+import { ViteLogo } from "@/components/ui/vite-logo";
 
-const SKILLS: Array<{ label: string; href: string; Icon: LucideIcon }> = [
-  { label: "React", href: "https://github.com/ExceptionH4ndlers/ABP_2DSM", Icon: Atom },
-  { label: "Vite", href: "https://github.com/Leo-Slv/Portfolio", Icon: Flame },
-  { label: "Next.js", href: "https://github.com/Leo-Slv", Icon: LayoutTemplate },
-  { label: "NestJS", href: "https://github.com/Leo-Slv", Icon: Layers },
-  { label: "ASP.NET", href: "https://github.com/Leo-Slv/ACTi-case", Icon: Server },
-  { label: "FastAPI", href: "https://github.com/Leo-Slv/InboxIQ", Icon: Zap },
-  { label: "PostgreSQL", href: "https://github.com/ExceptionH4ndlers/ABP_2DSM", Icon: Database },
-  { label: "SQL Server", href: "https://github.com/Leo-Slv/ACTi-case", Icon: Database },
-  { label: "MySQL", href: "https://github.com/Leo-Slv", Icon: Database },
-  { label: "Docker", href: "https://github.com/Leo-Slv", Icon: Container },
-  { label: "AWS", href: "https://github.com/Leo-Slv/InboxIQ", Icon: Cloud },
-  { label: "DDD", href: "https://github.com/Leo-Slv", Icon: Layers },
+type SkillIcon = ComponentType<{ className?: string; "aria-hidden"?: boolean }>;
+
+// `brand` colors the icon on hover; icons whose brand color is black/white stay theme-colored.
+export const SKILLS: Array<{ label: string; href: string; Icon: SkillIcon; brand?: string; iconClass?: string }> = [
+  { label: "React", href: "https://github.com/ExceptionH4ndlers/ABP_2DSM", Icon: SiReact, brand: "#61DAFB" },
+  { label: "Vite", href: "https://github.com/Leo-Slv/Portfolio", Icon: ViteLogo, brand: "#646CFF" },
+  { label: "Next.js", href: "https://github.com/Leo-Slv", Icon: SiNextdotjs },
+  { label: "NestJS", href: "https://github.com/Leo-Slv", Icon: SiNestjs, brand: "#E0234E" },
+  { label: "ASP.NET", href: "https://github.com/Leo-Slv/ACTi-case", Icon: SiDotnet, brand: "#512BD4" },
+  { label: "FastAPI", href: "https://github.com/Leo-Slv/InboxIQ", Icon: SiFastapi, brand: "#009688" },
+  { label: "PostgreSQL", href: "https://github.com/ExceptionH4ndlers/ABP_2DSM", Icon: SiPostgresql, brand: "#4169E1" },
+  { label: "SQL Server", href: "https://github.com/Leo-Slv/ACTi-case", Icon: DiMsqlServer, brand: "#CC2927", iconClass: "scale-[1.4]" },
+  { label: "MySQL", href: "https://github.com/Leo-Slv", Icon: SiMysql, brand: "#4479A1", iconClass: "scale-[1.25]" },
+  { label: "Docker", href: "https://github.com/Leo-Slv", Icon: SiDocker, brand: "#2496ED" },
+  { label: "AWS", href: "https://github.com/Leo-Slv/InboxIQ", Icon: FaAws, brand: "#FF9900" },
+  { label: "DDD", href: "https://github.com/Leo-Slv", Icon: Boxes },
 ];
 
-const skillIconClass = "h-7 w-7 text-ink shrink-0";
+const skillIconClass =
+  "h-7 w-7 text-ink shrink-0 transition-colors duration-300 group-hover:text-[var(--brand,rgb(var(--c-ink)))]";
 
 export function AboutSection() {
   const { t } = useTranslation();
@@ -78,15 +87,16 @@ export function AboutSection() {
               <span className="section-title-line" />
             </Reveal>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {SKILLS.map(({ label, href, Icon }, idx) => (
+              {SKILLS.map(({ label, href, Icon, brand, iconClass }, idx) => (
                 <Reveal key={label} delay={idx * 50}>
                 <a
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col items-center justify-center gap-2 border border-line bg-page px-3 py-4 text-center min-h-[5.5rem] focus-ring hover-lift"
+                  style={brand ? ({ "--brand": brand } as React.CSSProperties) : undefined}
+                  className="group flex flex-col items-center justify-center gap-2 border border-line bg-page px-3 py-4 text-center min-h-[5.5rem] focus-ring hover-lift"
                 >
-                  <Icon className={skillIconClass} strokeWidth={1.75} aria-hidden />
+                  <Icon className={`${skillIconClass} ${iconClass ?? ""}`} aria-hidden />
                   <span className="text-xs font-medium text-ink leading-tight">{label}</span>
                 </a>
                 </Reveal>

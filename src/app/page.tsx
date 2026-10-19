@@ -2,6 +2,7 @@ import { NavBar } from "@/components/features/nav-bar/NavBar";
 import { LanguageToggle } from "@/components/features/language-toggle/LanguageToggle";
 import { HeroSection } from "@/components/features/hero/HeroSection";
 import { AboutSection } from "@/components/features/about/AboutSection";
+import { GithubSection } from "@/components/features/github/GithubSection";
 import { ProjectsSection } from "@/components/features/projects/ProjectsSection";
 import { ExperienceSection } from "@/components/features/experience/ExperienceSection";
 import { ContactSection } from "@/components/features/contact/ContactSection";
@@ -15,6 +16,7 @@ export default function Home() {
       <main>
         <HeroSection />
         <AboutSection />
+        <GithubSection />
         <ProjectsSection />
         <ExperienceSection />
         <ContactSection />

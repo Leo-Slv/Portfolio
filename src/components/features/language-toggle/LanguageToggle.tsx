@@ -2,12 +2,14 @@
 
 import { useTranslation } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function LanguageToggle() {
   const { t, locale, setLocale } = useTranslation();
 
   return (
-    <div className="fixed z-[60] top-[calc(4.5rem+0.5rem)] md:top-[calc(5.25rem+0.5rem)] right-4 sm:right-6 lg:right-8">
+    <div className="fixed z-[60] top-[calc(4.5rem+0.5rem)] md:top-[calc(5.25rem+0.5rem)] right-4 sm:right-6 lg:right-8 flex items-center gap-2">
+      <ThemeToggle />
       <div className="flex border border-ink bg-surface" role="group" aria-label="Language toggle">
         <button
           type="button"
@@ -15,7 +17,7 @@ export function LanguageToggle() {
           aria-pressed={locale === "pt-BR"}
           className={cn(
             "px-3 py-1.5 text-[0.65rem] font-semibold uppercase tracking-wide min-w-[3.25rem]",
-            locale === "pt-BR" ? "bg-ink text-white" : "bg-surface text-ink"
+            locale === "pt-BR" ? "bg-ink text-page" : "bg-surface text-ink"
           )}
         >
           {t("NAVBAR.LABEL_PT")}
@@ -26,7 +28,7 @@ export function LanguageToggle() {
           aria-pressed={locale === "en-US"}
           className={cn(
             "px-3 py-1.5 text-[0.65rem] font-semibold uppercase tracking-wide min-w-[3.25rem] border-l border-ink",
-            locale === "en-US" ? "bg-ink text-white" : "bg-surface text-ink"
+            locale === "en-US" ? "bg-ink text-page" : "bg-surface text-ink"
           )}
         >
           {t("NAVBAR.LABEL_EN")}

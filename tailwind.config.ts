@@ -9,6 +9,19 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        marquee: { from: { transform: "translateX(0)" }, to: { transform: "translateX(-50%)" } },
+        "modal-fade": { from: { opacity: "0" }, to: { opacity: "1" } },
+        "modal-pop": {
+          from: { opacity: "0", transform: "translateY(12px) scale(0.97)" },
+          to: { opacity: "1", transform: "none" },
+        },
+      },
+      animation: {
+        marquee: "marquee 40s linear infinite",
+        "modal-fade": "modal-fade 0.25s ease-out both",
+        "modal-pop": "modal-pop 0.35s cubic-bezier(0.22, 1, 0.36, 1) both",
+      },
       fontFamily: {
         sans: [
           "var(--font-satoshi)",
@@ -23,12 +36,12 @@ const config: Config = {
         ],
       },
       colors: {
-        page: "#f4f4f5",
-        surface: "#ffffff",
-        ink: "#0a0a0a",
-        muted: "#52525b",
-        line: "#e4e4e7",
-        "line-strong": "#d4d4d8",
+        page: "rgb(var(--c-page) / <alpha-value>)",
+        surface: "rgb(var(--c-surface) / <alpha-value>)",
+        ink: "rgb(var(--c-ink) / <alpha-value>)",
+        muted: "rgb(var(--c-muted) / <alpha-value>)",
+        line: "rgb(var(--c-line) / <alpha-value>)",
+        "line-strong": "rgb(var(--c-line-strong) / <alpha-value>)",
       },
       borderRadius: {
         "af-sm": "0",
@@ -39,7 +52,7 @@ const config: Config = {
         "surface-top": "none",
         "surface-bottom": "none",
         "surface-depth": "none",
-        "focus-ring": "0 0 0 2px #fff, 0 0 0 4px #0a0a0a",
+        "focus-ring": "0 0 0 2px rgb(var(--c-surface)), 0 0 0 4px rgb(var(--c-ink))",
         "card-drop": "none",
       },
     },

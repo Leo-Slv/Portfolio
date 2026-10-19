@@ -1,119 +1,68 @@
 "use client";
 
-import { ArrowRight, ChevronLeft, ChevronRight, Github } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { ArrowRight, ChevronLeft, ChevronRight, Github, Lock } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "@/lib/i18n";
+import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/ui/reveal";
-
-type Featured = {
-  slug: string;
-  titleKey: string;
-  descKey: string;
-  tags: string[];
-  projectUrl?: string;
-  repositoryUrl?: string;
-};
-
-const PROJECTS: Featured[] = [
-  {
-    slug: "archflow",
-    titleKey: "PROJECTS.CARD_TITLE_5",
-    descKey: "PROJECTS.DESCRIPTION_5",
-    tags: ["ASP.NET", "Next.js", "PostgreSQL", "DDD"],
-    projectUrl: "https://arch-front-refactor.vercel.app/",
-    repositoryUrl: "https://github.com/orgs/ArchFlowPlatform/repositories",
-  },
-  {
-    slug: "ordercore",
-    titleKey: "PROJECTS.CARD_TITLE_13",
-    descKey: "PROJECTS.DESCRIPTION_13",
-    tags: [".NET 10", "PostgreSQL", "RabbitMQ", "Docker"],
-    repositoryUrl: "https://github.com/Leo-Slv/OrderCore",
-  },
-  {
-    slug: "coursecore",
-    titleKey: "PROJECTS.CARD_TITLE_10",
-    descKey: "PROJECTS.DESCRIPTION_10",
-    tags: [".NET 10", "ASP.NET Core", "PostgreSQL", "DDD"],
-    repositoryUrl: "https://github.com/Leo-Slv/CourseCore",
-  },
-  {
-    slug: "marfim",
-    titleKey: "PROJECTS.CARD_TITLE_12",
-    descKey: "PROJECTS.DESCRIPTION_12",
-    tags: ["Next.js", "React", "TypeScript", "Tailwind"],
-    projectUrl: "https://marfim-kappa.vercel.app/",
-    repositoryUrl: "https://github.com/Leo-Slv/Marfim",
-  },
-  {
-    slug: "plataforma-vdg",
-    titleKey: "PROJECTS.CARD_TITLE_11",
-    descKey: "PROJECTS.DESCRIPTION_11",
-    tags: ["Next.js", "TypeScript", "Platform", "Web"],
-    repositoryUrl: "https://github.com/Leo-Slv/plataforma-vdg",
-  },
-  {
-    slug: "quantum-crm",
-    titleKey: "PROJECTS.CARD_TITLE_9",
-    descKey: "PROJECTS.DESCRIPTION_9",
-    tags: ["Next.js", "NestJS", "PostgreSQL", "CRM"],
-    projectUrl: "https://abp3-sistema-gestao-leads-front.vercel.app/login",
-    repositoryUrl: "https://github.com/ErrorSquad-ABP/ABP3-Sistema-Gestao-Leads",
-  },
-  {
-    slug: "inbox-iq",
-    titleKey: "PROJECTS.CARD_TITLE_2",
-    descKey: "PROJECTS.DESCRIPTION_2",
-    tags: ["FastAPI", "OpenAI", "Next.js", "AWS"],
-    projectUrl: "https://inbox-iq-mauve.vercel.app/",
-    repositoryUrl: "https://github.com/Leo-Slv/InboxIQ",
-  },
-  {
-    slug: "pdv-web",
-    titleKey: "PROJECTS.CARD_TITLE_7",
-    descKey: "PROJECTS.DESCRIPTION_7",
-    tags: ["Web", "Dashboards", "Reports", "Performance"],
-    repositoryUrl: "https://github.com/Leo-Slv",
-  },
-  {
-    slug: "acti-case",
-    titleKey: "PROJECTS.CARD_TITLE_1",
-    descKey: "PROJECTS.DESCRIPTION_1",
-    tags: ["ASP.NET", "SQL Server", "Angular", "EF Core"],
-    repositoryUrl: "https://github.com/Leo-Slv/ACTi-case",
-  },
-  {
-    slug: "portfolio-pessoal",
-    titleKey: "PROJECTS.CARD_TITLE_3",
-    descKey: "PROJECTS.DESCRIPTION_3",
-    tags: ["Next.js", "TypeScript", "i18n", "UI"],
-    repositoryUrl: "https://github.com/Leo-Slv/Portfolio",
-  },
-  {
-    slug: "portal-limnologico",
-    titleKey: "PROJECTS.CARD_TITLE_6",
-    descKey: "PROJECTS.DESCRIPTION_6",
-    tags: ["Data", "Charts", "Reports", "Web"],
-    repositoryUrl: "https://github.com/ExceptionH4ndlers/ABP_2DSM",
-  },
-  {
-    slug: "gerenciamento-pedagogico",
-    titleKey: "PROJECTS.CARD_TITLE_4",
-    descKey: "PROJECTS.DESCRIPTION_4",
-    tags: ["Full stack", "Auth", "Admin", "Realtime"],
-    projectUrl: "https://gerenciamento-pedagogico.vercel.app/",
-    repositoryUrl: "https://github.com/ExceptionH4ndlers/ABP_2DSM",
-  },
-];
+import { ProjectModal } from "./ProjectModal";
+import { FILTERS, PROJECTS, matchesFilter, type Featured, type FilterId } from "./projects-data";
 
 const AUTO_SCROLL_SPEED = 28; // px per second
 const RESUME_DELAY_MS = 2500;
+const MIN_CARDS_FOR_LOOP = 4;
+
+function ProjectPreview({ project, title }: { project: Featured; title: string }) {
+  const [failed, setFailed] = useState(false);
+  const host = project.projectUrl ? new URL(project.projectUrl).host : null;
+
+  if (project.projectUrl && !failed) {
+    const previewSrc = `/previews/${project.slug}.png`;
+    return (
+      <div className="relative h-44 w-full overflow-hidden border-b border-line bg-page">
+        <div className="absolute inset-x-0 top-0 z-10 flex h-6 items-center gap-1.5 border-b border-line bg-surface/90 px-3">
+          <span className="h-1.5 w-1.5 rounded-full bg-line-strong" aria-hidden />
+          <span className="h-1.5 w-1.5 rounded-full bg-line-strong" aria-hidden />
+          <span className="h-1.5 w-1.5 rounded-full bg-line-strong" aria-hidden />
+          <span className="ml-2 truncate font-mono text-[0.6rem] text-muted">{host}</span>
+        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={previewSrc}
+          alt={title}
+          loading="lazy"
+          onError={() => setFailed(true)}
+          className="h-full w-full object-cover object-top pt-6 transition-transform duration-700 ease-out group-hover/preview:scale-105"
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className="flex h-44 w-full items-center justify-center gap-2 border-b border-line bg-page font-mono text-[0.65rem] text-muted"
+      aria-hidden
+    >
+      {["client", "API", "DB"].map((node, index) => (
+        <span key={node} className="flex items-center gap-2">
+          {index > 0 && <ArrowRight className="h-3 w-3" strokeWidth={1.75} />}
+          <span className="border border-ink bg-surface px-3 py-2 text-ink">{node}</span>
+        </span>
+      ))}
+    </div>
+  );
+}
 
 export function ProjectsSection() {
   const { t } = useTranslation();
   const trackRef = useRef<HTMLDivElement | null>(null);
   const pausedRef = useRef(false);
   const resumeTimerRef = useRef<number | undefined>(undefined);
+  const [filter, setFilter] = useState<FilterId>("all");
+  const [selected, setSelected] = useState<Featured | null>(null);
+
+  const visible = PROJECTS.filter((project) => matchesFilter(project, filter));
+  const loopEnabled = visible.length >= MIN_CARDS_FOR_LOOP;
 
   const getLoopWidth = (el: HTMLElement) => {
     const first = el.querySelector<HTMLElement>("[data-carousel-card]");
@@ -130,13 +79,18 @@ export function ProjectsSection() {
   };
 
   useEffect(() => {
+    trackRef.current?.scrollTo({ left: 0 });
+  }, [filter]);
+
+  useEffect(() => {
     const el = trackRef.current;
-    if (!el) return;
+    if (!el || !loopEnabled) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     let frame = 0;
     let last = performance.now();
     let position = el.scrollLeft;
+    let running = false;
     let inView = true;
     let hovering = false;
 
@@ -151,13 +105,15 @@ export function ProjectsSection() {
 
       if (inView && !pausedRef.current && !hovering) {
         const loop = getLoopWidth(el);
-        // resync in case the user scrolled or the layout changed
-        if (Math.abs(el.scrollLeft - position) > 2) position = el.scrollLeft;
+        // browsers snap scrollLeft to device pixels, so keep our own sub-pixel position
+        // and only re-read the real one when resuming after the user (or layout) moved it
+        if (!running) position = el.scrollLeft;
+        running = true;
         position += AUTO_SCROLL_SPEED * dt;
         if (loop > 0 && position >= loop) position -= loop;
         el.scrollLeft = position;
       } else {
-        position = el.scrollLeft;
+        running = false;
       }
       frame = requestAnimationFrame(tick);
     };
@@ -196,7 +152,7 @@ export function ProjectsSection() {
       el.removeEventListener("focusin", onFocusIn);
       el.removeEventListener("focusout", onFocusOut);
     };
-  }, []);
+  }, [loopEnabled]);
 
   const scrollByCards = (dir: -1 | 1) => {
     const el = trackRef.current;
@@ -219,6 +175,7 @@ export function ProjectsSection() {
 
   const renderCard = (project: Featured, clone: boolean) => {
     const projectTitle = t(project.titleKey);
+    const open = () => setSelected(project);
 
     return (
       <article
@@ -227,8 +184,24 @@ export function ProjectsSection() {
         data-carousel-card
         className="hover-lift flex flex-col border border-line bg-page shrink-0 basis-full md:basis-[calc(50%-1.25rem)] lg:basis-[calc(33.333%-1.666rem)]"
       >
+        <button
+          type="button"
+          onClick={open}
+          aria-label={`${t("PROJECTS.DETAILS")}: ${projectTitle}`}
+          className="group/preview block w-full text-left focus-ring"
+        >
+          <ProjectPreview project={project} title={projectTitle} />
+        </button>
         <div className="p-6 flex flex-col flex-1 gap-4">
-          <h3 className="text-lg font-bold text-ink tracking-tight">{projectTitle}</h3>
+          <div className="flex items-center justify-between gap-3">
+            <h3 className="text-lg font-bold text-ink tracking-tight">{projectTitle}</h3>
+            {project.projectUrl && (
+              <span className="inline-flex shrink-0 items-center gap-1.5 border border-ink px-2 py-0.5 text-[0.6rem] font-semibold uppercase tracking-wide text-ink">
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-ink" aria-hidden />
+                {t("PROJECTS.LIVE_BADGE")}
+              </span>
+            )}
+          </div>
           <p className="text-sm leading-relaxed text-muted flex-1">{t(project.descKey)}</p>
           <div className="flex flex-wrap gap-2">
             {project.tags.map((tag) => (
@@ -240,8 +213,15 @@ export function ProjectsSection() {
               </span>
             ))}
           </div>
-          {(project.repositoryUrl || project.projectUrl) && (
-            <div className="flex flex-wrap justify-end gap-x-5 gap-y-2 pt-2">
+          <div className="flex flex-wrap items-center justify-between gap-x-5 gap-y-2 pt-2">
+            <button
+              type="button"
+              onClick={open}
+              className="text-sm font-semibold text-ink underline underline-offset-4 focus-ring"
+            >
+              {t("PROJECTS.DETAILS")}
+            </button>
+            <div className="flex flex-wrap justify-end gap-x-5 gap-y-2">
               {project.repositoryUrl && (
                 <a
                   href={project.repositoryUrl}
@@ -252,6 +232,12 @@ export function ProjectsSection() {
                   {t("PROJECTS.VIEW_REPOSITORY")}
                   <Github className="h-3.5 w-3.5 shrink-0" strokeWidth={1.75} aria-hidden />
                 </a>
+              )}
+              {project.privateRepo && (
+                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-muted">
+                  <Lock className="h-3.5 w-3.5 shrink-0" strokeWidth={1.75} aria-hidden />
+                  {t("PROJECTS.PRIVATE_REPO")}
+                </span>
               )}
               {project.projectUrl && (
                 <a
@@ -265,7 +251,7 @@ export function ProjectsSection() {
                 </a>
               )}
             </div>
-          )}
+          </div>
         </div>
       </article>
     );
@@ -277,6 +263,28 @@ export function ProjectsSection() {
         <Reveal className="section-title-row">
           <span className="section-title-text">{t("PROJECTS.FEATURED_LABEL")}</span>
           <span className="section-title-line" />
+        </Reveal>
+
+        <Reveal delay={100} className="-mt-4 mb-8 flex flex-wrap gap-2">
+          {FILTERS.map(({ id, labelKey }) => {
+            const active = filter === id;
+            return (
+              <button
+                key={id}
+                type="button"
+                onClick={() => setFilter(id)}
+                aria-pressed={active}
+                className={cn(
+                  "h-10 border px-4 text-xs font-semibold uppercase tracking-wide transition-colors focus-ring",
+                  active
+                    ? "border-ink bg-ink text-page"
+                    : "border-line bg-page text-ink hover:border-ink"
+                )}
+              >
+                {t(labelKey)}
+              </button>
+            );
+          })}
         </Reveal>
 
         <Reveal delay={150} className="relative mx-auto mt-10 w-[calc(100%-4rem)] max-w-6xl sm:w-[calc(100%-5.5rem)]">
@@ -304,11 +312,13 @@ export function ProjectsSection() {
             className="flex gap-8 overflow-x-auto py-2 [scrollbar-width:none] [-ms-overflow-style:none] lg:gap-10 [&::-webkit-scrollbar]:hidden"
             aria-label="Projects carousel"
           >
-            {PROJECTS.map((project) => renderCard(project, false))}
-            {PROJECTS.map((project) => renderCard(project, true))}
+            {visible.map((project) => renderCard(project, false))}
+            {loopEnabled && visible.map((project) => renderCard(project, true))}
           </div>
         </Reveal>
       </div>
+
+      {selected && <ProjectModal project={selected} onClose={() => setSelected(null)} />}
     </section>
   );
 }

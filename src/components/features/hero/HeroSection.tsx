@@ -3,9 +3,24 @@
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "@/lib/i18n";
+import { useCountUp } from "@/lib/use-count-up";
+import { PROJECTS } from "@/components/features/projects/projects-data";
+import { SKILLS } from "@/components/features/about/AboutSection";
 
 const iconProps = { className: "h-4 w-4 shrink-0 text-ink", strokeWidth: 1.75 } as const;
 const TYPE_SPEED_MS = 18;
+const MAX_TILT_DEG = 7;
+
+function Counter({ value, label }: { value: number; label: string }) {
+  const [ref, display] = useCountUp<HTMLDivElement>(value);
+
+  return (
+    <div ref={ref} className="border-r border-line px-4 py-4 last:border-r-0 sm:px-6">
+      <p className="text-3xl font-bold tracking-tight tabular-nums text-ink">{display}</p>
+      <p className="mt-1 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-muted">{label}</p>
+    </div>
+  );
+}
 
 type TerminalSegment = {
   text: string;
@@ -39,6 +54,7 @@ function renderTypedSegments(segments: TerminalSegment[], visibleChars: number) 
 export function HeroSection() {
   const { t } = useTranslation();
   const terminalBodyRef = useRef<HTMLDivElement | null>(null);
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const terminalLines = useMemo<TerminalLine[]>(
     () => [
       {
@@ -206,10 +222,10 @@ export function HeroSection() {
               <div className="flex flex-wrap gap-4 items-center">
                 <a
                   href="#projects-section"
-                  className="inline-flex items-center gap-2 rounded-sm border border-ink bg-ink px-6 py-3 text-sm font-semibold text-white focus-ring"
+                  className="inline-flex items-center gap-2 rounded-sm border border-ink bg-ink px-6 py-3 text-sm font-semibold text-page focus-ring"
                 >
                   {t("HOME.VIEW_PROJECTS")}
-                  <ArrowRight className="h-[18px] w-[18px] shrink-0 text-white" strokeWidth={1.75} />
+                  <ArrowRight className="h-[18px] w-[18px] shrink-0 text-page" strokeWidth={1.75} />
                 </a>
                 <a
                   href="mailto:leonardo1692004@gmail.com"
@@ -250,16 +266,27 @@ export function HeroSection() {
             </div>
 
             <div className="flex justify-center lg:justify-end items-center order-2 w-full min-w-0">
-              <div className="relative w-full max-w-2xl aspect-[4/3] border border-line bg-page shrink-0 overflow-hidden">
+              <div
+                className="relative w-full max-w-2xl aspect-[4/3] border border-line bg-page shrink-0 overflow-hidden"
+                onPointerMove={(e) => {
+                  if (e.pointerType !== "mouse") return;
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  setTilt({
+                    x: ((e.clientX - rect.left) / rect.width - 0.5) * 2,
+                    y: ((e.clientY - rect.top) / rect.height - 0.5) * 2,
+                  });
+                }}
+                onPointerLeave={() => setTilt({ x: 0, y: 0 })}
+              >
                 <div
-                  className="relative flex h-full w-full items-center justify-center overflow-hidden bg-[linear-gradient(rgba(255,255,255,0.52),rgba(255,255,255,0.52)),repeating-linear-gradient(90deg,transparent_0,transparent_74px,rgba(20,20,20,0.028)_75px)] p-4 sm:p-6 lg:p-8"
+                  className="relative flex h-full w-full items-center justify-center overflow-hidden bg-[linear-gradient(rgb(var(--c-surface)/0.52),rgb(var(--c-surface)/0.52)),repeating-linear-gradient(90deg,transparent_0,transparent_74px,rgba(20,20,20,0.028)_75px)] p-4 sm:p-6 lg:p-8"
                   aria-label={t("HOME.TERMINAL_ARIA_LABEL")}
                 >
                   <span
                     className="pointer-events-none absolute right-[-18px] top-[47%] h-20 w-20 opacity-40 [background-image:radial-gradient(circle,#595959_1.45px,transparent_1.55px)] [background-size:16px_16px]"
                     aria-hidden
                   />
-                  <div className="relative z-[1] flex h-[calc(100%-1.5rem)] w-full flex-col border border-[#1b1b1b] bg-[#111110] text-[#ecece8] shadow-[12px_12px_0_#e4e4e0] sm:shadow-[18px_18px_0_#e4e4e0]">
+                  <div style={{ transform: `perspective(900px) rotateY(${tilt.x * MAX_TILT_DEG}deg) rotateX(${-tilt.y * MAX_TILT_DEG}deg)`, transition: tilt.x === 0 && tilt.y === 0 ? "transform 0.5s ease-out" : "transform 0.12s ease-out" }} className="relative z-[1] flex h-[calc(100%-1.5rem)] w-full flex-col border border-[#1b1b1b] bg-[#111110] text-[#ecece8] shadow-[12px_12px_0_var(--term-shadow)] sm:shadow-[18px_18px_0_var(--term-shadow)]">
                     <div className="flex h-10 shrink-0 items-center justify-between border-b border-[#3a3a37] bg-[#171716] px-3 sm:h-12 sm:px-4">
                       <span className="font-mono text-[0.58rem] font-medium uppercase tracking-[0.08em] text-[#c8c8c4] sm:text-xs">
                         leonardo - portfolio
@@ -303,6 +330,12 @@ export function HeroSection() {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="grid grid-cols-3 border border-line bg-surface mb-6 md:mb-10">
+          <Counter value={PROJECTS.length} label={t("HOME.STAT_PROJECTS")} />
+          <Counter value={SKILLS.length} label={t("HOME.STAT_TECH")} />
+          <Counter value={PROJECTS.filter((p) => p.projectUrl).length} label={t("HOME.STAT_LIVE")} />
         </div>
       </div>
     </section>
