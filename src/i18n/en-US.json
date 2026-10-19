@@ -84,6 +84,8 @@
     "CARD_TITLE_9": "Quantum CRM",
     "CARD_TITLE_10": "CourseCore",
     "CARD_TITLE_11": "VDG Platform",
+    "CARD_TITLE_12": "Marfim",
+    "CARD_TITLE_13": "OrderCore",
     "MINI_1": "Partner registration & management (full stack)",
     "MINI_2": "AI email triage and automation",
     "MINI_3": "Modern UI, responsive, multi-language",
@@ -102,7 +104,9 @@
     "DESCRIPTION_8": "Frontend for the ArchFlow platform, built with Next.js, TypeScript, Shadcn UI, and Axios. Agile management platform with Scrum and Kanban.",
     "DESCRIPTION_9": "Lead management system for sales teams, focused on opportunity traceability and commercial productivity.",
     "DESCRIPTION_10": "Modular white-label backend for a course platform, covering users, permissions, courses, lessons, videos, progress, audit logs, and JWT authentication.",
-    "DESCRIPTION_11": "Web platform for hosting courses and video lessons, focused on content organization, a responsive experience, and continuous feature evolution."
+    "DESCRIPTION_11": "Web platform for hosting courses and video lessons, focused on content organization, a responsive experience, and continuous feature evolution.",
+    "DESCRIPTION_12": "E-commerce frontend with a customer storefront (catalog, cart, checkout, account) and an admin panel for orders, products, inventory, payments, and audit, consuming the OrderCore API.",
+    "DESCRIPTION_13": ".NET order-processing API covering inventory reservation under concurrency, idempotent checkout, and Stripe payments, with RabbitMQ, SignalR, OpenTelemetry, and Testcontainers-based tests."
   },
   "EXPERIENCE_SECTION": {
     "LABEL": "Experience / education",
