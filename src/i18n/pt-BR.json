@@ -74,11 +74,12 @@
   "GITHUB": {
     "SECTION_LABEL": "Atividade no GitHub",
     "REPOS": "Repositórios públicos",
-    "RECENT_COMMITS": "Commits recentes",
-    "STARS": "Estrelas recebidas",
     "LANGUAGES": "Linguagens mais usadas",
     "RECENT_ACTIVITY": "Atividade recente",
-    "SOURCE_NOTE": "Dados ao vivo da API pública do GitHub."
+    "SOURCE_NOTE": "Dados ao vivo do GitHub, atualizados a cada hora.",
+    "TOTAL_CONTRIBUTIONS": "Contribuições totais",
+    "LONGEST_STREAK": "Maior sequência (dias)",
+    "PRESENT": "atual"
   },
   "PROJECTS": {
     "PRIVATE_REPO": "Repositório privado (empresa)",

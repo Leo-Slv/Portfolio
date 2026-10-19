@@ -1,13 +1,13 @@
 "use client";
 
-import { ArrowUpRight, GitCommitHorizontal, Star } from "lucide-react";
+import { ArrowUpRight, GitCommitHorizontal, Info } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTranslation } from "@/lib/i18n";
 import { Reveal } from "@/components/ui/reveal";
 import { useCountUp } from "@/lib/use-count-up";
 
 const USERNAME = "Leo-Slv";
-const CACHE_KEY = "portfolio-github-stats";
+const CACHE_KEY = "portfolio-github-stats-v2";
 const CACHE_TTL_MS = 60 * 60 * 1000;
 // Clearly separated tones (ink at decreasing strength) so adjacent languages never look alike.
 const LANGUAGE_TONES = [1, 0.55, 0.32, 0.18, 0.1];
@@ -15,37 +15,43 @@ const LANGUAGE_TONES = [1, 0.55, 0.32, 0.18, 0.1];
 type GithubRepo = {
   name: string;
   html_url: string;
-  stargazers_count: number;
   language: string | null;
   pushed_at: string;
   fork: boolean;
 };
 
-type GithubEvent = {
-  type: string;
-  created_at: string;
-  payload?: { commits?: unknown[]; size?: number };
+type Contributions = {
+  total: number;
+  since: string;
+  longestStreak: { days: number; start: string; end: string };
 };
 
 type Stats = {
   publicRepos: number;
-  stars: number;
-  recentCommits: number;
+  contributions: Contributions | null;
   languages: { name: string; count: number }[];
   recent: { name: string; url: string; pushedAt: string }[];
 };
 
+async function fetchContributions(): Promise<Contributions | null> {
+  try {
+    const res = await fetch("/api/github-contributions");
+    return res.ok ? ((await res.json()) as Contributions) : null;
+  } catch {
+    return null;
+  }
+}
+
 async function fetchStats(): Promise<Stats> {
-  const [userRes, reposRes, eventsRes] = await Promise.all([
+  const [userRes, reposRes, contributions] = await Promise.all([
     fetch(`https://api.github.com/users/${USERNAME}`),
     fetch(`https://api.github.com/users/${USERNAME}/repos?per_page=100&sort=pushed`),
-    fetch(`https://api.github.com/users/${USERNAME}/events/public?per_page=100`),
+    fetchContributions(),
   ]);
   if (!userRes.ok || !reposRes.ok) throw new Error("github request failed");
 
   const user = (await userRes.json()) as { public_repos: number };
   const repos = ((await reposRes.json()) as GithubRepo[]).filter((repo) => !repo.fork);
-  const events = eventsRes.ok ? ((await eventsRes.json()) as GithubEvent[]) : [];
 
   const languageCount = new Map<string, number>();
   for (const repo of repos) {
@@ -54,10 +60,7 @@ async function fetchStats(): Promise<Stats> {
 
   return {
     publicRepos: user.public_repos,
-    stars: repos.reduce((sum, repo) => sum + repo.stargazers_count, 0),
-    recentCommits: events
-      .filter((event) => event.type === "PushEvent")
-      .reduce((sum, event) => sum + (event.payload?.size ?? event.payload?.commits?.length ?? 0), 0),
+    contributions,
     languages: [...languageCount.entries()]
       .map(([name, count]) => ({ name, count }))
       .sort((a, b) => b.count - a.count)
@@ -89,14 +92,21 @@ function saveCache(data: Stats) {
   }
 }
 
-function StatCard({ value, label }: { value: number; label: string }) {
+function StatCard({ value, label, caption }: { value: number; label: string; caption?: string }) {
   const [ref, display] = useCountUp<HTMLDivElement>(value);
 
   return (
     <div ref={ref} className="border border-line bg-surface p-6">
-      <p className="text-3xl font-bold tracking-tight tabular-nums text-ink">{display}</p>
+      <p className="text-3xl font-bold tracking-tight tabular-nums text-ink">{display.toLocaleString()}</p>
       <p className="mt-1 text-xs font-semibold uppercase tracking-[0.1em] text-muted">{label}</p>
+      {caption && <p className="mt-2 text-xs text-muted">{caption}</p>}
     </div>
+  );
+}
+
+function formatDate(iso: string, locale: string) {
+  return new Intl.DateTimeFormat(locale, { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }).format(
+    new Date(iso)
   );
 }
 
@@ -152,10 +162,25 @@ export function GithubSection() {
         <Reveal delay={100}>
           {stats ? (
             <div className="grid gap-6 lg:grid-cols-[1fr_1.4fr]">
-              <div className="grid grid-cols-3 gap-4 lg:grid-cols-1">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-1">
                 <StatCard value={stats.publicRepos} label={t("GITHUB.REPOS")} />
-                <StatCard value={stats.recentCommits} label={t("GITHUB.RECENT_COMMITS")} />
-                <StatCard value={stats.stars} label={t("GITHUB.STARS")} />
+                {stats.contributions && (
+                  <>
+                    <StatCard
+                      value={stats.contributions.total}
+                      label={t("GITHUB.TOTAL_CONTRIBUTIONS")}
+                      caption={`${formatDate(stats.contributions.since, locale)} – ${t("GITHUB.PRESENT")}`}
+                    />
+                    <StatCard
+                      value={stats.contributions.longestStreak.days}
+                      label={t("GITHUB.LONGEST_STREAK")}
+                      caption={`${formatDate(stats.contributions.longestStreak.start, locale)} – ${formatDate(
+                        stats.contributions.longestStreak.end,
+                        locale
+                      )}`}
+                    />
+                  </>
+                )}
               </div>
 
               <div className="flex flex-col gap-6">
@@ -230,7 +255,7 @@ export function GithubSection() {
         </Reveal>
 
         <p className="mt-6 flex items-center gap-1.5 text-xs text-muted">
-          <Star className="h-3 w-3" strokeWidth={1.75} aria-hidden />
+          <Info className="h-3 w-3" strokeWidth={1.75} aria-hidden />
           {t("GITHUB.SOURCE_NOTE")}
         </p>
       </div>
