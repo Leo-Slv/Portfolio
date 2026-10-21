@@ -10,6 +10,8 @@ export type Featured = {
   repositoryUrl?: string;
   /** Source is private (e.g. company code): show a label instead of a repository link. */
   privateRepo?: boolean;
+  /** Slug used for the problem/decision/result copy (PROJECTS.CASE_<SLUG>_*). */
+  caseKey?: string;
 };
 
 export const FILTERS: { id: FilterId; labelKey: string }[] = [
@@ -23,6 +25,7 @@ export const FILTERS: { id: FilterId; labelKey: string }[] = [
 export const PROJECTS: Featured[] = [
   {
     slug: "archflow",
+    caseKey: "ARCHFLOW",
     titleKey: "PROJECTS.CARD_TITLE_5",
     descKey: "PROJECTS.DESCRIPTION_5",
     tags: ["ASP.NET", "Next.js", "PostgreSQL", "DDD"],
@@ -32,6 +35,7 @@ export const PROJECTS: Featured[] = [
   },
   {
     slug: "ordercore",
+    caseKey: "ORDERCORE",
     titleKey: "PROJECTS.CARD_TITLE_13",
     descKey: "PROJECTS.DESCRIPTION_13",
     tags: [".NET 10", "PostgreSQL", "RabbitMQ", "Docker"],
@@ -40,6 +44,7 @@ export const PROJECTS: Featured[] = [
   },
   {
     slug: "coursecore",
+    caseKey: "COURSECORE",
     titleKey: "PROJECTS.CARD_TITLE_10",
     descKey: "PROJECTS.DESCRIPTION_10",
     tags: [".NET 10", "ASP.NET Core", "PostgreSQL", "DDD"],
@@ -48,6 +53,7 @@ export const PROJECTS: Featured[] = [
   },
   {
     slug: "marfim",
+    caseKey: "MARFIM",
     titleKey: "PROJECTS.CARD_TITLE_12",
     descKey: "PROJECTS.DESCRIPTION_12",
     tags: ["Next.js", "React", "TypeScript", "Tailwind"],
@@ -66,6 +72,7 @@ export const PROJECTS: Featured[] = [
   },
   {
     slug: "quantum-crm",
+    caseKey: "QUANTUM_CRM",
     titleKey: "PROJECTS.CARD_TITLE_9",
     descKey: "PROJECTS.DESCRIPTION_9",
     tags: ["Next.js", "NestJS", "PostgreSQL", "CRM"],
@@ -84,6 +91,7 @@ export const PROJECTS: Featured[] = [
   },
   {
     slug: "pdv-web",
+    caseKey: "PDV_WEB",
     titleKey: "PROJECTS.CARD_TITLE_7",
     descKey: "PROJECTS.DESCRIPTION_7",
     tags: ["Web", "Dashboards", "Reports", "Performance"],

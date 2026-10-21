@@ -87,6 +87,18 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           <div className="flex min-w-0 flex-col gap-5">
             <p className="text-sm leading-relaxed text-muted">{t(project.descKey)}</p>
+            {project.caseKey && (
+              <dl className="flex flex-col gap-3 border-l border-line pl-4 text-sm leading-relaxed">
+                {(["PROBLEM", "DECISION", "RESULT"] as const).map((part) => (
+                  <div key={part}>
+                    <dt className="text-[0.65rem] font-semibold uppercase tracking-wide text-ink">
+                      {t(`PROJECTS.CASE_${part}`)}
+                    </dt>
+                    <dd className="text-muted">{t(`PROJECTS.CASE_${project.caseKey}_${part}`)}</dd>
+                  </div>
+                ))}
+              </dl>
+            )}
             <div className="flex flex-wrap gap-2">
               {project.tags.map((tag) => (
                 <span
