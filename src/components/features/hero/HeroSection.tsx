@@ -80,11 +80,9 @@ export function HeroSection() {
       {
         segments: [
           { text: t("HOME.TERMINAL_BACKEND_LABEL").padEnd(14, " "), className: "text-[#f0f0ec]" },
-          { text: "ASP.NET Core ", className: "text-[#b7b7b1]" },
+          { text: "C# ", className: "text-[#b7b7b1]" },
           { text: "/ ", className: "text-[#62625e]" },
-          { text: "NestJS ", className: "text-[#b7b7b1]" },
-          { text: "/ ", className: "text-[#62625e]" },
-          { text: "FastAPI", className: "text-[#b7b7b1]" },
+          { text: "ASP.NET Core", className: "text-[#b7b7b1]" },
         ],
       },
       {
@@ -92,7 +90,9 @@ export function HeroSection() {
           { text: t("HOME.TERMINAL_FRONTEND_LABEL").padEnd(14, " "), className: "text-[#f0f0ec]" },
           { text: "Next.js ", className: "text-[#b7b7b1]" },
           { text: "/ ", className: "text-[#62625e]" },
-          { text: "TypeScript", className: "text-[#b7b7b1]" },
+          { text: "TypeScript ", className: "text-[#b7b7b1]" },
+          { text: "/ ", className: "text-[#62625e]" },
+          { text: "Angular", className: "text-[#b7b7b1]" },
         ],
       },
       {
