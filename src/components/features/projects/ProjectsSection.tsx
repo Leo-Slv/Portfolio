@@ -6,6 +6,7 @@ import { useTranslation } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/ui/reveal";
 import { ArchitectureDiagram } from "./ArchitectureDiagram";
+import { ProjectBadges } from "./ProjectBadges";
 import { ProjectModal } from "./ProjectModal";
 import { FILTERS, PROJECTS, matchesFilter, type Featured, type FilterId } from "./projects-data";
 
@@ -221,6 +222,7 @@ export function ProjectsSection() {
             )}
           </div>
           <p className="text-sm leading-relaxed text-muted flex-1">{t(project.descKey)}</p>
+          {project.badges && <ProjectBadges badges={project.badges} />}
           <div className="flex flex-wrap gap-2">
             {project.tags.map((tag) => (
               <span

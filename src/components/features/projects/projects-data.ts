@@ -1,5 +1,8 @@
 export type FilterId = "all" | "dotnet" | "nextjs" | "ai" | "live";
 
+/** Engineering-practice badges; each one must be backed by the project's repository. */
+export type BadgeId = "ci" | "cd" | "docker" | "security" | "tests" | "testsLayers";
+
 /** Stack labels for the architecture diagram shown when a project has no preview image. */
 export type Diagram = {
   client: string;
@@ -10,6 +13,7 @@ export type Diagram = {
 };
 
 export type Featured = {
+  badges?: BadgeId[];
   diagram?: Diagram;
   slug: string;
   titleKey: string;
@@ -50,6 +54,7 @@ export const PROJECTS: Featured[] = [
     descKey: "PROJECTS.DESCRIPTION_13",
     tags: [".NET 10", "PostgreSQL", "RabbitMQ", "Docker"],
     groups: ["dotnet"],
+    badges: ["ci", "testsLayers", "docker"],
     diagram: { client: "SignalR", api: ".NET 10", db: "PostgreSQL", side: "RabbitMQ · Stripe" },
     repositoryUrl: "https://github.com/Leo-Slv/OrderCore",
   },
@@ -60,6 +65,7 @@ export const PROJECTS: Featured[] = [
     descKey: "PROJECTS.DESCRIPTION_10",
     tags: [".NET 10", "ASP.NET Core", "PostgreSQL", "DDD"],
     groups: ["dotnet"],
+    badges: ["ci", "cd", "security"],
     diagram: { client: "Any front", api: "ASP.NET Core", db: "PostgreSQL", side: "JWT · RBAC" },
     repositoryUrl: "https://github.com/Leo-Slv/CourseCore",
   },
@@ -70,6 +76,7 @@ export const PROJECTS: Featured[] = [
     descKey: "PROJECTS.DESCRIPTION_12",
     tags: ["Next.js", "React", "TypeScript", "Tailwind"],
     groups: ["nextjs"],
+    badges: ["tests"],
     projectUrl: "https://marfim-kappa.vercel.app/",
     repositoryUrl: "https://github.com/Leo-Slv/Marfim",
   },
@@ -79,6 +86,7 @@ export const PROJECTS: Featured[] = [
     descKey: "PROJECTS.DESCRIPTION_11",
     tags: ["Next.js", "TypeScript", "Platform", "Web"],
     groups: ["nextjs"],
+    badges: ["tests"],
     projectUrl: "https://plataforma-vdg.vercel.app/",
     repositoryUrl: "https://github.com/Leo-Slv/plataforma-vdg",
   },

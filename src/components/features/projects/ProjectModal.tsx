@@ -3,6 +3,7 @@
 import { ExternalLink, Github, Lock, X } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { useTranslation } from "@/lib/i18n";
+import { ProjectBadgeDetails } from "./ProjectBadges";
 import type { Featured } from "./projects-data";
 
 type ProjectModalProps = {
@@ -99,6 +100,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 ))}
               </dl>
             )}
+            {project.badges && <ProjectBadgeDetails badges={project.badges} />}
             <div className="flex flex-wrap gap-2">
               {project.tags.map((tag) => (
                 <span

@@ -152,7 +152,20 @@
     "CASE_QUANTUM_CRM_RESULT": "Sistema de gestão de leads entregue no projeto da FATEC Jacareí.",
     "CASE_PROBLEM": "Problema",
     "CASE_DECISION": "Decisão",
-    "CASE_RESULT": "Resultado"
+    "CASE_RESULT": "Resultado",
+    "BADGES_LABEL": "Práticas de engenharia",
+    "BADGE_CI": "CI",
+    "BADGE_CI_DESC": "Pipeline no GitHub Actions que compila e roda os testes a cada push.",
+    "BADGE_CD": "CD",
+    "BADGE_CD_DESC": "Publica a imagem Docker no GHCR e aplica as migrations do banco automaticamente.",
+    "BADGE_DOCKER": "Docker",
+    "BADGE_DOCKER_DESC": "Dockerfile e docker-compose para subir a API e suas dependências.",
+    "BADGE_SECURITY": "Segurança",
+    "BADGE_SECURITY_DESC": "Varredura de segredos com Gitleaks e verificação de pacotes vulneráveis no pipeline.",
+    "BADGE_TESTS": "Testes",
+    "BADGE_TESTS_DESC": "Testes automatizados executados no pipeline do repositório.",
+    "BADGE_TESTS_LAYERS": "Testes em 3 camadas",
+    "BADGE_TESTS_LAYERS_DESC": "Testes unitários, de integração (Testcontainers) e de arquitetura."
   },
   "EXPERIENCE_SECTION": {
     "LABEL": "Experiência / educação",
