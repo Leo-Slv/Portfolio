@@ -1,6 +1,16 @@
 export type FilterId = "all" | "dotnet" | "nextjs" | "ai" | "live";
 
+/** Stack labels for the architecture diagram shown when a project has no preview image. */
+export type Diagram = {
+  client: string;
+  api: string;
+  db: string;
+  /** Optional broker/external service hanging off the API. */
+  side?: string;
+};
+
 export type Featured = {
+  diagram?: Diagram;
   slug: string;
   titleKey: string;
   descKey: string;
@@ -40,6 +50,7 @@ export const PROJECTS: Featured[] = [
     descKey: "PROJECTS.DESCRIPTION_13",
     tags: [".NET 10", "PostgreSQL", "RabbitMQ", "Docker"],
     groups: ["dotnet"],
+    diagram: { client: "SignalR", api: ".NET 10", db: "PostgreSQL", side: "RabbitMQ · Stripe" },
     repositoryUrl: "https://github.com/Leo-Slv/OrderCore",
   },
   {
@@ -49,6 +60,7 @@ export const PROJECTS: Featured[] = [
     descKey: "PROJECTS.DESCRIPTION_10",
     tags: [".NET 10", "ASP.NET Core", "PostgreSQL", "DDD"],
     groups: ["dotnet"],
+    diagram: { client: "Any front", api: "ASP.NET Core", db: "PostgreSQL", side: "JWT · RBAC" },
     repositoryUrl: "https://github.com/Leo-Slv/CourseCore",
   },
   {
@@ -105,6 +117,7 @@ export const PROJECTS: Featured[] = [
     descKey: "PROJECTS.DESCRIPTION_1",
     tags: ["ASP.NET", "SQL Server", "Angular", "EF Core"],
     groups: ["dotnet"],
+    diagram: { client: "Angular", api: "ASP.NET", db: "SQL Server", side: "EF Core" },
     repositoryUrl: "https://github.com/Leo-Slv/ACTi-case",
   },
   {
@@ -115,14 +128,6 @@ export const PROJECTS: Featured[] = [
     groups: ["nextjs"],
     projectUrl: "https://leonardo-irineu-dev.vercel.app/",
     repositoryUrl: "https://github.com/Leo-Slv/Portfolio",
-  },
-  {
-    slug: "portal-limnologico",
-    titleKey: "PROJECTS.CARD_TITLE_6",
-    descKey: "PROJECTS.DESCRIPTION_6",
-    tags: ["Data", "Charts", "Reports", "Web"],
-    groups: [],
-    repositoryUrl: "https://github.com/ExceptionH4ndlers/ABP_2DSM",
   },
   {
     slug: "gerenciamento-pedagogico",

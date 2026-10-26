@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/ui/reveal";
+import { ArchitectureDiagram } from "./ArchitectureDiagram";
 import { ProjectModal } from "./ProjectModal";
 import { FILTERS, PROJECTS, matchesFilter, type Featured, type FilterId } from "./projects-data";
 
@@ -38,19 +39,7 @@ function ProjectPreview({ project, title }: { project: Featured; title: string }
     );
   }
 
-  return (
-    <div
-      className="flex h-44 w-full items-center justify-center gap-2 border-b border-line bg-page font-mono text-[0.65rem] text-muted"
-      aria-hidden
-    >
-      {["client", "API", "DB"].map((node, index) => (
-        <span key={node} className="flex items-center gap-2">
-          {index > 0 && <ArrowRight className="h-3 w-3" strokeWidth={1.75} />}
-          <span className="border border-ink bg-surface px-3 py-2 text-ink">{node}</span>
-        </span>
-      ))}
-    </div>
-  );
+  return <ArchitectureDiagram diagram={project.diagram ?? { client: "Web", api: "API", db: "Database" }} />;
 }
 
 export function ProjectsSection() {
