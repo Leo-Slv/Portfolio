@@ -97,6 +97,7 @@ export const PROJECTS: Featured[] = [
     descKey: "PROJECTS.DESCRIPTION_9",
     tags: ["Next.js", "NestJS", "PostgreSQL", "CRM"],
     groups: ["nextjs"],
+    badges: ["ci", "tests"],
     projectUrl: "https://abp3-sistema-gestao-leads-front.vercel.app/login",
     repositoryUrl: "https://github.com/ErrorSquad-ABP/ABP3-Sistema-Gestao-Leads",
   },
