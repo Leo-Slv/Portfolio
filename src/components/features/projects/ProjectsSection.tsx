@@ -71,6 +71,35 @@ export function ProjectsSection() {
     trackRef.current?.scrollTo({ left: 0 });
   }, [filter]);
 
+  // The cloned set is inert, so never let the user rest on it: once scrolling settles past the
+  // original set, jump back by one loop width (the clones are identical, so it is seamless).
+  useEffect(() => {
+    const el = trackRef.current;
+    if (!el || !loopEnabled) return;
+
+    let timer: number | undefined;
+    const normalize = () => {
+      const loop = getLoopWidth(el);
+      if (loop > 0 && el.scrollLeft >= loop) {
+        el.style.scrollBehavior = "auto";
+        el.scrollLeft -= loop;
+        el.style.scrollBehavior = "";
+      }
+    };
+    const onScroll = () => {
+      window.clearTimeout(timer);
+      timer = window.setTimeout(normalize, 150);
+    };
+
+    el.addEventListener("scroll", onScroll, { passive: true });
+    el.addEventListener("scrollend", normalize);
+    return () => {
+      window.clearTimeout(timer);
+      el.removeEventListener("scroll", onScroll);
+      el.removeEventListener("scrollend", normalize);
+    };
+  }, [loopEnabled, filter]);
+
   useEffect(() => {
     const el = trackRef.current;
     if (!el || !loopEnabled) return;
