@@ -155,7 +155,7 @@
     "CASE_RESULT": "Resultado",
     "BADGES_LABEL": "Práticas de engenharia",
     "BADGE_CI": "CI",
-    "BADGE_CI_DESC": "Pipeline no GitHub Actions que compila e roda os testes a cada push.",
+    "BADGE_CI_DESC": "Pipeline no GitHub Actions que valida o código (build, lint e verificações de qualidade) a cada push ou PR.",
     "BADGE_CD": "CD",
     "BADGE_CD_DESC": "Publica a imagem Docker no GHCR e aplica as migrations do banco automaticamente.",
     "BADGE_DOCKER": "Docker",
@@ -163,7 +163,7 @@
     "BADGE_SECURITY": "Segurança",
     "BADGE_SECURITY_DESC": "Varredura de segredos com Gitleaks e verificação de pacotes vulneráveis no pipeline.",
     "BADGE_TESTS": "Testes",
-    "BADGE_TESTS_DESC": "Testes automatizados executados no pipeline do repositório.",
+    "BADGE_TESTS_DESC": "Suíte de testes automatizados no repositório.",
     "BADGE_TESTS_LAYERS": "Testes em 3 camadas",
     "BADGE_TESTS_LAYERS_DESC": "Testes unitários, de integração (Testcontainers) e de arquitetura."
   },
