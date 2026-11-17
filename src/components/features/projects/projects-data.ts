@@ -121,6 +121,17 @@ export const PROJECTS: Featured[] = [
     privateRepo: true,
   },
   {
+    slug: "app-salvagnini",
+    caseKey: "SALVAGNINI",
+    titleKey: "PROJECTS.CARD_TITLE_14",
+    descKey: "PROJECTS.DESCRIPTION_14",
+    tags: ["Angular", "C#", "PWA", "ERP"],
+    groups: ["dotnet"],
+    badges: ["tests"],
+    projectUrl: "https://app-salvagnini.actidesenvolvimento.com.br/auth/login",
+    privateRepo: true,
+  },
+  {
     slug: "acti-case",
     titleKey: "PROJECTS.CARD_TITLE_1",
     descKey: "PROJECTS.DESCRIPTION_1",
